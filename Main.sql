@@ -1,25 +1,22 @@
-var characters = [[],[], [], [], [],[],[], []];
-      characters[0][0] = new create_character("", "", 10, 10, 10, 10);
-      for(var j = 0; j < 1; j++) {
-          characters[1][j] = new create_character("", "", 10, 10, 10, 10);  
-      }
-      this.create_character = function(name, category, atck, dfse, agit, ment) {
-          this.name = name;
-          this.category = category;
-          this.ofns = ofns; //Athletics (climb, force open, grapple, high jump, long jump, reposition, shove, swim, trip; disarm),
-          this.dfse = dfse;
-          this.sped = sped; //Acrobatics (balance, tumble through; fly maneuver, squeeze), Piloting, Stealth (conceal object, hide, sneak), Thievery (palm object, steal; disable device, pick lock)
-          this.ment = ment; //Arcana (recall knowledge; borrow an arcane spell, decipher writing, identify magic, learn a spell), Computers, Crafting (recall knowledge, repair; craft, earn income, identify alchemy), Deception (create diversion, impersonate, lie; feint), Diplomacy (gather information, make impression, request), Intimidate (coerce, demoralize), Lore (recall knowledge; earn income), Medicine (first aid; disease, poison, wounds), Nature (command animal, recall knowledge; identify magic, learn a spell), Occultism (recall knowledge; decipher writing, identify magic, learn a spell), Society (recall knowledge, subsist; create forgery, decipher writing), Survival (sense direction, subsist; cover tracks, track), Religion (recall knowledge; decipher writing, identify magic, learn a spell), Society (recall knowledge, subsist; create forgery), Survival (sense direction, subsist; cover tracks, track), Religion (recall knowledge; decipher writing, identify magic, learn a spell)
-          this.crouching = false;
-          this.x = 0;
-          this.y = 0;
-          this.z = 0;
-          this.dX = 0;
-          this.dY = 0;
-          this.dZ = 0;
-          push();
-          translate(this.x, this.y, this.z);
-          this.solid = box(size/2, size/2, size*1.5); //grass or water
+CREATE DATABASE characters;
+
+CREATE TABLE characters (
+  name TINYTEXT,
+  category TINYTEXT,
+  offense SMALLINT, --Athletics (climb, force open, grapple, high jump, long jump, reposition, shove, swim, trip; disarm),
+  defense SMALLINT, --n/a
+  speed SMALLINT, --Acrobatics (balance, tumble through; fly maneuver, squeeze), Piloting, Stealth (conceal object, hide, sneak), Thievery (palm object, steal; disable device, pick lock)
+  mental SMALLINT, --Arcana (recall knowledge; borrow an arcane spell, decipher writing, identify magic, learn a spell), Computers, Crafting (recall knowledge, repair; craft, earn income, identify alchemy), Deception (create diversion, impersonate, lie; feint), Diplomacy (gather information, make impression, request), Intimidate (coerce, demoralize), Lore (recall knowledge; earn income), Medicine (first aid; disease, poison, wounds), Nature (command animal, recall knowledge; identify magic, learn a spell), Occultism (recall knowledge; decipher writing, identify magic, learn a spell), Society (recall knowledge, subsist; create forgery, decipher writing), Survival (sense direction, subsist; cover tracks, track), Religion (recall knowledge; decipher writing, identify magic, learn a spell), Society (recall knowledge, subsist; create forgery), Survival (sense direction, subsist; cover tracks, track), Religion (recall knowledge; decipher writing, identify magic, learn a spell)
+  crouching BOOLEAN,
+  x INT,
+  y INT,
+  z INT,
+  dX TINYINT,
+  dY TINYINT,
+  dZ TINYINT
+);
+
+          /*this.solid = box(size/2, size/2, size*1.5); //grass or water
           this.damage = function(stat, target, ranged) {
               accuracystat = getModOfStat(stat);
               dexpenalty = 0;
@@ -67,6 +64,4 @@ var characters = [[],[], [], [], [],[],[], []];
           }
           getDist(x, y, z, xb, yb, zb) {
               return Math.sqrt(((x-xb)^2)+((y-yb)^2)+((z-zb)^2))
-          }
-      }
-  
+          }*/
