@@ -1,7 +1,7 @@
 CREATE DATABASE characters;
 
 CREATE TABLE characters (
-  name TINYTEXT,
+  name TINYTEXT(128),
   category TINYTEXT,
   offense SMALLINT, --Athletics (climb, force open, grapple, high jump, long jump, reposition, shove, swim, trip; disarm),
   defense SMALLINT, --n/a
@@ -11,9 +11,9 @@ CREATE TABLE characters (
   x INT,
   y INT,
   z INT,
-  dX TINYINT,
-  dY TINYINT,
-  dZ TINYINT
+  dX TINYINT(256),
+  dY TINYINT(256),
+  dZ TINYINT(256)
 );
 
           /*this.solid = box(size/2, size/2, size*1.5); //grass or water
