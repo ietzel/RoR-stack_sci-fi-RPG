@@ -1,6 +1,6 @@
-import processing.Application;
+import processing.core.PApplet;
 
-public class Main extends Application {
+public class Main extends PApplet {
   var characters = [[],[], [], [], [],[],[], []];
       characters[0][0] = new create_character("", "", 10, 10, 10, 10);
       for(var j = 0; j < 1; j++) {
