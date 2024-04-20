@@ -72,4 +72,17 @@ public class Main extends PApplet {
               return Math.sqrt(((x-xb)^2)+((y-yb)^2)+((z-zb)^2))
           }
       }
+  public void settings() {
+		size(500, 500);
+	}
+
+	public void draw(){
+		background(64);
+		//ellipse(mouseX, mouseY, 20, 20);
+	}
+  
+	public static void main(String[] passedArgs) {
+		String[] appletArgs = new String[] { "Tabletop Science-Fiction Roleplaying Game Simulator" };
+		Main.main(appletArgs);
+  }
 }
