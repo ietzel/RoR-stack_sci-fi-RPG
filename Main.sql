@@ -1,7 +1,4 @@
-import processing.core.PApplet;
-
-public class Main extends PApplet {
-  var characters = [[],[], [], [], [],[],[], []];
+var characters = [[],[], [], [], [],[],[], []];
       characters[0][0] = new create_character("", "", 10, 10, 10, 10);
       for(var j = 0; j < 1; j++) {
           characters[1][j] = new create_character("", "", 10, 10, 10, 10);  
@@ -72,17 +69,4 @@ public class Main extends PApplet {
               return Math.sqrt(((x-xb)^2)+((y-yb)^2)+((z-zb)^2))
           }
       }
-  public void settings() {
-		size(500, 500);
-	}
-
-	public void draw(){
-		background(64);
-		//ellipse(mouseX, mouseY, 20, 20);
-	}
   
-	public static void main(String[] passedArgs) {
-		String[] appletArgs = new String[] { "Tabletop Science-Fiction Roleplaying Game Simulator" };
-		Main.main(appletArgs);
-  }
-}
