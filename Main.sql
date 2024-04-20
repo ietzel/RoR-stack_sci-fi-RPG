@@ -1,8 +1,8 @@
-CREATE DATABASE characters;
+CREATE DATABASE game;
 
 CREATE TABLE characters (
   name TINYTEXT(128),
-  category TINYTEXT,
+  category TINYTEXT(64),
   offense SMALLINT, --Athletics (climb, force open, grapple, high jump, long jump, reposition, shove, swim, trip; disarm),
   defense SMALLINT, --n/a
   speed SMALLINT, --Acrobatics (balance, tumble through; fly maneuver, squeeze), Piloting, Stealth (conceal object, hide, sneak), Thievery (palm object, steal; disable device, pick lock)
