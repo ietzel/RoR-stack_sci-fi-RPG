@@ -14,5 +14,4 @@ CREATE TABLE characters (
   dX TINYINT(128),
   dY TINYINT(128),
   dZ TINYINT(128)
-  /*this.solid = box(size/2, size/2, size*1.5); //grass or water*/
 );
