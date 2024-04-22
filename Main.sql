@@ -16,7 +16,7 @@ CREATE TABLE characters (
   dZ TINYINT(128)
 );
 
-CREATE TABLE weapons (
+CREATE TABLE Weapons (
   name TINYTEXT,
   type TINYTEXT,
   itemlevel TINYINT(128),
@@ -31,7 +31,7 @@ CREATE TABLE weapons (
   description TINYTEXT
 );
 
-CREATE TABLE armor (
+CREATE TABLE Armor (
   name TINYTEXT,
   itemlevel TINYINT(128),
   type TINYTEXT,
@@ -44,3 +44,13 @@ CREATE TABLE armor (
   bulk TINYTEXT,
   special TINYTEXT
 );
+
+INSERT INTO Weapons (name, type, itemlevel, price, damage, range, critical, capacity, ammousage, bulk, special, description) VALUES
+  (
+  
+  );
+
+INSERT INTO Armor (name, itemlevel, type, price, EACbonus, KACbonus, maxdexbonus, armorcheckpenalty, speedadjustment, bulk, special) VALUES
+  (
+  
+  );
