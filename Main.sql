@@ -15,3 +15,32 @@ CREATE TABLE characters (
   dY TINYINT(128),
   dZ TINYINT(128)
 );
+
+CREATE TABLE weapons (
+  name TINYTEXT,
+  type TINYTEXT,
+  itemlevel TINYINT(128),
+  price MEDIUMINT(1000092),
+  damage TINYINT(128),
+  range TINYINT(128),
+  critical TINYINT(128),
+  capacity TINYINT(128),
+  ammousage TINYINT(128),
+  bulk TINYTEXT,
+  special TINYTEXT,
+  description TINYTEXT
+);
+
+CREATE TABLE armor (
+  name TINYTEXT,
+  itemlevel TINYINT(128),
+  type TINYTEXT,
+  price MEDIUMINT(1000092),
+  EACbonus TINYINT(128),
+  KACbonus TINYINT(128),
+  maxdexbonus TINYINT(128),
+  armorcheckpenalty TINYINT(128),
+  speedadjustment TINYINT(128),
+  bulk TINYTEXT,
+  special TINYTEXT
+);
