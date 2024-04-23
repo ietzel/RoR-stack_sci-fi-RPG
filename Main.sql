@@ -1,6 +1,6 @@
 CREATE DATABASE game;
 
-CREATE TABLE characters (
+CREATE TABLE Characters (
   name TINYTEXT,
   category TINYTEXT,
   baseoffense SMALLINT(2048), --Athletics (climb, force open, grapple, high jump, long jump, reposition, shove, swim, trip; disarm),
