@@ -51,6 +51,6 @@ INSERT INTO Weapons (name, type, itemlevel, price, damage, range, critical, capa
   );
 
 INSERT INTO Armor (name, itemlevel, type, price, EACbonus, KACbonus, maxdexbonus, armorcheckpenalty, speedadjustment, bulk, special) VALUES
-  (
-  
+  (																			
+
   );
