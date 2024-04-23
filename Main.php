@@ -7,7 +7,6 @@ function damage(stat, target, ranged) {
   accuracystat = getModOfStat(stat);
   dexpenalty = 0;
   crouch_mod = 0;
-  cover_mod = 0;
   t_crouch_mod = 0;
   t_cover_mod = 0;
   if(this.crouching <= -1) {
