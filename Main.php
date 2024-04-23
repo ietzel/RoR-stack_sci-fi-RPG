@@ -7,9 +7,12 @@ function damage(stat, target, ranged) {
   accuracystat = getModOfStat(stat);
   dexpenalty = 0;
   crouch_mod = 0;
-  if(this.crouching) {
-    crouch_mod = 2;
-  }         
+  cover_mod = 0;
+  if(this.crouching == -1) {
+    crouch_mod = 4;
+  } else if(this.crouching == -2) {
+    cover_mod = 2;
+  }
   if((this.sped+this.ment)>=(this.ofns*2)) {
     if((this.ment>target.ment) && (this.sped>target.ment)) {
       dexpenalty = target.sped;
@@ -21,23 +24,25 @@ function damage(stat, target, ranged) {
   }
   if(!ranged) {
     if(getDist(this.x, this.y, this.z, target.x, target.y, target.z) <= size*1.5) {
-      if(accuracystat >= (getModOfStat(target.sped)-dexpenalty-crouch_mod)) {
-        if(accuracystat >= getModOfStat(target.dfse)) {
-          characters = splice([indexOf(target), 1]
-        }
-      }
-    }
-  } else {
-    if(getDist(this.x, this.y, this.z, target.x, target.y, target.z) <= size*6) {
-      if(accuracystat >= (getModOfStat(target.sped)-dexpenalty+crouch_mod)) {
-        if(accuracystat >= getModOfStat(target.dfse)) {
-          characters = splice([indexOf(target), 1]
+      if((accuracystat-crouch_mod) >= (getModOfStat(target.sped)-dexpenalty)) {
+        if((accuracystat-crouch_mod+10) >= (getModOfStat(target.sped)-dexpenalty)) {
+          if((accuracystat*2) >= getModOfStat(target.dfse)) {
+            characters = splice([indexOf(target), 1]
+          }
+        } else {
+          if(getDist(this.x, this.y, this.z, target.x, target.y, target.z) <= size*6) {
+            if((accuracystat-cover_mod) >= (getModOfStat(target.sped)-dexpenalty)) {
+              if(accuracystat >= getModOfStat(target.dfse)) {
+                characters = splice([indexOf(target), 1]
+              }
+            }
+          }
         }
       }
     }
   }
 }
-          
+
 function update() {
   this.x += this.dX;
   this.y += this.dY;
