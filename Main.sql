@@ -1,5 +1,11 @@
 CREATE DATABASE game;
 
+CREATE TABLE Tiles (
+  x SMALLINT(2048),
+  y SMALLINT(2048),
+  y SMALLINT(2048)
+)
+	
 CREATE TABLE Characters (
   name TINYTEXT,
   category TINYTEXT,
