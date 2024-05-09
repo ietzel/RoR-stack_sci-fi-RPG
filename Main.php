@@ -3,12 +3,16 @@ $servername = "localhost";
 $username = "username";
 $password = "password";
 
-function damage(stat, target, ranged) {
+function damage(stat, mental, target, ranged) {
   accuracystat = getModOfStat(stat);
   dexpenalty = 0;
   crouch_mod = 0;
   t_crouch_mod = 0;
   t_cover_mod = 0;
+  knowledgeable = false;
+  if(mental >= 30) {
+    knowledgeable = true;
+  }
   if(this.crouching <= -1) {
     crouch_mod = -2;
   }
