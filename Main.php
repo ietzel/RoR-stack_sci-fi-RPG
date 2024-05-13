@@ -10,8 +10,12 @@ function damage(stat, mental, target, ranged) {
   t_crouch_mod = 0;
   t_cover_mod = 0;
   knowledgeable = false;
+  frightened_mod = 0;
   if(mental >= 30) {
     knowledgeable = true;
+  }
+  if(target.mental<=mental) {
+    frightened_mod = floor((target.mental-mental)/-10)-1;
   }
   if(this.crouching <= -1) {
     crouch_mod = -2;
@@ -22,37 +26,37 @@ function damage(stat, mental, target, ranged) {
     crouch_mod = -2;
     cover_mod = -2;
   }
-  if((this.sped+this.ment)>=(this.ofns*2)) {
+  if((this.sped+this.ment+frightened_mod)>=(this.ofns*2)) {
     if((this.ment>target.ment) && (this.sped>target.ment)) {
       dexpenalty = target.sped;
     }
   } else {
-    if(this.ofns>target.ment) {
+    if(this.ofns+frightened_mod>target.ment) {
       dexpenalty = target.sped;
     }
   }
   if(!ranged) {
     if(getDist(this.x, this.y, this.z, target.x, target.y, target.z) <= size*1.5) {
-      if((accuracystat-crouch_mod+10) >= (getModOfStat(target.sped)-dexpenalty+t_crouch_mod)) {
-        if((accuracystat*2) >= getModOfStat(target.dfse)) {
+      if((accuracystat-crouch_mod+frightened_mod+10) >= (getModOfStat(target.sped)-dexpenalty+t_crouch_mod)) {
+        if(((accuracystat*2)+frightened_mod) >= getModOfStat(target.dfse)) {
           characters = splice([indexOf(target), 1];
         }
       } else {
-        if((accuracystat-cover_mod) >= (getModOfStat(target.sped)-dexpenalty+t_crouch_mod)) {
-          if(accuracystat >= getModOfStat(target.dfse)) {
+        if(((accuracystat-cover_mod)+frightened_mod) >= (getModOfStat(target.sped)-dexpenalty+t_crouch_mod)) {
+          if((accuracystat+frightened_mod) >= getModOfStat(target.dfse)) {
             characters = splice([indexOf(target), 1];
           }
         }
       }
     }
   } else if(getDist(this.x, this.y, this.z, target.x, target.y, target.z) <= size*6) {
-    if((accuracystat-crouch_mod+10) >= (getModOfStat(target.sped)-dexpenalty+(t_crouch_mod*-1))) {
-        if((accuracystat*2) >= getModOfStat(target.dfse)) {
+    if((accuracystat-crouch_mod+frightened_mod+10) >= (getModOfStat(target.sped)-dexpenalty+(t_crouch_mod*-1))) {
+        if(((accuracystat*2)+frightened_mod) >= getModOfStat(target.dfse)) {
           characters = splice([indexOf(target), 1];
         }
       } else {
-        if((accuracystat-cover_mod) >= (getModOfStat(target.sped)-dexpenalty+(t_crouch_mod*-1))) {
-          if(accuracystat >= getModOfStat(target.dfse)) {
+        if((accuracystat-+frightened_modcover_mod) >= (getModOfStat(target.sped)-dexpenalty+(t_crouch_mod*-1))) {
+          if((accuracystat+frightened_mod) >= getModOfStat(target.dfse)) {
             characters = splice([indexOf(target), 1];
           }
         }
