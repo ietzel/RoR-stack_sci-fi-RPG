@@ -36,31 +36,14 @@ CREATE TABLE Dialogue {
 
 CREATE TABLE Weapons (
   name TINYTEXT,
-  type TINYTEXT,
-  itemlevel TINYINT(128),
-  price MEDIUMINT(1000092),
-  damage TINYINT(128),
-  range TINYINT(128),
-  critical TINYINT(128),
-  capacity TINYINT(128),
-  ammousage TINYINT(128),
-  bulk TINYTEXT,
-  special TINYTEXT,
-  description TINYTEXT
+  offense_mod TINYINT(128), --damage, critical
+  speed_mod TINYINT(128), --range, bulk 
 );
 
 CREATE TABLE Armor (
-  name TINYTEXT,
-  itemlevel TINYINT(128),
-  type TINYTEXT,
-  price MEDIUMINT(1000092),
-  EACbonus TINYINT(128),
-  KACbonus TINYINT(128),
-  maxdexbonus TINYINT(128),
-  armorcheckpenalty TINYINT(128),
-  speedadjustment TINYINT(128),
-  bulk TINYTEXT,
-  special TINYTEXT
+  name TINYTEXT,	
+  defense_mod TINYINT(128), --EACbonus, KACbonus  
+  speed_mod TINYINT(128) --maxdexbonus, armorcheckpenalty, speedadjustment, bulk    
 );
 
 INSERT INTO Characters (name, category, baseoffense, basedefense, basespeed, basemental, offense, defense, speed, mental, crouching, x, y, z, dX, dY, dZ) VALUES
@@ -69,7 +52,7 @@ INSERT INTO Characters (name, category, baseoffense, basedefense, basespeed, bas
 	("3", "", 10, 10, 10, 10, 10, 10, 10, 10, FALSE, 0, 0, 0, 0, 0, 0),
 	("4", "", 10, 10, 10, 10, 10, 10, 10, 10, FALSE, 0, 0, 0, 0, 0, 0)
 
-INSERT INTO Weapons (name, type, itemlevel, price, damage, range, critical, capacity, ammousage, bulk, special, description) VALUES
+INSERT INTO Weapons (name, offense_mod, speed_mod) VALUES
 	("Garrote, Wire", "Basic Melee 2-H", 2, 900, 1, 0, 0, 0, 0, "L", "analog, conceal, grapple, operative, throttle", "A pair of slim handles connected by flexible cable made of a strong alloy, the garrote is a weapon strongly associated with assassination. That’s no accident, as the weapon’s primary use is to silently strangle creatures. However, a garrote can also be used to ensnare appendages. The wire garrote is the simplest version, while the nanofiber, microfilament, and monowire models use increasingly fine cables to deal substantially more damage. For instance, the monowire version has a cable as thin as a single complex molecule, which closes into the handles when the weapon isn’t in use. This construction results in a nearly invisible cable with an extreme edge."),
 	("Baton, Tactical", "Basic Melee 1-H", 1, 90, 2, 0, 0, 0, 0, "L", "analog, operative", "A baton is a thin, solid metal shaft, usually with a textured rubber grip. A tactical baton can be used to inflict precise bludgeoning blows. An advanced baton, used by elite mercenary and security companies, often has an additional shaft, as well as a weighted end that can be powered to connect with substantially more force than a tactical baton. "
 	("Battleglove, Cestus", "Basic Melee 1-H", 1, 100, 2, 0, 0, 0, 0, "L", "analog", "Battlegloves are popular, economical choices for mercenaries and guards. These durable nylon-web or para-aramid gloves hold a weighted plate over the wearer’s knuckles. You can hold other objects or weapons in a hand wearing a glove, but you can’t use the glove to make attacks while doing so."),
