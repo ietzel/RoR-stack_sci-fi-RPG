@@ -56,7 +56,7 @@ INSERT INTO Dialogue (textvalue, category, x, y) VALUES
 	("A", "", 0, 0),
 	("A", "", 0, 1),
 	("A", "", 1, 0),
-	("A", "", 1, 1),
+	("A", "", 1, 1)
 
 INSERT INTO Weapons (name, offense_mod, speed_mod) VALUES
 	("Garrote, Wire", "Basic Melee 2-H", 2, 900, 1, 0, 0, 0, 0, "L", "analog, conceal, grapple, operative, throttle", "A pair of slim handles connected by flexible cable made of a strong alloy, the garrote is a weapon strongly associated with assassination. That’s no accident, as the weapon’s primary use is to silently strangle creatures. However, a garrote can also be used to ensnare appendages. The wire garrote is the simplest version, while the nanofiber, microfilament, and monowire models use increasingly fine cables to deal substantially more damage. For instance, the monowire version has a cable as thin as a single complex molecule, which closes into the handles when the weapon isn’t in use. This construction results in a nearly invisible cable with an extreme edge."),
