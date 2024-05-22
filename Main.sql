@@ -36,14 +36,14 @@ CREATE TABLE Dialogue {
 
 CREATE TABLE Weapons (
   name TINYTEXT,
-  offense_mod TINYINT(128), --damage, critical
-  speed_mod TINYINT(128), --range, bulk 
+  offense_mod TINYINT(128), --Log2((avg damage)*critical)/2)
+  speed_mod TINYINT(128), --Log2((range/20)-bulk)
 );
 
 CREATE TABLE Armor (
   name TINYTEXT,	
-  defense_mod TINYINT(128), --EACbonus, KACbonus  
-  speed_mod TINYINT(128) --maxdexbonus, armorcheckpenalty, speedadjustment, bulk    
+  defense_mod TINYINT(128), --Log2(EACbonus+KACbonus)  
+  speed_mod TINYINT(128) --Log2(maxdexbonus-armorcheckpenalty-speedadjustment-bulk)    
 );
 
 INSERT INTO Characters (name, category, baseoffense, basedefense, basespeed, basemental, offense, defense, speed, mental, crouching, x, y, z, dX, dY, dZ) VALUES
