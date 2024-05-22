@@ -56,6 +56,12 @@ CREATE TABLE Armor (
   special TINYTEXT
 );
 
+INSERT INTO Characters (name, category, baseoffense, basedefense, basespeed, basemental, offense, defense, speed, mental, crouching, x, y, z, dX, dY, dZ) VALUES
+	("1", "", 10, 10, 10, 10, 10, 10, 10, 10, FALSE, 0, 0, 0, 0, 0, 0),
+	("2", "", 10, 10, 10, 10, 10, 10, 10, 10, FALSE, 0, 0, 0, 0, 0, 0),
+	("3", "", 10, 10, 10, 10, 10, 10, 10, 10, FALSE, 0, 0, 0, 0, 0, 0),
+	("4", "", 10, 10, 10, 10, 10, 10, 10, 10, FALSE, 0, 0, 0, 0, 0, 0)
+
 INSERT INTO Weapons (name, type, itemlevel, price, damage, range, critical, capacity, ammousage, bulk, special, description) VALUES
 	("Garrote, Wire", "Basic Melee 2-H", 2, 900, 1, 0, 0, 0, 0, "L", "analog, conceal, grapple, operative, throttle", "A pair of slim handles connected by flexible cable made of a strong alloy, the garrote is a weapon strongly associated with assassination. That’s no accident, as the weapon’s primary use is to silently strangle creatures. However, a garrote can also be used to ensnare appendages. The wire garrote is the simplest version, while the nanofiber, microfilament, and monowire models use increasingly fine cables to deal substantially more damage. For instance, the monowire version has a cable as thin as a single complex molecule, which closes into the handles when the weapon isn’t in use. This construction results in a nearly invisible cable with an extreme edge."),
 	("Baton, Tactical", "Basic Melee 1-H", 1, 90, 2, 0, 0, 0, 0, "L", "analog, operative", "A baton is a thin, solid metal shaft, usually with a textured rubber grip. A tactical baton can be used to inflict precise bludgeoning blows. An advanced baton, used by elite mercenary and security companies, often has an additional shaft, as well as a weighted end that can be powered to connect with substantially more force than a tactical baton. "
