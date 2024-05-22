@@ -27,6 +27,13 @@ CREATE TABLE Characters (
   dZ TINYINT(128)
 );
 
+CREATE TABLE Dialogue {
+  textvalue TINYTEXT,
+  category TINYTEXT,
+  x SMALLINT(2048),
+  y SMALLINT(2048),
+}
+
 CREATE TABLE Weapons (
   name TINYTEXT,
   type TINYTEXT,
