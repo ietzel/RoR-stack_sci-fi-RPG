@@ -1,1 +1,3 @@
-https://www.aonsrd.com/
+run on bootable USB
+
+starfinder: https://www.aonsrd.com/
