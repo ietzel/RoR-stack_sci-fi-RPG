@@ -48,7 +48,7 @@ CREATE TABLE Armor (
 
 INSERT INTO Characters (name, category, baseoffense, basedefense, basespeed, basemental, offense, defense, speed, mental, crouching, x, y, z, dX, dY, dZ) VALUES
 	--castlecrashers
-        ("Alien", "", 10, 10, 10, 14, 10, 10, 10, 14, FALSE, 0, 0, 0, 0, 0, 0),
+        new create_character("Alien", "", 10, 10, 10, 14, 10, 10, 10, 14, FALSE, 0, 0, 0, 0, 0, 0),
         new create_character("Blacksmith", "", 11, 11, 11, 11),
         new create_character("Blue Knight", "", 12, 10, 10, 12),
         new create_character("Cultist", "", 10, 10, 10, 14),
@@ -62,7 +62,7 @@ INSERT INTO Characters (name, category, baseoffense, basedefense, basespeed, bas
         new create_character("Pink Knight", "", 10, 10, 10, 14),
         new create_character("Red Knight", "", 14, 10, 10, 10).     
 	--minecraft
-        
+        ()
       	--skylanders
         new create_character("Spyro", "Magic", 12, 10, 18, 12),
         new create_character("Legendary Spyro", "Magic", 15, 11, 18, 12),
