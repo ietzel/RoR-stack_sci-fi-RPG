@@ -1,6 +1,6 @@
 Run on Linux Mint/Ububtu/Tinycore, and any remotely up to date release of Apache server.
 
-Multiplayer tutorial: https://medium.com/hackernoon/how-to-build-a-multiplayer-browser-game-4a793818c29b https://medium.com/hackernoon/how-to-build-a-multiplayer-browser-game-part-2-2edd112aabdf#.imv6b3b33
+Multiplayer tutorial: https://javascript.plainenglish.io/develop-your-first-multiplayer-browser-game-io-99931c7d3a5b
 
 starfinder: https://www.aonsrd.com/
 
