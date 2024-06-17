@@ -104,52 +104,52 @@ function setup() {
 }
 
 function draw() {
-    cam.camera(0,-256,-512,0,0,0,0,1,0); //x_coor,y_coor,z_coor
+    cam.camera(0,0,0,0,0,0,0,1,0); //x_coor 0,y_coor -256,z_coor -512
 
     background(220,100,100);
     for (x = -width/2-256; x < width/2+256; x+=8) {
-    for (z=-512/2-256; z <512/2+256; z+=8) {
-        y = (noise(x*0.01+(millis() * 10000), z*x*0.01+(millis() * 10000))-0.5)*100*2;
-        stroke(0);
-        g = noise(x * x*0.01+(millis() * 10000)+20000,z*x*0.01+(millis() * 10000)+20000)-0.5;
-        fill(125+125*g,95+90*g,60+60*g,100) //grass color
-        if (y<-64) {
-        fill (200,20,40); //stone color
-        }
-        if (y>8) {
-        fill(240,100,60,100); //water color
-        y = 8;
-        noStroke();
-        }
-        push();
-        translate(x,y,z);
-        box(8); //grass or water
-        translate(0,8*3,0);
-        fill (200,20,40); //stone color
-        box(8,8*5,8); //stone block
-        let treeChance = (noise(x * x*0.01+(millis() * 10000)+10000,z*x*0.01+(millis() * 10000)+10000)-0.5)*90;
-        if (((noise(x * x*0.01+(millis() * 10000)+10000,z*x*0.01+(millis() * 10000)+10000)-0.5)*90) > 9.5 && y>-64 && y<8) {
-        translate(0,-8*5,0);
-        fill(0,75,30); //trunk color
-        cylinder(8/2,8*3);
-        translate(-8,-8,-8);
-        fill(120,80,30); //leaves
-        //sphere(8*2);
-        // fill in tree:
-        for (i=0;i<2;i++){
-            for (j=0;j<3;j++){
-            for (k=0;k<3;k++){
-                box(8);
-                translate(0,0,8)
+        for (z=-512/2-256; z <512/2+256; z+=8) {
+            y = (noise(x*0.01+(millis() * 10000), z*x*0.01+(millis() * 10000))-0.5)*100*2;
+            stroke(0);
+            g = noise(x * x*0.01+(millis() * 10000)+20000,z*x*0.01+(millis() * 10000)+20000)-0.5;
+            fill(125+125*g,95+90*g,60+60*g,100) //grass color
+            if (y<-64) {
+                fill (200,20,40); //stone color
             }
-            translate(8,0,-8*3)
-            } 
-            translate(-8*3,-8,0)
+            if (y>8) {
+                fill(240,100,60,100); //water color
+                y = 8;
+                noStroke();
+            }
+            push();
+            translate(x,y,z);
+            box(8); //grass or water
+            translate(0,8*3,0);
+            fill (200,20,40); //stone color
+            box(8,8*5,8); //stone block
+            let treeChance = (noise(x * x*0.01+(millis() * 10000)+10000,z*x*0.01+(millis() * 10000)+10000)-0.5)*90;
+            if (((noise(x * x*0.01+(millis() * 10000)+10000,z*x*0.01+(millis() * 10000)+10000)-0.5)*90) > 9.5 && y>-64 && y<8) {
+                translate(0,-8*5,0);
+                fill(0,75,30); //trunk color
+                cylinder(8/2,8*3);
+                translate(-8,-8,-8);
+                fill(120,80,30); //leaves
+                //sphere(8*2);
+                // fill in tree:
+                for (i=0;i<2;i++){
+                    for (j=0;j<3;j++){
+                        for (k=0;k<3;k++){
+                            box(8);
+                            translate(0,0,8)
+                        }
+                        translate(8,0,-8*3)
+                    } 
+                    translate(-8*3,-8,0)
+                }
+                translate(8,0,8);
+                box(8) //cap on tree
+            }
+            pop();
         }
-        translate(8,0,8);
-        box(8) //cap on tree
-        }
-        pop();
-    }
     }
 }
