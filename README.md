@@ -1,4 +1,4 @@
-Run on Linux Mint/Ububtu/Tinycore, and any remotely up to date release of Apache server.
+Install ngrok, start server using the command node server.js, and lastly enter the command ngrok http 3000 (which will generate a URL).
 
 Multiplayer tutorial: https://www.youtube.com/watch?v=2hhEOGXcCvg
 
