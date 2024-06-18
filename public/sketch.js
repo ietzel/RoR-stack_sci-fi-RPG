@@ -104,7 +104,7 @@ function setup() {
 }
 
 function draw() {
-    cam.camera(0,0,0,0,0,0,0,1,0); //x_coor 0,y_coor -256,z_coor -512
+    cam.camera(0,-256,-512,0,0,0,0,1,0); //x_coor 0,y_coor -256,z_coor -512
 
     background(220,100,100);
     for (x = -width/2-256; x < width/2+256; x+=8) {
@@ -112,7 +112,7 @@ function draw() {
             y = (noise(x*0.01+(millis() * 10000), z*x*0.01+(millis() * 10000))-0.5)*100*2;
             stroke(0);
             g = noise(x * x*0.01+(millis() * 10000)+20000,z*x*0.01+(millis() * 10000)+20000)-0.5;
-            fill(125+125*g,95+90*g,60+60*g,100) //grass color
+            fill(125+125*g,95+90*g,60+60*g,100)
             if (y<-64) {
                 fill (200,20,40); //stone color
             }
