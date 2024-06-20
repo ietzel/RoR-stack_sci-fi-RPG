@@ -33,7 +33,7 @@
         }
 
       	let map = null;
-	let noiseScale = 1/4096; 
+	let noiseScale = 1/8; 
 	let ocean = "#008dc4"; //Deep Sea, Lakes
 	let shore = "#00a9cc"; //Coasts, Wetlands
 	let sand = "#eecda3"; //Deserts, Plains, 
@@ -46,10 +46,10 @@ Rock Formations
 Atmospheric Optics, Astronomy, Weather*/
 	    
 	function setup() {
-	  createCanvas(256, 256); 
+	  createCanvas(64, 64); 
 	  noStroke();
 	  background(0);
-	  noiseDetail(0.5, 0.5);
+	  noiseDetail(0.125, 0.5);
 	  makeMap();
 	  drawMap();
 	}
