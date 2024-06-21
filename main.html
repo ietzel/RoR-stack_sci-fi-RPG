@@ -37,7 +37,7 @@
         }
 
       	let map = null;
-	let noiseScale = 1/128; 
+	let noiseScale = 1/16; 
 	let ocean = "#008dc4"; //Deep Sea, Lakes
 	let shore = "#00a9cc"; //Coasts, Wetlands
 	let sand = "#eecda3"; //Deserts, Plains 
@@ -48,25 +48,7 @@
 Caves
 Rock Formations
 Atmospheric Optics, Astronomy, Weather*/
-	    
-	function setup() {
-	  createCanvas(512, 512); 
-	  noStroke();
-	  background(0);
-	  noiseDetail(32, 0.5);
-	  makeMap();
-	  drawMap();
-	}
-
-	function makeMap() {
-	  map = [];
-	  for(let i = 0; i < width; i++) {
-		map[i] = [];
-		for(let j = 0; j < height; j++) {
-		  map[i][j] = pickColor(i, j);
-		}
-	  }
-	}
+	   
 
 	function pickColor(i, j) {
 	  let h = noise((i)*noiseScale, (j)*noiseScale);
@@ -119,6 +101,45 @@ Atmospheric Optics, Astronomy, Weather*/
 		  }
 	  }
 	  updatePixels();
+	}
+
+
+	function setup() {
+	  w = min(windowWidth, windowHeight)
+	  createCanvas(w, w)
+	
+	  gridWidth = w
+	  gridHeight = w
+	  hexagonSize = w/10
+	}
+	
+	function drawHexagon(cX, cY, r, c){
+	  beginShape()
+	  fill(c);
+	  for(let a = 0; a < TAU; a+=TAU/6){
+	    vertex(cX + r * cos(a), cY + r * sin(a))
+	  }
+	  endShape(CLOSE)
+	}
+	
+	function makeGrid(){
+	  count = 0
+	  for(y = 0; y < gridHeight; y+=hexagonSize/2.3){
+	    for(x = 0; x < gridWidth; x+=hexagonSize*1.5){
+	      drawHexagon(x+hexagonSize*(count%2==0)*0.75, y, hexagonSize/2, pickColor(y, x))
+	    }
+	    count++
+	  }
+	}
+	
+	function draw(){
+	  background(0);
+	  stroke(255);
+	  noFill();
+	
+	  makeGrid()
+	
+	  noLoop()
 	}
     </script>
       <div id="protips" align="bottom">
