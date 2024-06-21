@@ -22,8 +22,8 @@
 	    <label>Events:</label>
     </div>
     <div id="class" align="center">
-	<label for="cars">Choose a car:</label>
-	<select name="cars" id="cars">
+	<label for="classes">Choose a car:</label>
+	<select name="classes" id="classes">
 		<option value="">Biohacker</option>
 		<option value="">Envoy</option>
 		<!--<option value="">Evolutionist</option>-->
@@ -40,6 +40,27 @@
 	</select>
     </div>
     <script>
+	this.create_class = function(hp, skills, ...class_skills) {
+		this.hp = hp;
+		this.skills = skills;
+		this.class_skills = class_skills;
+	}
+	classes = [
+		new create_class(12, 4, []),
+		new create_class(, , []),
+		/*new create_class(, , []),*/
+		new create_class(, , []),
+		new create_class(, , []),
+		/*new create_class(, , []),*/
+		new create_class(, , []),
+		/*new create_class(, , []),*/
+		new create_class(, , []),
+		new create_class(, , []),
+		new create_class(, , []),
+		new create_class(, , []),
+		new create_class(, , []),
+	]
+	
         function keyPressed() {
           if (keyCode === LEFT_ARROW) {
             x_coor -= 50;
