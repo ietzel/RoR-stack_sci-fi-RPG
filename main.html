@@ -40,7 +40,7 @@
 	let noiseScale = 1/128; 
 	let ocean = "#008dc4"; //Deep Sea, Lakes
 	let shore = "#00a9cc"; //Coasts, Wetlands
-	let sand = "#eecda3"; //Deserts, Plains, 
+	let sand = "#eecda3"; //Deserts, Plains 
 	let grass = "#7ec850"; //Forests, Valleys
 	let stone = "#676767"; //Mountains, Tundra
 	let snow = "#fffafa"; //n/a
@@ -72,35 +72,35 @@ Atmospheric Optics, Astronomy, Weather*/
 	  let h = noise((i)*noiseScale, (j)*noiseScale);
 	  let c = "#facade";
 	  
-	  if(h < 0.2) {
+	  if(h < 0.15) {
 		c = ocean;
 	  } else if(h < 0.3) {
-		if(random() > pow(h-0.2, 2)*100) {
+		if(random() > pow(h-0.15, 2)*100) {
 		  c = ocean;
 		} else {
 		  c = shore;
 		}
-	  } else if(h < 0.4) {
+	  } else if(h < 0.45) {
 		if(random() > pow(h-0.3, 2)*100) {
 		  c = shore;
 		} else {
 		  c = sand;
 		}
-	  } else if(h < 0.5) {
-		if(random() > pow(h-0.4, 2)*100) {
+	  } else if(h < 0.6) {
+		if(random() > pow(h-0.45, 2)*100) {
 		  c = sand;
 		} else {
 		  c = grass;
 		}
 	  }
-	  else if(h < 0.6) {
-		if(random() > pow(h-0.5, 2)*100) {
+	  else if(h < 0.75) {
+		if(random() > pow(h-0.6, 2)*100) {
 		  c = grass;
 		} else {
 		  c = stone;
 		}
-	  } else if (h < 0.7) {
-		if(random() > pow(h-0.6, 2)*100) {
+	  } else if (h < 0.9) {
+		if(random() > pow(h-0.75, 2)*100) {
 		  c = stone;
 		} else {
 		  c = snow;
