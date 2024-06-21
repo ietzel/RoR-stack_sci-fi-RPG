@@ -40,27 +40,44 @@
 	</select>
     </div>
     <script>
-	this.create_class = function(hp, skills, ...class_skills) {
+	this.create_class = function(name, hp, skills, Acrobatics,Arcana,Athletics,Computers,Crafting,Deception,Diplomacy,Intimidate,Medicine,Medicine,Nature,Occultism,Piloting,Religion,Society,Stealth,Survival,Thievery) {
+		this.name = name;
 		this.hp = hp;
 		this.skills = skills;
-		this.class_skills = class_skills;
+		this.Acrobatics = Acrobatics; 
+		this.Arcana = Arcana; 
+		this.Athletics = Athletics; 
+		this.Computers = Computers; 
+		this.Crafting = Crafting; 
+		this.Deception = Deception; 
+		this.Diplomacy = Diplomacy; 
+		this.Intimidate = Intimidate; 
+		this.Medicine = Medicine; 
+		this.Medicine = Medicine; 
+		this.Nature = Nature; 
+		this.Occultism = Occultism; 
+		this.Piloting = Piloting; 
+		this.Society = Society; 
+		this.Stealth = Stealth; 
+		this.Survival = Survival; 
+		this.Thievery = Thievery;
 	}
 	classes = [
-		new create_class(12, 4, []),
-		new create_class(, , []),
-		/*new create_class(, , []),*/
-		new create_class(, , []),
-		new create_class(, , []),
-		/*new create_class(, , []),*/
-		new create_class(, , []),
-		/*new create_class(, , []),*/
-		new create_class(, , []),
-		new create_class(, , []),
-		new create_class(, , []),
-		new create_class(, , []),
-		new create_class(, , []),
-	]
-	
+		new create_class("Biohacker", 12, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+		new create_class("Envoy", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+		/*new create_class("Evolutionist", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),*/
+		new create_class("Mechanic", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+		new create_class("Mystic", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+		/*new create_class("Nanocyte", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),*/
+		new create_class("Operative", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+		/*new create_class("Precog", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),*/
+		new create_class("Solarian", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+		new create_class("Soldier", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+		new create_class("Technomancer", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+		new create_class("Vanguard", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+		new create_class("Witchwarper", , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	];
+
         function keyPressed() {
           if (keyCode === LEFT_ARROW) {
             x_coor -= 50;
