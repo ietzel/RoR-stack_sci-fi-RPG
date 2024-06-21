@@ -54,35 +54,35 @@ Atmospheric Optics, Astronomy, Weather*/
 	  let h = noise((i)*noiseScale, (j)*noiseScale);
 	  let c = "#facade";
 	  
-	  if(h < 0.15) {
+	  if(h < 0.05) {
 		c = ocean;
-	  } else if(h < 0.3) {
+	  } else if(h < 0.2) {
 		if(random() > pow(h-0.15, 2)*100) {
 		  c = ocean;
 		} else {
 		  c = shore;
 		}
-	  } else if(h < 0.45) {
-		if(random() > pow(h-0.3, 2)*100) {
+	  } else if(h < 0.35) {
+		if(random() > pow(h-0.2, 2)*100) {
 		  c = shore;
 		} else {
 		  c = sand;
 		}
-	  } else if(h < 0.6) {
-		if(random() > pow(h-0.45, 2)*100) {
+	  } else if(h < 0.5) {
+		if(random() > pow(h-0.35, 2)*100) {
 		  c = sand;
 		} else {
 		  c = grass;
 		}
 	  }
-	  else if(h < 0.75) {
-		if(random() > pow(h-0.6, 2)*100) {
+	  else if(h < 0.65) {
+		if(random() > pow(h-0.5, 2)*100) {
 		  c = grass;
 		} else {
 		  c = stone;
 		}
-	  } else if (h < 0.9) {
-		if(random() > pow(h-0.75, 2)*100) {
+	  } else if (h < 0.8) {
+		if(random() > pow(h-0.65, 2)*100) {
 		  c = stone;
 		} else {
 		  c = snow;
