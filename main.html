@@ -37,7 +37,7 @@
         }
 
       	let map = null;
-	let noiseScale = 1/4; 
+	let noiseScale = 1/128; 
 	let ocean = "#008dc4"; //Deep Sea, Lakes
 	let shore = "#00a9cc"; //Coasts, Wetlands
 	let sand = "#eecda3"; //Deserts, Plains, 
@@ -53,7 +53,7 @@ Atmospheric Optics, Astronomy, Weather*/
 	  createCanvas(512, 512); 
 	  noStroke();
 	  background(0);
-	  noiseDetail(8, 0.5);
+	  noiseDetail(128, 0.5);
 	  makeMap();
 	  drawMap();
 	}
