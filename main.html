@@ -103,8 +103,68 @@
 Caves
 Rock Formations
 Atmospheric Optics, Astronomy, Weather*/
-	   
-
+	function create_weather_event(perception_penalty) {
+		this.perception_penalty = perception_penalty;
+	}
+	weather_events = [
+		Fog(-1), 
+		Heavy_Downpour(-1), 
+		Cold_Snap(-1), 
+		Windstorm(-1), 
+		Severe_Hailstorm(-2), 
+		Blizzard(-2), 
+		Supernatural_Storm(-3), 
+		Flash_Flood(-3), 
+		Wildfire(-4), 
+		Subsidence(-5), 
+		Thunderstorm(-6), 
+		Tornado(-8)
+	];
+		
+	function random_weather_event() { //DC 17 general check to determine if it happens on a day
+		int random = Math.floor(Math.random()*20)+1;
+		event = weather_events[0];
+		switch(random) {
+			case 1, 2, 3:
+				event =  weather_events[0];
+				break;
+			case 4, 5, 6, 7:
+				event =  weather_events[1];
+				break;
+			case 8, 9:
+				event =  weather_events[2];
+				break;
+			case 10, 11, 12:
+				event =  weather_events[3];
+				break;
+			case 13:
+				event =  weather_events[4];
+				break;
+			case 14:
+				event =  weather_events[5];
+				break;
+			case 15:
+				event =  weather_events[6];
+				break;
+			case 16:
+				event =  weather_events[7];
+				break;
+			case 17:
+				event =  weather_events[8];
+				break;
+			case 18:
+				event =  weather_events[9];
+				break;
+			case 19:
+				event =  weather_events[10];
+				break;
+			case 20:
+				event =  weather_events[11];
+				break;
+		}
+		
+	}
+	    
 	function pickColor(i, j) {
 	  let h = noise((i)*noiseScale, (j)*noiseScale);
 	  let c = "#facade";
