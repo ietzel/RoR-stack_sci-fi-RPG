@@ -20,6 +20,24 @@
     <div id="feed" align="right">
 	    <label>Events:</label>
     </div>
+    <div id="race" align="center">
+	<label for="races">Choose a race:</label>
+	<select name="races" id="races">
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+	</select>
+    </div>
     <div id="class" align="center">
 	<label for="classes">Choose a class:</label>
 	<select name="classes" id="classes">
@@ -79,19 +97,29 @@
 	];
 
         function keyPressed() {
-          if (keyCode === LEFT_ARROW) {
-            x_coor -= 50;
-          } else if (keyCode === RIGHT_ARROW) {
-            x_coor += 50;
-          } else if (keyCode === DOWN_ARROW) {
-            z_coor -= 50;
-            characters[0][0].crouching = true;
-          } else if (keyCode === UP_ARROW) {
-            z_coor += 50;
-            characters[0][0].crouching = false;
+	  if(zoomed_in) {
+		  
+	  } else {
+	    if(keyCode === LEFT_ARROW) {
+	      x_coor -= 50;
+	    } else if(keyCode === RIGHT_ARROW) {
+	      x_coor += 50;
+	    } else if(keyCode === DOWN_ARROW) {
+	      z_coor -= 50;
+	      characters[0][0].crouching = true;
+	    } else if(keyCode === UP_ARROW) {
+	      z_coor += 50;
+	      characters[0][0].crouching = false;
+	    } else if(keyCode === ENTER) {
+	      restoreGrid();
+	       zoom_in();  
+	  }
+          
           }
         }
 
+	let map = [];
+	let zoomed_in = false;
 	let noiseScale = 1/16; 
 	let ocean = "#008dc4"; //Deep Sea, Lakes
 	let shore = "#00a9cc"; //Coasts, Wetlands
@@ -121,48 +149,50 @@ Atmospheric Optics, Astronomy, Weather*/
 		Tornado(-8)
 	];
 		
-	function random_weather_event() { //DC 17 general check to determine if it happens on a day
-		random = Math.floor(Math.random()*20)+1;
-		event = weather_events[0];
-		switch(random) {
-			case 1, 2, 3:
-				event =  weather_events[0];
-				break;
-			case 4, 5, 6, 7:
-				event =  weather_events[1];
-				break;
-			case 8, 9:
-				event =  weather_events[2];
-				break;
-			case 10, 11, 12:
-				event =  weather_events[3];
-				break;
-			case 13:
-				event =  weather_events[4];
-				break;
-			case 14:
-				event =  weather_events[5];
-				break;
-			case 15:
-				event =  weather_events[6];
-				break;
-			case 16:
-				event =  weather_events[7];
-				break;
-			case 17:
-				event =  weather_events[8];
-				break;
-			case 18:
-				event =  weather_events[9];
-				break;
-			case 19:
-				event =  weather_events[10];
-				break;
-			case 20:
-				event =  weather_events[11];
-				break;
+	function random_weather_event() {
+		occurence = Math.floor(Math.random()*20)+1;
+		if(occurence > 16) {
+			random = Math.floor(Math.random()*20)+1;
+			event = weather_events[0];
+			switch(random) {
+				case 1, 2, 3:
+					event =  weather_events[0];
+					break;
+				case 4, 5, 6, 7:
+					event =  weather_events[1];
+					break;
+				case 8, 9:
+					event =  weather_events[2];
+					break;
+				case 10, 11, 12:
+					event =  weather_events[3];
+					break;
+				case 13:
+					event =  weather_events[4];
+					break;
+				case 14:
+					event =  weather_events[5];
+					break;
+				case 15:
+					event =  weather_events[6];
+					break;
+				case 16:
+					event =  weather_events[7];
+					break;
+				case 17:
+					event =  weather_events[8];
+					break;
+				case 18:
+					event =  weather_events[9];
+					break;
+				case 19:
+					event =  weather_events[10];
+					break;
+				case 20:
+					event =  weather_events[11];
+					break;
+			}
 		}
-		
 	}
 	    
 	function pickColor(i, j) {
@@ -237,24 +267,32 @@ Atmospheric Optics, Astronomy, Weather*/
 	  endShape(CLOSE)
 	}
 	
-	function makeGrid(){
-	  count = 0
-	  for(y = 0; y < gridHeight; y+=hexagonSize/2.3){
-	    for(x = 0; x < gridWidth; x+=hexagonSize*1.5){
-	      drawHexagon(x+hexagonSize*(count%2==0)*0.75, y, hexagonSize/2, pickColor(y, x))
+	function makeGrid() {
+	  count = 0;
+	  i = 0, j = 0;
+	  for(y = 0; y < gridHeight; y+=hexagonSize/2.3) {
+	    j++;
+	    for(x = 0; x < gridWidth; x+=hexagonSize*1.5) {
+	      i++;
+	      map[i][j] = drawHexagon(x+hexagonSize*(count%2==0)*0.75, y, hexagonSize/2, pickColor(y, x))
 	    }
-	    count++
+	    count++;
 	  }
 	}
+	function restoreGrid() {
+		for(i = 0; i < map.length) {
+			for(j = 0; j < map[i].length) {
+				map[i][j];
+			}	
+		}
+	}
 	
-	function draw(){
+	function draw() {
 	  background(0);
 	  stroke(255);
 	  noFill();
-	
-	  makeGrid()
-	
-	  noLoop()
+	  makeGrid();
+	  noLoop();
 	}
     </script>
       <div id="protips" align="left">
