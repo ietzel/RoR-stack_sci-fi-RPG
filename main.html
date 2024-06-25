@@ -57,6 +57,17 @@
 	</select>
     </div>
     <script>
+	function create_race(name, hp, speed, str, dex, con, int, wis, cha) {
+		this.name = name; 
+		this.hp = hp;
+		this.speed = speed;
+		this.str = str;
+		this.dex = dex;
+		this.con = con;
+		this.int = int;
+		this.wis = wis;
+		this.cha = cha;
+	}
 	function create_class(name, hp, skills, Acrobatics, Arcana, Athletics, Computers, Crafting, Deception, Diplomacy, Intimidate, Lore, Medicine, Nature, Occultism, Piloting, Religion, Society, Stealth, Survival, Thievery) {
 		this.name = name;
 		this.hp = hp;
@@ -80,6 +91,40 @@
 		this.Survival = Survival; 
 		this.Thievery = Thievery;
 	}
+	races = [
+		new create_race("Dwarf", 10, 20, 0, 0, 2, 0, 2, -1),
+		new create_race("Elf", 6, 30, 0, 2, -1, 2, 0, 0),
+		new create_race("Gnome", 8, 25, -3, 2, 2, 0, 0, 2),
+		new create_race("Goblin", 6, 25, -2, 4, 0, 0, -1, 2),
+		new create_race("Halfling", 6, 25, -3, 4, 0, 0, 2, 0),
+		new create_race("Human", 8, 25, 0, 0, 1, 1, 0, 0),
+		new create_race("Leshy", 8, 25, -2, 2, 2, -1, 2, 0),
+		new create_race("Orc", 10, 25, 1, 0, 0, 0, 1, 0),
+		new create_race("Barathu", 6, 30, 0, -2, 2, 0, 2, 0),
+		new create_race("Contemplative", 2, 30, -2, 0, -2, 4, 0, 2),
+		new create_race("Draelik", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Dragonkin", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Drow", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Formian", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Space Goblin", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Gray", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Haan", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Ikeshti", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Kalo", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Maraquoi", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Nuar", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Reptoid", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Ryphorian", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Sarcesian", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Shobhad", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Skittermander", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Urog", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Verthani", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Witchwyrd", 10, 25, 0, 0, 0, 0, 0, 0),
+		new create_race("Wrikreechee", 10, 25, 0, 0, 0, 0, 0, 0)
+
+	
+	]
 	classes = [
 		new create_class("Biohacker", 12, 4, 0, 0, 0, 2, 2, 2, 2, 0, 4, 4, 0, 0, 0, 0, 2, 0, 0, 2),
 		new create_class("Envoy", 12, 8, 2, 0, 2, 2, 2, 4, 2, 2, 2, 2, 0, 0, 2, 0, 2, 0, 0, 2),
