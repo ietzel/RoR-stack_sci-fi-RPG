@@ -354,12 +354,10 @@
 	}
 	
 	function makeGrid() {
-	  count = 0;
-	  for(y = -gridHeight/2; y < gridHeight/2; y+=hexagonSize/2.3) {
-	    for(x = -gridWidth/2; x < gridWidth/2; x+=hexagonSize*1.5) {
-	      drawHexagon((x+hexagonSize*(count%2==0)*0.75), y, hexagonSize/2, pickColor(x, y));
+	  for(i = 0; i < 10; i+=1) {
+	    for(j = 0; j < 10; j+=1) {
+	      drawHexagon(map[i][j].x, map[i][j].y, hexagonSize/2, map[i][j].c);
 	    }
-	    count++;
 	  }
 	}
 	function restoreGrid() {
