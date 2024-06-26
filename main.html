@@ -172,15 +172,13 @@
 	    }	  
 	  } else {
 	    if(keyCode === LEFT_ARROW) {
-	      x_coor -= 50;
+	      playerX -= gridWidth*hexagonSize*0.075;
 	    } else if(keyCode === RIGHT_ARROW) {
-	      x_coor += 50;
+	      playerX += gridWidth*hexagonSize*0.075;
 	    } else if(keyCode === DOWN_ARROW) {
-	      z_coor -= 50;
-	      characters[0][0].crouching = true;
+	      playerY -= gridWidth/10;
 	    } else if(keyCode === UP_ARROW) {
-	      z_coor += 50;
-	      characters[0][0].crouching = false;
+	      playerY += gridWidth/10;
 	    } else if(keyCode === ENTER) {
 	      zoom_in();  
 	    }
@@ -196,10 +194,11 @@
 	let grass = "#7ec850"; //Forests, Valleys
 	let stone = "#676767"; //Tundra, Mountains
 	let snow = "#fffafa"; //n/a
-/*Rivers
-Caves
-Rock Formations
-Atmospheric Optics, Astronomy, Weather*/
+	let playerX = 0, playerY = 0;
+	/*Rivers
+	Caves
+	Rock Formations
+	Atmospheric Optics, Astronomy, Weather*/
 	function create_weather_event(perception_penalty) {
 		this.perception_penalty = perception_penalty;
 	}
@@ -340,7 +339,7 @@ Atmospheric Optics, Astronomy, Weather*/
 	  count = 0;
 	  for(y = 0; y < gridHeight; y+=hexagonSize/2.3) {
 	    for(x = 0; x < gridWidth; x+=hexagonSize*1.5) {
-	      drawHexagon(x+hexagonSize*(count%2==0)*0.75, y, hexagonSize/2, pickColor(y, x))
+	      drawHexagon(x+hexagonSize*(count%2==0)*0.75, y, hexagonSize/2, pickColor(y, x));
 	    }
 	    count++;
 	  }
@@ -428,11 +427,16 @@ Atmospheric Optics, Astronomy, Weather*/
 	}  
 	
 	function draw() {
-	  background(0);
-	  stroke(255);
-	  noFill();
-	  makeGrid();
-	  noLoop();
+	  if(zoomed_in) {
+		  
+	  } else {
+		  background(0);
+		  stroke(255);
+		  noFill();
+		  makeGrid();
+		  drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, pickColor(playerY, playerX));
+		  noLoop();
+	  }
 	}
     </script>
       <p>Press enter to change view from biome map to local landscape</p>
