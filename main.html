@@ -337,9 +337,9 @@
 	
 	function makeGrid() {
 	  count = 0;
-	  for(y = 0; y < gridHeight; y+=hexagonSize/2.3) {
-	    for(x = 0; x < gridWidth; x+=hexagonSize*1.5) {
-	      drawHexagon((x+hexagonSize*(count%2==0)*0.75)-(windowWidth/2), y-(windowHeight/2), hexagonSize/2, pickColor(y, x));
+	  for(y = -gridHeight/2; y < gridHeight/2; y+=hexagonSize/2.3) {
+	    for(x = -gridWidth/2; x < gridWidth/2; x+=hexagonSize*1.5) {
+	      drawHexagon((x+hexagonSize*(count%2==0)*0.75), y, hexagonSize/2, pickColor(y, x));
 	    }
 	    count++;
 	  }
