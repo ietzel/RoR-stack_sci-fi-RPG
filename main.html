@@ -322,12 +322,12 @@
 	  updatePixels();
 	}
 
-	function create_hex(i, j) {
+	function hex(i, j) {
 		this.i = i;
 		this.j = j;
-		this.x = ((i*windowWidth*1.5)+(windowWidth*(i%2==0)*1.125));
-		this.y = i*windowHeight/23;
-		this.c = pickColor(x, y);
+		this.x = ((i*windowWidth*1.5)+(windowWidth*(this.i%2==0)*1.125));
+		this.y = this.j*windowHeight/23;
+		this.c = pickColor(this.x, this.y);
 	}
 	    
 	function setup() {
@@ -340,7 +340,7 @@
 
 	  for(i = 0; i < 10; i+=1) {
 	    for(j = 0; j < 10; j+=1) {
-	      map[i][j] = new create_hex(i, y);
+	      map[i][j] = new hex(i, y);
 	    }
 	  }
 	}
