@@ -168,6 +168,7 @@
 	      z_coor += 50;
 	      characters[0][0].crouching = false;
 	    } else if(keyCode === ENTER) {
+	      zoomed_in = false;
 	      restoreGrid(); 
 	    }	  
 	  } else {
@@ -184,6 +185,7 @@
 	      playerY += windowHeight/10;
 	      drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, color('rgba(128, 128, 128, 0.5)'));
 	    } else if(keyCode === ENTER) {
+	      zoomed_in = true;
 	      zoom_in();  
 	    }
           }
