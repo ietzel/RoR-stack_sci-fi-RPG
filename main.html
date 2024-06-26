@@ -356,10 +356,10 @@
 	function drawHexagon(cX, cY, r, c){
 	  beginShape();
 	  fill(c);
-	  for(let a = 0; a < TAU; a+=TAU/6){
-	    vertex(cX + r * cos(a), cY + r * sin(a))
+	  for(let a = 0; a < TAU; a+=TAU/6) {
+	    vertex(cX + r * cos(a), cY + r * sin(a));
 	  }
-	  endShape(CLOSE)
+	  endShape(CLOSE);
 	}
 	
 	function makeGrid() {
