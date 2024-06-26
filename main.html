@@ -172,13 +172,13 @@
 	    }	  
 	  } else {
 	    if(keyCode === LEFT_ARROW) {
-	      playerX -= gridWidth*hexagonSize*0.075;
+	      playerX -= windowWidth*0.075;
 	    } else if(keyCode === RIGHT_ARROW) {
-	      playerX += gridWidth*hexagonSize*0.075;
+	      playerX += windowWidth*0.075;
 	    } else if(keyCode === DOWN_ARROW) {
-	      playerY -= gridWidth/10;
+	      playerY -= windowHeight/10;
 	    } else if(keyCode === UP_ARROW) {
-	      playerY += gridWidth/10;
+	      playerY += windowHeight/10;
 	    } else if(keyCode === ENTER) {
 	      zoom_in();  
 	    }
