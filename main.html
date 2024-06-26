@@ -154,7 +154,7 @@
 		new create_class("Vanguard", 14, 6, 2, 0, 2, 0, 2, 0, 2, 2, 0, 4, 0, 2, 0, 0, 2, 2, 2, 0),
 		new create_class("Witchwarper", 10, 4, 2, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 2, 0, 0, 2, 0, 0, 0)
 	];
-
+	
         function keyPressed() {
 	  if(zoomed_in) {
 	    if(keyCode === LEFT_ARROW) {
@@ -322,18 +322,30 @@
 	  updatePixels();
 	}
 
-
+	funciton create_hexagon(i, j) {
+		this.i = i;
+		this.j = j;
+		this.x = ((i*windowWidth*1.5)+(windowWidth*(i%2==0)*1.125));
+		this.y = i*windowHeight/23;
+		this.c = pickColor(x, y);
+	}
 	function setup() {
-	  w = min(windowWidth, windowHeight)
-	  createCanvas(w, w, WEBGL)
+	  w = min(windowWidth, windowHeight);
+	  createCanvas(w, w, WEBGL);
 	
-	  gridWidth = w
-	  gridHeight = w
-	  hexagonSize = w/10
+	  gridWidth = w;
+	  gridHeight = w;
+	  hexagonSize = w/10;
+
+	  for(i = 0; i < 10; i+=1) {
+	    for(j = 0; j < 10; j+=1) {
+	      map[i][j] = new create_hexagon(i, y);
+	    }
+	  }
 	}
 	
 	function drawHexagon(cX, cY, r, c){
-	  beginShape()
+	  beginShape();
 	  fill(c);
 	  for(let a = 0; a < TAU; a+=TAU/6){
 	    vertex(cX + r * cos(a), cY + r * sin(a))
@@ -345,7 +357,7 @@
 	  count = 0;
 	  for(y = -gridHeight/2; y < gridHeight/2; y+=hexagonSize/2.3) {
 	    for(x = -gridWidth/2; x < gridWidth/2; x+=hexagonSize*1.5) {
-	      drawHexagon((x+hexagonSize*(count%2==0)*0.75), y, hexagonSize/2, pickColor(y, x));
+	      drawHexagon((x+hexagonSize*(count%2==0)*0.75), y, hexagonSize/2, pickColor(x, y));
 	    }
 	    count++;
 	  }
