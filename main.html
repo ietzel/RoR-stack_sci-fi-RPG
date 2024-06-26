@@ -173,12 +173,16 @@
 	  } else {
 	    if(keyCode === LEFT_ARROW) {
 	      playerX -= windowWidth*0.075;
+	      drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, color('rgba(128, 128, 128, 0.5)'));
 	    } else if(keyCode === RIGHT_ARROW) {
 	      playerX += windowWidth*0.075;
+	      drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, color('rgba(128, 128, 128, 0.5)'));
 	    } else if(keyCode === DOWN_ARROW) {
 	      playerY -= windowHeight/10;
+	      drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, color('rgba(128, 128, 128, 0.5)'));
 	    } else if(keyCode === UP_ARROW) {
 	      playerY += windowHeight/10;
+	      drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, color('rgba(128, 128, 128, 0.5)'));
 	    } else if(keyCode === ENTER) {
 	      zoom_in();  
 	    }
@@ -434,7 +438,6 @@
 		  stroke(255);
 		  noFill();
 		  makeGrid();
-		  drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, color('rgba(128, 128, 128, 0.5)'));
 		  noLoop();
 	  }
 	}
