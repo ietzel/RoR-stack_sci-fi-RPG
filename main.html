@@ -378,12 +378,12 @@
 	  r = 64;
 	  s = sqrt(3 * pow(r, 2) / 4);
 	  hexagons = [];
-	  player_hexagon = new Hexagon(0, 0, r);
+	  player_hexagon = new Hexagon(0, 0, r, "grey");
 	  let counter = 0;
 	  for (let y = 0; y < height + s; y += 2*s) {
 		for (let x = 0; x < width + r; x += 3*r) {
-			hexagons.push(new Hexagon(x, y, r, counter++));
-			hexagons.push(new Hexagon(x + 1.5 * r, y + s, r, counter++));
+			hexagons.push(new Hexagon(x, y, r, pickColor(this.x, this.y), counter++));
+			hexagons.push(new Hexagon(x + 1.5 * r, y + s, r, pickColor(this.x, this.y), counter++));
 		}
 	  }
 	}
@@ -399,11 +399,11 @@
 	}
 	
 	class Hexagon {
-		constructor(x, y, r) {
+		constructor(x, y, r, c) {
 			this.x = x;
 			this.y = y;
 			this.r = r;
-			this.c = pickColor(this.x, this.y)
+			this.c = c;
 		}
 		render() {
 			fill(this.c);
@@ -418,7 +418,6 @@
 		cam.camera(0,0,0,0,0,0,0,0,0);
 		translate(0,0,0);
 		hexagons.forEach(h => {h.render();});
-		fill("grey");
 		player_hexagon.render();
 	}
 
