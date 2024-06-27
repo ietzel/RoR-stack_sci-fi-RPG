@@ -209,28 +209,28 @@
 	      characters[0][0].crouching = false;
 	    } else if(keyCode === ENTER) {
 	      zoomed_in = false;
-	      restoreGrid(); 
+	      makeGrid(); 
 	    }	  
 	  } else {
 	    if(keyCode === LEFT_ARROW) {
 	      playerX -= windowWidth*0.075;
-	      restoreGrid();
+	      makeGrid();
 	      drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, color('rgba(128, 128, 128, 0.5)'));
 	    } else if(keyCode === RIGHT_ARROW) {
 	      playerX += windowWidth*0.075;
-	      restoreGrid();
+	      makeGrid();
 	      drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, color('rgba(128, 128, 128, 0.5)'));
 	    } else if(keyCode === DOWN_ARROW) {
 	      playerY -= windowHeight/10;
-	      restoreGrid();
+	      makeGrid();
 	      drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, color('rgba(128, 128, 128, 0.5)'));
 	    } else if(keyCode === UP_ARROW) {
 	      playerY += windowHeight/10;
-	      restoreGrid();
+	      makeGrid();
 	      drawHexagon(playerX+hexagonSize*(count%2==0)*0.75, playerY, hexagonSize/2, color('rgba(128, 128, 128, 0.5)'));
 	    } else if(keyCode === ENTER) {
 	      zoomed_in = true;
-	      zoom_in();  
+	      make_landscape();  
 	    }
           }
         }
@@ -399,23 +399,16 @@
 	}
 	
 	function makeGrid() {
+	  clear();
 	  for(i = 0; i < 10; i+=1) {
 	    for(j = 0; j < 10; j+=1) {
 	      drawHexagon(map[i][j].x, map[i][j].y, windowWidth/20, map[i][j].c);
 	    }
 	  }
 	}
-	function restoreGrid() {
-		clear();
-		makeGrid();
-	}
-
-	function zoom_in() {
-		clear();	
-		make_landscape();
-	}	
 
 	function make_landscape() {
+		clear();
 		let size = 8;
 		let depth = 512;
 		let overlap = 256;
@@ -437,7 +430,7 @@
 		//terrRange = 100;
 		//seed = millis() * 10000; //to vary noise
 	
-		cam.camera(0,-256,-512,0,0,0,0,1,0); //x_coor,y_coor,z_coor
+		cam.camera(x_coor,y_coor,z_coor,0,0,0,0,1,0);
 		
 		    background(220,100,100);
 		    for (x = -width/2-256; x < width/2+256; x+=8) {
