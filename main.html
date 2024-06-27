@@ -381,8 +381,12 @@
 	function hex(i, j) {
 		this.i = i;
 		this.j = j;
-		this.x = ((i*windowWidth*1.5)+(windowWidth*(this.i%2==0)*1.125));
-		this.y = this.j*windowHeight/23;
+		if(this.i%2==0) {
+			this.x = ((i*512*1.5)+(512*1.125));
+		} else {
+			this.x = null;
+		}
+		this.y = this.j*512/23;
 		this.c = pickColor(this.x, this.y);
 	}
 	    
@@ -397,7 +401,9 @@
 
 	  for(var i = 0; i < 10; i+=1) {
 	    for(var j = 0; j < 10; j+=1) {
-	      map[i][j] = new hex(i, j);
+	      if(this.i%2==0) {
+	      	map[i][j] = new hex(i, j);
+	      }
 	    }
 	  }
 	}
