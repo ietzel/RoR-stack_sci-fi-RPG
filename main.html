@@ -377,24 +377,12 @@
 	  }
 	  updatePixels();
 	}
-
-	function hex(i, j) {
-		this.i = i;
-		this.j = j;
-		if(this.i%2==0) {
-			this.x = ((i*512*1.5)+(512*1.125));
-		} else {
-			this.x = null;
-		}
-		this.y = this.j*512/23;
-		this.c = pickColor(this.x, this.y);
-	}
 	    
 	function setup() {
 	  seed = millis()*10000;
 	  w = min(windowWidth, windowHeight);
 	  createCanvas(w, w, WEBGL);
-	  r = 50;
+	  r = 64;
 	  s = sqrt(3 * pow(r, 2) / 4);
 	  hexagons = [];
 	
@@ -419,22 +407,21 @@
 	}
 	
 	class Hexagon {
-		constructor(x, y, r, name) {
+		constructor(x, y, r) {
 			this.x = x;
 			this.y = y;
 			this.r = r;
 			this.c = pickColor(this.x, this.y)
-			this.name = name;
 		}
 		render() {
 			fill(this.c);
 			stroke(0);
-			hexagon(this.x, this.y, this.r);
-			text(this.name, this.x, this.y);
+			hexagon(this.x-(windowWidth/2), this.y-(windowHeight/2), this.r);
 		}
 	}
 	    
 	function makeGrid() {
+		clear();
 		hexagons.forEach(h => {h.render();});
 	}
 
@@ -512,7 +499,7 @@
 	}
     </script>
       <p>Press enter to change view from biome map to local landscape</p>
-      <!--<div id="protips" align="left">
+      <div id="protips" align="left">
 	<ul>  
 	  <label><h4>Strength</h4></label>
 	  <li>Athletics (climb, force open, grapple, high jump, long jump, reposition, shove, swim, trip; disarm)</li>
@@ -549,6 +536,6 @@
 	  <li>n/a</li>
 	  <li>n/a</li>
 	</ul>
-    </div>-->
+    </div>
   </body>  
 </html>
