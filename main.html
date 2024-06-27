@@ -394,15 +394,14 @@
 	}
 	
 	class Hexagon {
-		constructor(x, y, r, c) {
+		constructor(x, y, r) {
 			this.x = x;
 			this.y = y;
 			this.r = r;
-			this.c = c;
+			this.c = pickColor();
 		}
 		render(c) {
-			fill(c || this.c);
-			stroke(0);
+			fill(this.c);
 			hexagon(this.x-256, this.y-256, this.r);
 		}
 	}
@@ -412,8 +411,8 @@
 		cam = createCamera();
 		cam.camera(0,0,0,0,0,0,0,1,0);
 		translate(0,0,0);
-		hexagons.forEach(h => {h.render(pickColor(h.x, h.y));});
-		//player_hexagon.render(pickColor(player_hexagon.x, player_hexagon.y));
+		hexagons.forEach(h => {h.render();});
+		player_hexagon.render();
 	}
 
 	function make_landscape() {
