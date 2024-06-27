@@ -200,6 +200,7 @@
 	];
 	
         function keyPressed() {
+	console.log(zoomed_in);
 	  if(zoomed_in) {
 	    if(keyCode === LEFT_ARROW) {
 	      x_coor -= 50;
@@ -207,10 +208,10 @@
 	      x_coor += 50;
 	    } else if(keyCode === DOWN_ARROW) {
 	      z_coor -= 50;
-	      characters[0][0].crouching = true;
+	      //characters[0][0].crouching = true;
 	    } else if(keyCode === UP_ARROW) {
 	      z_coor += 50;
-	      characters[0][0].crouching = false;
+	      //characters[0][0].crouching = false;
 	    } else if(keyCode === ENTER) {
 	      zoomed_in = false;
 	      makeGrid(); 
