@@ -92,7 +92,7 @@
 		<option value="">Nature (command animal, recall knowledge, identify magic, learn a spell)</option>
 		<option value="">Survival (sense direction, subsist, cover tracks, track)</option>
 		<option value="">Religion (recall knowledge, decipher writing, identify magic, learn a spell)</option>
-		<option value="">Perception [wis. mod. only]</option>
+		<option value="">Perception [wis. mod. & proficioency bonus only]</option>
 		<option value="">Deception (create diversion, impersonate, lie, feint) </option>
 		<option value="">Diplomacy (gather information, make impression, request)</option>
 		<option value="">Intimidate (coerce, demoralize)</option>
@@ -124,7 +124,7 @@
 		this.wis = wis;
 		this.cha = cha;
 	}
-	function create_class(name, hp, skills, Acrobatics, Arcana, Athletics, Computers, Crafting, Deception, Diplomacy, Intimidate, Lore, Medicine, Nature, Occultism, Piloting, Religion, Society, Stealth, Survival, Thievery) {
+	function create_class(name, hp, skills, Acrobatics, Arcana, Athletics, Computers, Crafting, Deception, Diplomacy, Intimidate, Lore, Medicine, Nature, Occultism, Perception, Piloting, Religion, Society, Stealth, Survival, Thievery) {
 		this.name = name;
 		this.hp = hp;
 		this.skills = skills;
@@ -140,6 +140,7 @@
 		this.Medicine = Medicine; 
 		this.Nature = Nature; 
 		this.Occultism = Occultism; 
+		this.Perception = Perception;
 		this.Piloting = Piloting; 
 		this.Religion = Religion; 
 		this.Society = Society; 
@@ -148,13 +149,13 @@
 		this.Thievery = Thievery;
 	}
 	races = [
-		new create_race("Dwarf", 10, 20, 0, 0, 2, 0, 2, -1),
-		new create_race("Elf", 6, 30, 0, 2, -1, 2, 0, 0),
-		new create_race("Gnome", 8, 25, -3, 2, 2, 0, 0, 2),
-		new create_race("Goblin", 6, 25, -2, 4, 0, 0, -1, 2),
-		new create_race("Halfling", 6, 25, -3, 4, 0, 0, 2, 0),
+		new create_race("Dwarf", 10, 20, 0, 0, 1, 0, 1, 0),
+		new create_race("Elf", 6, 30, 0, 1, 0, 1, 0, 0),
+		new create_race("Gnome", 8, 25, -2, 2, 1, 0, 0, 1),
+		new create_race("Goblin", 6, 25, -2, 3, 0, 0, 0, 1),
+		new create_race("Halfling", 6, 25, -2, 3, 0, 0, 1, 0),
 		new create_race("Human", 8, 25, 0, 0, 1, 1, 0, 0),
-		new create_race("Leshy", 8, 25, -2, 2, 2, -1, 2, 0),
+		new create_race("Leshy", 8, 25, -2, 2, 1, 0, 1, 0),
 		new create_race("Orc", 10, 25, 1, 0, 0, 0, 1, 0),
 		new create_race("Barathu", 6, 30, 0, -2, 2, 0, 2, 0),
 		new create_race("Contemplative", 2, 30, -2, 0, -2, 4, 0, 2),
@@ -180,19 +181,19 @@
 		new create_race("Wrikreechee", 4, 30, 0, -2, 2, 2, 0, 0)
 	]
 	classes = [
-		new create_class("Biohacker", 12, 4, 0, 0, 0, 2, 2, 2, 2, 0, 4, 4, 0, 0, 0, 0, 2, 0, 0, 2),
-		new create_class("Envoy", 12, 8, 2, 0, 2, 2, 2, 4, 2, 2, 2, 2, 0, 0, 2, 0, 2, 0, 0, 2),
-		new create_class("Evolutionist", 12, 4, 2, 0, 2, 0, 2, 2, 0, 2, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0),
-		new create_class("Mechanic", 12, 4, 0, 0, 2, 2, 2, 0, 0, 0, 4, 2, 0, 0, 2, 0, 0, 0, 0, 0),
-		new create_class("Mystic", 12, 6, 0, 0, 0, 0, 2, 2, 2, 2, 4, 0, 0, 0, 0, 2, 2, 0, 2, 0),
-		new create_class("Nanocyte", 12, 6, 2, 0, 2, 2, 2, 0, 0, 0, 4, 4, 0, 0, 2, 0, 0, 2, 0, 2),
-		new create_class("Operative", 12, 8, 2, 0, 2, 2, 2, 4, 0, 2, 2, 2, 0, 0, 2, 0, 2, 2, 2, 2),
-		new create_class("Precog", 10, 6, 2, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 2, 2, 0, 2, 2, 0, 0),
-		new create_class("Solarian", 14, 4, 2, 0, 2, 0, 2, 0, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 0, 0),
-		new create_class("Soldier", 14, 4, 2, 0, 2, 0, 2, 0, 0, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 0),
-		new create_class("Technomancer", 10, 4, 0, 0, 0, 2, 2, 0, 4, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 2),
-		new create_class("Vanguard", 14, 6, 2, 0, 2, 0, 2, 0, 2, 2, 0, 4, 0, 2, 0, 0, 2, 2, 2, 0),
-		new create_class("Witchwarper", 10, 4, 2, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 2, 0, 0, 2, 0, 0, 0)
+		new create_class("Biohacker", 12, 4, 0, 0, 0, 2, 2, 2, 2, 0, 4, 4, 0, 0, 4, 0, 0, 2, 0, 0, 2),
+		new create_class("Envoy", 12, 8, 2, 0, 2, 2, 2, 4, 2, 2, 2, 2, 0, 0, 4, 2, 0, 2, 0, 0, 2),
+		new create_class("Evolutionist", 12, 4, 2, 0, 2, 0, 2, 2, 0, 2, 0, 0, 0, 0, 2, 0, 0, 2, 2, 2, 0),
+		new create_class("Mechanic", 12, 4, 0, 0, 2, 2, 2, 0, 0, 0, 4, 2, 0, 0, 2, 2, 0, 0, 0, 0, 0),
+		new create_class("Mystic", 12, 6, 0, 0, 0, 0, 2, 2, 2, 2, 4, 0, 0, 0, 4, 0, 2, 2, 0, 2, 0),
+		new create_class("Nanocyte", 12, 6, 2, 0, 2, 2, 2, 0, 0, 0, 4, 4, 0, 0, 2, 2, 0, 0, 2, 0, 2),
+		new create_class("Operative", 12, 8, 2, 0, 2, 2, 2, 4, 0, 2, 2, 2, 0, 0, 4, 2, 0, 2, 2, 2, 2),
+		new create_class("Precog", 10, 6, 2, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 2, 4, 2, 0, 2, 2, 0, 0),
+		new create_class("Solarian", 14, 4, 2, 0, 2, 0, 2, 0, 2, 2, 2, 0, 0, 2, 4, 0, 0, 0, 2, 0, 0),
+		new create_class("Soldier", 14, 4, 2, 0, 2, 0, 2, 0, 0, 2, 2, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0),
+		new create_class("Technomancer", 10, 4, 0, 0, 0, 2, 2, 0, 4, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 2),
+		new create_class("Vanguard", 14, 6, 2, 0, 2, 0, 2, 0, 2, 2, 0, 4, 0, 2, 2, 0, 0, 2, 2, 2, 0),
+		new create_class("Witchwarper", 10, 4, 2, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 	];
 	
         function keyPressed() {
