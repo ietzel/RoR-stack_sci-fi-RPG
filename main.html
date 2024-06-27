@@ -415,7 +415,8 @@
 	function makeGrid() {
 		clear();
 		cam = createCamera();
-		cam.camera(0,0,0,0,0,0,0,1,0);
+		cam.camera(0,0,0,0,0,0,0,0,0);
+		translate(0,0,0);
 		hexagons.forEach(h => {h.render();});
 	}
 
