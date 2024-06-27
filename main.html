@@ -418,7 +418,7 @@
 		cam.camera(0,0,0,0,0,0,0,0,0);
 		translate(0,0,0);
 		hexagons.forEach(h => {h.render(pickColor(h.x, h.y));});
-		player_hexagon.render(pickColor(h.x, h.y));
+		player_hexagon.render(pickColor(player_hexagon.x, player_hexagon.y));
 	}
 
 	function make_landscape() {
