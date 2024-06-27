@@ -245,6 +245,17 @@
 	let stone = "#676767"; //Tundra, Mountains
 	let snow = "#fffafa"; //n/a
 	let playerX = 0, playerY = 0;
+	let size = 8;
+        let depth = 512;
+        let overlap = 256;
+        let treeLine = -64;
+        let water = 8;
+        let x_coor = 0;
+        let y_coor = -256;
+        let z_coor = -512;
+        let rez1 = 0.01;
+	let terrRange = 100; 
+	let seed = millis()*10000;
 	/*Rivers
 	Caves
 	Rock Formations
@@ -409,17 +420,6 @@
 
 	function make_landscape() {
 		clear();
-		let size = 8;
-		let depth = 512;
-		let overlap = 256;
-		let treeLine = -64;
-		let water = 8;
-		let x_coor = 0;
-		let y_coor = -256;
-		let z_coor = -512;
-		let rez1 = 0.01;
-		let terrRange = 100; 
-		let seed = millis()*10000;
 		//canv = createCanvas(1024, 512, WEBGL);
         	//canv.mousePressed(setup);
 		cam = createCamera();
