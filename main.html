@@ -394,36 +394,48 @@
 	  seed = millis()*10000;
 	  w = min(windowWidth, windowHeight);
 	  createCanvas(w, w, WEBGL);
+	  r = 50;
+	  s = sqrt(3 * pow(r, 2) / 4);
+	  hexagons = [];
 	
-	  gridWidth = w;
-	  gridHeight = w;
-	  hexagonSize = w/10;
+	  let counter = 0;
+	  for (let y = 0; y < height + s; y += 2*s) {
+		for (let x = 0; x < width + r; x += 3*r) {
+			hexagons.push(new Hexagon(x, y, r, counter++));
+			hexagons.push(new Hexagon(x + 1.5 * r, y + s, r, counter++));
+		}
+	  }
 
-	  for(var i = 0; i < 10; i+=1) {
-	    for(var j = 0; j < 10; j+=1) {
-	      if(this.i%2==0) {
-	      	map[i][j] = new hex(i, j);
-	      }
-	    }
-	  }
+	}
+
+	function hexagon(x, y, r) {
+		beginShape();
+		for (let a = 0; a < 2 * PI; a += 2 * PI / 6) {
+			let x2 = cos(a) * r;
+			let y2 = sin(a) * r;
+			vertex(x + x2, y + y2);
+		}
+		endShape(CLOSE);
 	}
 	
-	function drawHexagon(cX, cY, r, c){
-	  beginShape();
-	  fill(c);
-	  for(let a = 0; a < TAU; a+=TAU/6) {
-	    vertex(cX + r * cos(a), cY + r * sin(a));
-	  }
-	  endShape(CLOSE);
+	class Hexagon {
+		constructor(x, y, r, name) {
+			this.x = x;
+			this.y = y;
+			this.r = r;
+			this.c = pickColor(this.x, this.y)
+			this.name = name;
+		}
+		render() {
+			fill(this.c);
+			stroke(0);
+			hexagon(this.x, this.y, this.r);
+			text(this.name, this.x, this.y);
+		}
 	}
-	
+	    
 	function makeGrid() {
-	  clear();
-	  for(i = 0; i < 10; i+=1) {
-	    for(j = 0; j < 10; j+=1) {
-	      drawHexagon(map[i][j].x, map[i][j].y, windowWidth/20, map[i][j].c);
-	    }
-	  }
+		hexagons.forEach(h => {h.render();});
 	}
 
 	function make_landscape() {
