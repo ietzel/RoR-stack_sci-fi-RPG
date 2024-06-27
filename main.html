@@ -200,7 +200,6 @@
 	];
 	
         function keyPressed() {
-	console.log(zoomed_in);
 	  if(zoomed_in) {
 	    if(keyCode === LEFT_ARROW) {
 	      x_coor -= 50;
@@ -327,7 +326,6 @@
 	function pickColor(i, j) {
 	  let h = noise((i)*noiseScale, (j)*noiseScale);
 	  let c = "#facade";
-	  
 	  if(h < 0.05) {
 		c = ocean;
 	  } else if(h < 0.2) {
@@ -379,8 +377,8 @@
 	  let counter = 0;
 	  for (let y = 0; y < height + s; y += 2*s) {
 		for (let x = 0; x < width + r; x += 3*r) {
-			hexagons.push(new Hexagon(x, y, r, pickColor(this.x, this.y), counter++));
-			hexagons.push(new Hexagon(x + 1.5 * r, y + s, r, pickColor(this.x, this.y), counter++));
+			hexagons.push(new Hexagon(x, y, r, pickColor(x, y), counter++));
+			hexagons.push(new Hexagon(x + 1.5 * r, y + s, r, pickColor(x, y), counter++));
 		}
 	  }
 	}
