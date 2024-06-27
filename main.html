@@ -452,7 +452,7 @@
 		            fill (200,20,40); //stone color
 		            box(size,size*5,size); //stone block
 		            let treeChance = (noise(x * rez1+seed+10000,z*rez1+seed+10000)-0.5)*90;
-		            if (treeChance > 9.5 && y>treeLine && y<water) {
+		            if(treeChance > 9.5 && y>treeLine && y<water) {
 		              translate(0,-size*5,0);
 		              fill(0,75,30); //trunk color
 		              cylinder(size/2,size*3);
@@ -460,9 +460,9 @@
 		              fill(120,80,30); //leaves
 		              //sphere(size*2);
 		              // fill in tree:
-		              for (i=0;i<2;i++){
-		                for (j=0;j<3;j++){
-		                  for (k=0;k<3;k++){
+		              for(i=0;i<2;i++) {
+		                for(j=0;j<3;j++) {
+		                  for(k=0;k<3;k++) {
 		                    box(size);
 		                    translate(0,0,size)
 		                  }
@@ -478,15 +478,15 @@
 		        }
 		      }
 	function draw() {
-	  if(zoomed_in) {
+	  /*if(zoomed_in) {
 		  make_landscape(); 
-	  } else {
+	  } else {*/
 		  background(0);
 		  stroke(255);
 		  noFill();
 		  makeGrid();
 		  noLoop();
-	  }
+	  //}
 	}
     </script>
       <p>Press enter to change view from biome map to local landscape</p>
