@@ -255,7 +255,7 @@
         let z_coor = -512;
         let rez1 = 0.01;
 	let terrRange = 100; 
-	let seed = millis()*10000;
+	let seed;
 	/*Rivers
 	Caves
 	Rock Formations
@@ -386,6 +386,7 @@
 	}
 	    
 	function setup() {
+	  let seed; = millis()*10000;
 	  w = min(windowWidth, windowHeight);
 	  createCanvas(w, w, WEBGL);
 	
