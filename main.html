@@ -405,10 +405,10 @@
 			this.r = r;
 			this.c = c;
 		}
-		render() {
-			fill(this.c);
+		render(c) {
+			fill(c || this.c);
 			stroke(0);
-			hexagon(this.x-(windowWidth/2), this.y-(windowHeight/2), this.r);
+			hexagon(this.x-256, this.y-256, this.r);
 		}
 	}
 	    
@@ -417,8 +417,8 @@
 		cam = createCamera();
 		cam.camera(0,0,0,0,0,0,0,0,0);
 		translate(0,0,0);
-		hexagons.forEach(h => {h.render();});
-		player_hexagon.render();
+		hexagons.forEach(h => {h.render(pickColor(h.x, h.y));});
+		player_hexagon.render(pickColor(h.x, h.y));
 	}
 
 	function make_landscape() {
