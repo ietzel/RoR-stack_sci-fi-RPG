@@ -169,6 +169,12 @@
 		this.Survival = Survival; 
 		this.Thievery = Thievery;
 	}
+	function create_checks(name, success, failure, mod) {
+		this.name = name;
+		this.success = success;
+		this.failure = failure;
+		this.mod = mod;
+	}
 	races = [
 		new create_race("Dwarf", 10, 20, 0, 0, 1, 0, 1, 0),
 		new create_race("Elf", 6, 30, 0, 1, 0, 1, 0, 0),
@@ -232,6 +238,27 @@
 		new create_class("Summoner", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0), 
 		new create_class("Swashbuckler", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0), 
 		new create_class("Thaumaturge", 8, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 4, 0, 2, 0, 0, 0, 0)
+	];
+	let checks = [
+		new create_check("Acrobatics", "", ""),
+		new create_check("Arcana", "", ""),
+		new create_check("Athletics", "", ""),
+		new create_check("Computers", "", ""),
+		new create_check("Crafting", "", ""),
+		new create_check("Deception", "", ""),
+		new create_check("Diplomacy", "", ""),
+		new create_check("Intimidate", "", ""),
+		new create_check("Lore", "", ""),
+		new create_check("Medicine", "", ""),
+		new create_check("Nature", "", ""),
+		new create_check("Occultism", "", ""),
+		new create_check("Perception", "", ""),
+		new create_check("Piloting", "", ""),
+		new create_check("Religion", "", ""),
+		new create_check("Society", "", ""),
+		new create_check("Stealth", "", ""),
+		new create_check("Survival", "", ""),
+		new create_check("Thievery", "", "")
 	];
 	let npcs = [
 		new create_character("Spyro", "Magic", 12, 10, 18, 12, 12, 12),
