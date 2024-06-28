@@ -421,9 +421,8 @@
 
 	function setup() {
   		createCanvas(512, 512);
-		textAlign(CENTER, CENTER);
 		r = 32;
-		s = sqrt(3 * pow(r, 2) / 4);
+		s = sqrt(3*pow(r,2)/4);
 		hexagons = [];
 		let counter = 0;
 		for (let y = 0; y < height + s; y += 2*s) {
@@ -442,7 +441,7 @@
 			for(var i=0; i<hexagons.length; i++) {
 				for(var j=0; j<hexagons[i].length; j++) {
 					if(((mouseX > hexagons[i][j].x) && (mouseX < hexagons[i][j].x + r)) && ((mouseY > hexagons[i][j].y) && (mouseY < hexagons[i][j].y + r))) {
-						document.getElementById("feed").value += hexagon[i][j].c;
+						document.getElementById("feed").value += hexagon[i][j].x + ", " + hexagon[i][j].x + ", " + hexagon[i][j].c;
 					}
 				}	
 			}
