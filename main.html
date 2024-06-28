@@ -254,7 +254,7 @@
 	let grass = "#7ec850"; //Forests, Valleys
 	let stone = "#676767"; //Tundra, Mountains
 	let snow = "#fffafa"; //n/a
-	let playerX = 0, playerY = 0;
+	let playerX = 256, playerY = 256;
 	/*Rivers
 	Caves
 	Rock Formations
@@ -385,7 +385,7 @@
 	function draw() {
 		clear();
 		hexagons.forEach(h => {h.render();});
-		fill("grey");
+		fill(color('rgba(128, 128, 128, 0.5)'));
 		hexagon(playerX, playerY, r);
 	}
 
