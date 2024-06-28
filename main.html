@@ -600,9 +600,10 @@
 			"You find a castle. They ask for a trade."
 		]
 	];
+	    
 	let text = "The Journey Begins.\n"
 	let r, s;
-	let hexagons;
+	let hexagons, player_hexagon, playerX, playerY;
 	let noiseScale = 1/16; 
 	let ocean = "#000D4E"; //Deep Sea
 	let ocean2 = "#008dc4"; //Lakes
@@ -620,6 +621,23 @@
 	Caves
 	Rock Formations
 	Atmospheric Optics, Astronomy, Weather*/
+
+	function keyPressed() {
+  		if (keyCode === LEFT_ARROW) {
+    			playerX--;
+  		} else if (keyCode === RIGHT_ARROW) {
+    			playerX++;
+  		} else if (keyCode === UP_ARROW) {
+    			playerY--;
+  		} else if (keyCode === DOWN_ARROW) {
+    			playerY++;
+  		} else if (keyCode === ENTER) {	
+			player_hexagon = new Hexagon(hexagons[playerX].x, hexagons[playerY].y, r);
+			text += hexagons[playerX][playerY].x + ", " + hexagons[playerX][playerY].x + ", " + hexagons[playerX][playerY].c;
+			document.getElementById("feed").value = text;
+		}
+  	}
+	    
 	function create_weather_event(perception_penalty) {
 		this.perception_penalty = perception_penalty;
 	}
@@ -767,21 +785,14 @@
 				hexagons.push(new Hexagon(x + 1.5 * r, y + s, r, counter++));
 			}
 		}	
+		player_hexagon = new Hexagon(hexagons[Math.round(hexagons.length/2)].x, hexagons[Math.round(hexagons[0].length/2)].y, r);
 	}
 
 	function draw() {
 		clear();
 		hexagons.forEach(h => {h.render();});
-		if(mouseIsPressed) {
-			for(var i=0; i<hexagons.length; i++) {
-				for(var j=0; j<hexagons[i].length; j++) {
-					if(((mouseX > hexagons[i][j].x) && (mouseX < hexagons[i][j].x + r)) && ((mouseY > hexagons[i][j].y) && (mouseY < hexagons[i][j].y + r))) {
-						text += hexagon[i][j].x + ", " + hexagon[i][j].x + ", " + hexagon[i][j].c;
-						document.getElementById("feed").value = text; 
-					}
-				}	
-			}
-		}
+		player_hexagon = new Hexagon(hexagons[playerX].x, hexagons[playerY].y, r);
+		player_hexagon.render();
 	}
 
 	function hexagon(x, y, r) {
