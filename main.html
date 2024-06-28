@@ -244,7 +244,8 @@
 	      playerY += windowHeight/10;
 	    } 
         }
-	let hexagons = [];
+	let r, s;
+	let hexagons, player_hexagon;
 	let player_hexagon;
 	let noiseScale = 1/16; 
 	let ocean = "#008dc4"; //Deep Sea, Lakes
@@ -382,6 +383,7 @@
 	  createCanvas(w, w, WEBGL);
 	  r = 64;
 	  s = sqrt(3*pow(r,2)/4);
+	  hexagons = [];
 	  player_hexagon = new Hexagon(0, 0, r);
 	  let counter = 0;
 	  for (let y = 0; y < height + s; y += 2*s) {
@@ -416,10 +418,6 @@
 	}
 	    
 	function draw() {
-		clear();
-		cam = createCamera();
-		cam.camera(0,0,0,0,0,0,0,1,0);
-		translate(0,0,0);
 		hexagons.forEach(h => {h.render();});
 		player_hexagon.render();
 	}
