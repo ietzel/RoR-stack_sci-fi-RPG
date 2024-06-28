@@ -244,7 +244,8 @@
 	      playerY += windowHeight/10;
 	    } 
         }
-
+	let hexagons = [];
+	let player_hexagon;
 	let noiseScale = 1/16; 
 	let ocean = "#008dc4"; //Deep Sea, Lakes
 	let shore = "#00a9cc"; //Coasts, Wetlands
@@ -381,7 +382,6 @@
 	  createCanvas(w, w, WEBGL);
 	  r = 64;
 	  s = sqrt(3*pow(r,2)/4);
-	  hexagons = [];
 	  player_hexagon = new Hexagon(0, 0, r);
 	  let counter = 0;
 	  for (let y = 0; y < height + s; y += 2*s) {
