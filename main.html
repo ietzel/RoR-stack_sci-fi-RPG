@@ -233,17 +233,6 @@
 		new create_class("Thaumaturge", 8, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 4, 0, 2, 0, 0, 0, 0)
 	];
 	
-        function keyPressed() {
-	    if(keyCode === LEFT_ARROW) {
-	      playerX -= r;
-	    } else if(keyCode === RIGHT_ARROW) {
-	      playerX += r;
-	    } else if(keyCode === DOWN_ARROW) {
-	      playerY += r;
-	    } else if(keyCode === UP_ARROW) {
-	      playerY -= r;
-	    } 
-        }
 	let stories = [
 		[
 			"."
@@ -277,7 +266,7 @@
 		]
 	];
 	let r, s;
-	let hexagons, player_hexagon;
+	let hexagons;
 	let noiseScale = 1/16; 
 	let ocean = "#000D4E"; //Deep Sea
 	let ocean2 = "#008dc4"; //Lakes
@@ -450,7 +439,15 @@
 		clear();
 		hexagons.forEach(h => {h.render();});
 		fill(color('rgba(128, 128, 128, 0.5)'));
-		hexagon(playerX, playerY, r);
+		if(mouseIsPressed) {
+			for(var i=0; i<hexagons.length; i++) {
+				for(var j=0; j<hexagons[i].length; j++) {
+					if(((mouseX > hexagons[i][j].x) && (mouseX < hexagons[i][j].x + r)) && ((mouseY > hexagons[i][j].y) && (mouseY < hexagons[i][j].y + r))) {
+						document.getElementById("feed").value += hexagon[i][j].c;
+					}
+				}	
+			}
+		}
 	}
 
 	function hexagon(x, y, r) {
