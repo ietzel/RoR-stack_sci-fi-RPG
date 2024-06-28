@@ -437,7 +437,6 @@
 	function draw() {
 		clear();
 		hexagons.forEach(h => {h.render();});
-		fill(color('rgba(128, 128, 128, 0.5)'));
 		if(mouseIsPressed) {
 			for(var i=0; i<hexagons.length; i++) {
 				for(var j=0; j<hexagons[i].length; j++) {
