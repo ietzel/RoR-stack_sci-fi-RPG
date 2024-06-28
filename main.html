@@ -332,7 +332,7 @@
 			}
 		}
 	}
-	    
+
 	function pickColor(i, j) {
 	  let h = noise((i)*noiseScale, (j)*noiseScale);
 	  let c = "#facade";
@@ -375,22 +375,25 @@
 	  
 	  return color(c);
 	}
-	    
+
+
 	function setup() {
-	  seed = millis()*10000;
-	  w = min(windowWidth, windowHeight);
-	  createCanvas(w, w);
-	  r = 64;
-	  s = sqrt(3*pow(r,2)/4);
-	  hexagons = [];
-	  player_hexagon = new Hexagon(0, 0, r);
-	  let counter = 0;
-	  for (let y = 0; y < height + s; y += 2*s) {
-		for (let x = 0; x < width + r; x += 3*r) {
-			hexagons.push(new Hexagon(x, y, r, counter++));
-			hexagons.push(new Hexagon(x + 1.5 * r, y + s, r, counter++));
-		}
-	  }
+  		createCanvas(512, 512);
+		textAlign(CENTER, CENTER);
+		r = 50;
+		s = sqrt(3 * pow(r, 2) / 4);
+		hexagons = [];
+		let counter = 0;
+		for (let y = 0; y < height + s; y += 2*s) {
+			for (let x = 0; x < width + r; x += 3*r) {
+				hexagons.push(new Hexagon(x, y, r, counter++));
+				hexagons.push(new Hexagon(x + 1.5 * r, y + s, r, counter++));
+			}
+		}	
+	}
+
+	function draw() {
+		hexagons.forEach(h => {h.render();});
 	}
 
 	function hexagon(x, y, r) {
@@ -402,23 +405,19 @@
 		}
 		endShape(CLOSE);
 	}
-	
+
 	class Hexagon {
 		constructor(x, y, r) {
 			this.x = x;
 			this.y = y;
 			this.r = r;
-			this.c = pickColor(this.x, this.y);
+	        this.c = pickColor(this.x, this.y);
 		}
+		
 		render() {
-			fill(this.c);
-			hexagon(this.x-256, this.y-256, this.r);
+		    fill(this.c)
+			hexagon(this.x, this.y, this.r);
 		}
-	}
-	    
-	function draw() {
-		hexagons.forEach(h => {h.render();});
-		player_hexagon.render();
 	}
     </script>
   </body>  
