@@ -368,37 +368,65 @@
 		if(random() > pow(h-0.15, 2)*100) {
 		  c = ocean;
 		} else {
+		  c = ocean2;
+		}
+	  } else if(h < 0.25) {
+		if(random() > pow(h-0.2, 2)*100) {
+		  c = ocean2;
+		} else {
 		  c = shore;
 		}
-	  } else if(h < 0.35) {
-		if(random() > pow(h-0.2, 2)*100) {
+	  } else if(h < 0.3) {
+		if(random() > pow(h-0.25, 2)*100) {
 		  c = shore;
+		} else {
+		  c = shore2;
+		}
+	} else if(h < 0.35) {
+		if(random() > pow(h-0.3, 2)*100) {
+		  c = shore2;
 		} else {
 		  c = sand;
 		}
-	  } else if(h < 0.5) {
+	  } else if(h < 0.4) {
 		if(random() > pow(h-0.35, 2)*100) {
 		  c = sand;
 		} else {
+		  c = sand2;
+		}
+	} else if(h < 0.45) {
+		if(random() > pow(h-0.4, 2)*100) {
+		  c = sand2;
+		} else {
 		  c = grass;
 		}
-	  }
-	  else if(h < 0.65) {
-		if(random() > pow(h-0.5, 2)*100) {
+	  } else if(h < 0.5) {
+		if(random() > pow(h-0.45, 2)*100) {
 		  c = grass;
+		} else {
+		  c = grass2;
+		}
+	  } else if(h < 0.55) {
+		if(random() > pow(h-0.5, 2)*100) {
+		  c = grass2;
 		} else {
 		  c = stone;
 		}
-	  } else if (h < 0.8) {
-		if(random() > pow(h-0.65, 2)*100) {
+	} else if(h < 0.6) {
+		if(random() > pow(h-0.55, 2)*100) {
 		  c = stone;
+		} else {
+		  c = stone2;
+		}
+	  } else if(h < 0.65) {
+		if(random() > pow(h-0.6, 2)*100) {
+		  c = stone2;
 		} else {
 		  c = snow;
 		}
 	  } else {
 		c = snow;
 	  }
-	  
 	  return color(c);
 	}
 
