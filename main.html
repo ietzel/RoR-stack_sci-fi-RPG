@@ -217,29 +217,13 @@
 	
         function keyPressed() {
 	    if(keyCode === LEFT_ARROW) {
-	      x_coor -= 50;
-	    } else if(keyCode === RIGHT_ARROW) {
-	      x_coor += 50;
-	    } else if(keyCode === DOWN_ARROW) {
-	      z_coor -= 50;
-	      //characters[0][0].crouching = true;
-	    } else if(keyCode === UP_ARROW) {
-	      z_coor += 50;
-	      //characters[0][0].crouching = false;
-	    } 	  
-	  } else {
-	    if(keyCode === LEFT_ARROW) {
 	      playerX -= windowWidth*0.075;
-	      makeGrid();
 	    } else if(keyCode === RIGHT_ARROW) {
 	      playerX += windowWidth*0.075;
-	      makeGrid();
 	    } else if(keyCode === DOWN_ARROW) {
 	      playerY -= windowHeight/10;
-	      makeGrid();
 	    } else if(keyCode === UP_ARROW) {
 	      playerY += windowHeight/10;
-	      makeGrid();
 	    } 
           }
         }
@@ -381,12 +365,12 @@
 	  r = 64;
 	  s = sqrt(3*pow(r,2)/4);
 	  hexagons = [];
-	  //player_hexagon = new Hexagon(0, 0, r, "grey");
+	  player_hexagon = new Hexagon(0, 0, r);
 	  let counter = 0;
 	  for (let y = 0; y < height + s; y += 2*s) {
 		for (let x = 0; x < width + r; x += 3*r) {
-			hexagons.push(new Hexagon(x, y, r, pickColor(x, y), counter++));
-			hexagons.push(new Hexagon(x + 1.5 * r, y + s, r, pickColor(x, y), counter++));
+			hexagons.push(new Hexagon(x, y, r, counter++));
+			hexagons.push(new Hexagon(x + 1.5 * r, y + s, r, counter++));
 		}
 	  }
 	}
