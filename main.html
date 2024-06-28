@@ -407,7 +407,7 @@
 			this.x = x;
 			this.y = y;
 			this.r = r;
-			this.c = pickColor();
+			this.c = pickColor(this.x, this.y);
 		}
 		render() {
 			fill(this.c);
@@ -415,23 +415,13 @@
 		}
 	}
 	    
-	function makeGrid() {
+	function draw() {
 		clear();
 		cam = createCamera();
 		cam.camera(0,0,0,0,0,0,0,1,0);
 		translate(0,0,0);
 		hexagons.forEach(h => {h.render();});
 		player_hexagon.render();
-	}
-
-	function draw() {
-	  /*if(zoomed_in) {
-		  make_landscape(); 
-	  } else {*/
-		  //background(0);
-		  makeGrid();
-		  //noLoop();
-	  //}
 	}
     </script>
   </body>  
