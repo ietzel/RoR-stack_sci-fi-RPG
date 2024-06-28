@@ -265,6 +265,7 @@
 			"You find a castle. They ask for a trade."
 		]
 	];
+	let text = "The Journey Begins.\n"
 	let r, s;
 	let hexagons;
 	let noiseScale = 1/16; 
@@ -441,7 +442,8 @@
 			for(var i=0; i<hexagons.length; i++) {
 				for(var j=0; j<hexagons[i].length; j++) {
 					if(((mouseX > hexagons[i][j].x) && (mouseX < hexagons[i][j].x + r)) && ((mouseY > hexagons[i][j].y) && (mouseY < hexagons[i][j].y + r))) {
-						document.getElementById("feed").value += hexagon[i][j].x + ", " + hexagon[i][j].x + ", " + hexagon[i][j].c;
+						text += hexagon[i][j].x + ", " + hexagon[i][j].x + ", " + hexagon[i][j].c;
+						document.getElementById("feed").value = text; 
 					}
 				}	
 			}
