@@ -394,6 +394,8 @@
 
 	function draw() {
 		hexagons.forEach(h => {h.render();});
+		fill("grey")
+		hexagon(playerX, playerY, r);
 	}
 
 	function hexagon(x, y, r) {
@@ -411,12 +413,12 @@
 			this.x = x;
 			this.y = y;
 			this.r = r;
-	        this.c = pickColor(this.x, this.y);
+	        	this.c = pickColor(this.x, this.y);
 		}
 		
 		render() {
 		    fill(this.c)
-			hexagon(this.x, this.y, this.r);
+		    hexagon(this.x, this.y, this.r);
 		}
 	}
     </script>
