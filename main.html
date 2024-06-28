@@ -235,15 +235,16 @@
 	
         function keyPressed() {
 	    if(keyCode === LEFT_ARROW) {
-	      playerX -= windowWidth*0.075;
+	      playerX--;
 	    } else if(keyCode === RIGHT_ARROW) {
-	      playerX += windowWidth*0.075;
+	      playerX++;
 	    } else if(keyCode === DOWN_ARROW) {
-	      playerY -= windowHeight/10;
+	      playerY--;
 	    } else if(keyCode === UP_ARROW) {
-	      playerY += windowHeight/10;
+	      playerY++;
 	    } 
         }
+	    
 	let r, s;
 	let hexagons, player_hexagon;
 	let noiseScale = 1/16; 
@@ -254,17 +255,6 @@
 	let stone = "#676767"; //Tundra, Mountains
 	let snow = "#fffafa"; //n/a
 	let playerX = 0, playerY = 0;
-	let size = 8;
-        let depth = 512;
-        let overlap = 256;
-        let treeLine = -64;
-        let water = 8;
-        let x_coor = 0;
-        let y_coor = -256;
-        let z_coor = -512;
-        let rez1 = 0.01;
-	let terrRange = 100; 
-	let seed;
 	/*Rivers
 	Caves
 	Rock Formations
@@ -393,8 +383,9 @@
 	}
 
 	function draw() {
+		clear();
 		hexagons.forEach(h => {h.render();});
-		fill("grey")
+		fill("grey");
 		hexagon(playerX, playerY, r);
 	}
 
