@@ -632,7 +632,6 @@
   		} else if (keyCode === DOWN_ARROW) {
     			playerY++;
   		} else if (keyCode === ENTER) {	
-			player_hexagon = new Hexagon(hexagons[playerX].x, hexagons[playerY].y, r);
 			text += hexagons[playerX][playerY].x + ", " + hexagons[playerX][playerY].x + ", " + hexagons[playerX][playerY].c;
 			document.getElementById("feed").value = text;
 		}
