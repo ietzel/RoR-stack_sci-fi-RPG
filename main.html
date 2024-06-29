@@ -169,7 +169,7 @@
 		this.Survival = Survival; 
 		this.Thievery = Thievery;
 	}
-	function create_checks(name, success, failure, mod) {
+	function create_check(name, success, failure, mod) {
 		this.name = name;
 		this.success = success;
 		this.failure = failure;
@@ -809,7 +809,7 @@
 	function draw() {
 		clear();
 		hexagons.forEach(h => {h.render();});
-		player_hexagon = new Hexagon(hexagons[playerX].x, hexagons[playerY].y, r);
+		player_hexagon = new Hexagon(hexagons[playerX].x, hexagons[playerY].y, 32);
 		player_hexagon.render();
 	}
 
