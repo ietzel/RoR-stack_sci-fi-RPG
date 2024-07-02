@@ -112,6 +112,7 @@
 		<option value="Arcana">Arcana (recall knowledge, borrow an arcane spell, decipher writing, identify magic, learn a spell)</option>
 		<option value="Computers">Computers</option>
 		<option value="Crafting">Crafting (recall knowledge, repair, craft, earn income, identify alchemy)</option>
+		<option value="Lore">Lore (earn income, recall knowledge)</option>
 		<option value="Medicine">Medicine (first aid, disease, poison, wounds)</option>
 		<option value="Occultism">Occultism (recall knowledge, decipher writing, identify magic, learn a spell)</option>
 		<option value="Society">Society (recall knowledge, subsist, create forgery)</option>
@@ -129,7 +130,7 @@
 	function create_character(name, category, str, dex, con, int, wis, cha) {
 		this.name = name;	
 		this.category = category;
-		this.hp = con*Math.floor(((str, dex, con, int, wis, cha)-60)/6); 
+		this.hp = con*Math.floor(((str, dex, con, int, wis, cha)-60)/24); 
 		if(this.hp < 1) {
 			this.hp = 1;
 		}
@@ -246,36 +247,36 @@
 		new create_class("Thaumaturge", 8, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 4, 0, 2, 0, 0, 0, 0)
 	];
 	let checks = [
-		new create_check("Acrobatics", "", "", 1),
-		new create_check("Athletics (climb/swim)", "", "", 1),
-	        new create_check("Athletics (force open)", "", "", 1),
-	        new create_check("Athletics (grapple)", "", "", 1),
-	        new create_check("Athletics (high/long jump)", "", "", 1),
-	        new create_check("Athletics (reposition/shove)", "", "", 1),
-	        new create_check("Athletics (trip)", "", "", 1),
-	        new create_check("Athletics (disarm)", "", "", 1),
-		new create_check("Arcana", "", "", 3),
-		new create_check("Athletics", "", "", 0),
+		new create_check("Acrobatics (tumble through)", "", "", 1),
+		new create_check("Athletics (climb/swim)", "", "", 0),
+	        new create_check("Athletics (force open)", "", "", 0),
+	        new create_check("Athletics (grapple)", "", "", 0),
+	        new create_check("Athletics (high/long jump)", "", "", 0),
+	        new create_check("Athletics (reposition/shove)", "", "", 0),
+	        new create_check("Athletics (trip)", "", "", 0),
+	        new create_check("Athletics (disarm)", "", "", 0),
+		new create_check("Arcana (recall knowledge)", "", "", 3),
 		new create_check("Computers", "", "", 3),
-		new create_check("Crafting", "", "", 3),
-		new create_check("Deception", "", "", 5),
-		new create_check("Diplomacy", "", "", 5),
-		new create_check("Intimidate", "", "", 5),
-		new create_check("Lore", "", "", 3),
-		new create_check("Medicine", "", "", 3),
-		new create_check("Nature", "", "", 4),
-		new create_check("Occultism", "", "", 3),
+		new create_check("Crafting (recall knowledge)", "", "", 3),
+		new create_check("Deception (feint)", "", "", 5),
+		new create_check("Diplomacy (make impression)", "", "", 5),
+		new create_check("Intimidate (demoralize)", "", "", 5),
+		new create_check("Lore (recall knowledge)", "", "", 3),
+		new create_check("Medicine (treat wounds)", "", "", 3),
+		new create_check("Nature (recall knowledge)", "", "", 4),
+		new create_check("Occultism (recall knowledge)", "", "", 3),
 		new create_check("Perception", "", "", 4),
 		new create_check("Piloting", "", "", 1),
-		new create_check("Religion", "", "", 4),
-		new create_check("Society", "", "", 3),
+		new create_check("Religion (recall knowledge)", "", "", 4),
+		new create_check("Society (recall knowledge)", "", "", 3),
 		new create_check("Stealth", "", "", 1),
-		new create_check("Survival", "", "", 4),
-		new create_check("Thievery", "", "", 1)
+		new create_check("Survival (sense direction + subsist)", "", "", 4),
+		new create_check("Thievery (disable device)", "", "", 1)
 	];
 	let npcs = [
 		new create_character("Bash", "Earth", 17, 6, 18, 4, 4, 4), //CR -1
 		new create_character("Voodood", "Magic", 15, 12, 10, 7, 7, 7), //CR -1
+		new create_character("Elite Voodood", "Magic", 15, 12, 10, 7, 7, 7), //CR -1
 		new create_character("Eruptor", "Fire", 16, 5, 17, 7, 7, 7), //CR -1
 		new create_character("Stump Smash", "Life", 18, 4, 14, 8, 8, 8), //CR -1
 		new create_character("Legendary Bash", "Earth", 17, 20, 6, 5, 5, 5), //CR -1
@@ -699,6 +700,10 @@
     			playerY++;
   		} else if (keyCode === ENTER) {	
 			text += hexagons[playerX][playerY].x + ", " + hexagons[playerX][playerY].x + ", " + hexagons[playerX][playerY].c;
+			encounter_number = Math.random()*4;
+			if(encounter_number >= 3) {
+				encounter(10);
+			}
 			document.getElementById("feed").innerHTML = text;
 		}
   	}
