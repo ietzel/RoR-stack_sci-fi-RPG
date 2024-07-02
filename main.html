@@ -662,7 +662,10 @@
 			"Bridge."
 		]
 	];
-	    
+	let health_statuses = [
+		["", "screams echo around you", "wounds appear", ""],
+		["", "stamina runs low", "the attack is dodged", ""]
+	];  
 	let encounter = false;
 	let text = "The Journey Begins.\n"
 	let r, s;
@@ -878,6 +881,15 @@
 		render() {
 		    fill(this.c)
 		    hexagon(this.x, this.y, this.r);
+		}
+
+		encounter(level) {
+			index = Math.floor(npcs.length*Math.random())
+			if(index > npcs.length - 1) {
+				index = npcs.length - 1;
+			}
+			enemy = npcs[index]
+			text += you find + " " + enemy.name;
 		}
 	}
     </script>
