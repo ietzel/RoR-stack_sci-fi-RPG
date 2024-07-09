@@ -336,7 +336,810 @@
 		new create_check("Survival (sense direction + subsist)", "", "", 4),
 		new create_check("Thievery (disable device)", "", "", 1)
 	];
-	let npcs = [
+	let pokemon = [
+		new create_character("Caterpie", "bug", 4,  6,  5,  2,  2,  2), //CR -2
+		new create_character("Wurmple", "bug", 6,  2,  5,  3,  3,  3), //CR -2
+		new create_character("Metapod", "bug", 2,  4,  7,  3,  3,  3), //CR -2
+		new create_character("Kricketot", "bug", 3,  3,  5,  4,  4,  4), //CR -2
+		new create_character("Silcoon", "bug", 5,  2,  7,  3,  3,  3), //CR -2
+		new create_character("Cascoon", "bug", 5,  2,  7,  3,  3,  3), //CR -2
+		new create_character("Scatterbug", "bug", 5,  5,  5,  3,  3,  3), //CR -2
+		new create_character("Spewpa", "bug", 3,  4,  7,  4,  4,  4), //CR -2
+		new create_character("Burmy", "bug", 4,  5,  6,  5,  5,  5), //CR -2
+		new create_character("Pineco", "bug", 9,  2,  10,  5,  5,  5), //CR -1
+		new create_character("Shelmet", "bug", 5,  3,  9,  7,  7,  7), //CR -1
+		new create_character("Grubbin", "bug", 8,  6,  6,  7,  7,  7), //CR -1
+		new create_character("Karrablast", "bug", 10,  8,  6,  6,  6,  6), //CR -1
+		new create_character("Kricketune", "bug", 12,  9,  9,  7,  7,  7), //CR -1
+		new create_character("Volbeat", "bug", 10,  12,  10,  9,  9,  9), //CR -1
+		new create_character("Illumise", "bug", 6,  12,  10,  11,  11,  11), //CR 0
+		new create_character("Accelgor", "bug", 10,  20,  8,  11,  11,  11), //CR 0
+		new create_character("Pinsir", "bug", 22,  15,  13,  11,  11,  11), //CR 0
+		new create_character("Joltik", "bug electric", 6,  9,  7,  7,  7,  7), //CR -1
+		new create_character("Charjabug", "bug electric", 11,  5,  10,  9,  9,  9), //CR -1
+		new create_character("Galvantula", "bug electric", 11,  15,  9,  11,  11,  11), //CR 0
+		new create_character("Vikavolt", "bug electric", 10,  6,  11,  15,  15,  15), //CR 0
+		new create_character("Cutiefly", "bug fairy", 6,  12,  5,  6,  6,  6), //CR -1
+		new create_character("Ribombee", "bug fairy", 7,  17,  8,  11,  11,  11), //CR 0
+		new create_character("Buzzwole", "bug fighting", 19,  11,  17,  7,  7,  7), //CR 0
+		new create_character("Heracross", "bug fighting", 26,  10,  13,  10,  10,  10), //CR 0
+		new create_character("Pheromosa", "bug fighting", 19,  21,  7,  12,  12,  12), //CR 0
+		new create_character("Larvesta", "bug fire", 12,  8,  7,  7,  7,  7), //CR -1
+		new create_character("Volcarona", "bug fire", 8,  14,  10,  17,  17,  17), //CR 0
+		new create_character("Combee", "bug flying", 4,  10,  5,  5,  5,  5), //CR -2
+		new create_character("Ledyba", "bug flying", 2,  7,  5,  8,  8,  8), //CR -1
+		new create_character("Yanma", "bug flying", 9,  13,  7,  8,  8,  8), //CR -1
+		new create_character("Beautifly", "bug flying", 10,  9,  7,  10,  10,  10), //CR -1
+		new create_character("Ledian", "bug flying", 5,  12,  7,  11,  11,  11), //CR -1
+		new create_character("Vivillon", "bug flying", 7,  12,  9,  10,  10,  10), //CR -1
+		new create_character("Butterfree", "bug flying", 6,  10,  7,  12,  12,  12), //CR -1
+		new create_character("Mothim", "bug flying", 13,  9,  8,  10,  10,  10), //CR 0
+		new create_character("Ninjask", "bug flying", 12,  22,  7,  7,  7,  7), //CR 0
+		new create_character("Masquerain", "bug flying", 8,  11,  9,  13,  13,  13), //CR 0
+		new create_character("Vespiquen", "bug flying", 11,  5,  12,  13,  13,  13), //CR 0
+		new create_character("Scyther", "bug flying", 15,  15,  10,  9,  9,  9), //CR 0
+		new create_character("Yanmega", "bug flying", 10,  13,  12,  12,  12,  12), //CR 0
+		new create_character("Shedinja", "bug ghost", 12,  5,  3,  4,  4,  4), //CR -2
+		new create_character("Paras", "bug grass", 10,  3,  6,  7,  7,  7), //CR -1
+		new create_character("Sewaddle", "bug grass", 7,  6,  8,  7,  7,  7), //CR -1
+		new create_character("Swadloon", "bug grass", 9,  6,  10,  9,  9,  9), //CR -1
+		new create_character("Parasect", "bug grass", 13,  4,  10,  10,  10,  10), //CR -1
+		new create_character("Wormadam", "bug grass", 9,  5,  11,  11,  11,  11), //CR -1
+		new create_character("Leavanny", "bug grass", 14,  13,  11,  10,  10,  10), //CR 0
+		new create_character("Nincada", "bug ground", 6,  5,  8,  4,  4,  4), //CR -2
+		new create_character("Weedle", "bug poison", 5,  7,  5,  2,  2,  2), //CR -2
+		new create_character("Kakuna", "bug poison", 3,  5,  6,  3,  3,  3), //CR -2
+		new create_character("Spinarak", "bug poison", 8,  4,  5,  5,  5,  5), //CR -2
+		new create_character("Venipede", "bug poison", 6,  8,  6,  4,  4,  4), //CR -2
+		new create_character("Venonat", "bug poison", 7,  6,  7,  6,  6,  6), //CR -1
+		new create_character("Whirlipede", "bug poison", 7,  6,  9,  8,  8,  8), //CR -1
+		new create_character("Ariados", "bug poison", 12,  5,  10,  9,  9,  9), //CR -1
+		new create_character("Dustox", "bug poison", 7,  9,  9,  10,  10,  10), //CR -1
+		new create_character("Venomoth", "bug poison", 9,  12,  9,  11,  11,  11), //CR 0
+		new create_character("Scolipede", "bug poison", 14,  16,  10,  8,  8,  8), //CR 0
+		new create_character("Beedrill", "bug poison", 21,  20,  7,  6,  6,  6), //CR 0
+		new create_character("Dwebble", "bug rock", 9,  7,  9,  5,  5,  5), //CR -1
+		new create_character("Crustle", "bug rock", 15,  6,  13,  10,  10,  10), //CR 0
+		new create_character("Shuckle", "bug rock", 1,  0,  17,  17,  17,  17), //CR 0
+		new create_character("Forretress", "bug steel", 12,  5,  15,  8,  8,  8), //CR -1
+		new create_character("Durant", "bug steel", 15,  15,  12,  6,  6,  6), //CR 0
+		new create_character("Escavalier", "bug steel", 19,  2,  12,  11,  11,  11), //CR 0
+		new create_character("Scizor", "bug steel", 21,  10,  15,  11,  11,  11), //CR 0
+		new create_character("Genesect", "bug steel", 17,  14,  11,  15,  15,  15), //CR 1
+		new create_character("Wimpod", "bug water", 5,  11,  4,  3,  3,  3), //CR -2
+		new create_character("Surskit", "bug water", 4,  9,  5,  7,  7,  7), //CR -1
+		new create_character("Golisopod", "bug water", 17,  5,  15,  10,  10,  10), //CR 0
+		new create_character("Poochyena", "dark", 7,  5,  5,  4,  4,  4), //CR -2
+		new create_character("Purrloin", "dark", 7,  9,  5,  6,  6,  6), //CR -1
+		new create_character("Zorua", "dark", 9,  9,  5,  8,  8,  8), //CR -1
+		new create_character("Mightyena", "dark", 12,  10,  10,  8,  8,  8), //CR -1
+		new create_character("Liepard", "dark", 12,  15,  8,  9,  9,  9), //CR 0
+		new create_character("Umbreon", "dark", 9,  9,  14,  13,  13,  13), //CR 0
+		new create_character("Zoroark", "dark", 15,  15,  8,  12,  12,  12), //CR 0
+		new create_character("Absol", "dark", 21,  16,  8,  12,  12,  12), //CR 0
+		new create_character("Darkrai", "dark", 12,  17,  11,  16,  16,  16), //CR 1
+		new create_character("Deino", "dark dragon", 9,  5,  7,  6,  6,  6), //CR -1
+		new create_character("Zweilous", "dark dragon", 12,  8,  10,  9,  9,  9), //CR -1
+		new create_character("Guzzlord", "dark dragon", 14,  6,  19,  10,  10,  10), //CR 0
+		new create_character("Hydreigon", "dark dragon", 15,  14,  13,  15,  15,  15), //CR 1
+		new create_character("Scraggy", "dark fighting", 10,  6,  8,  7,  7,  7), //CR -1
+		new create_character("Scrafty", "dark fighting", 12,  8,  12,  11,  11,  11), //CR 0
+		new create_character("Houndour", "dark fire", 8,  9,  5,  9,  9,  9), //CR -1
+		new create_character("Houndoom", "dark fire", 12,  16,  11,  16,  16,  16), //CR 1
+		new create_character("Vullaby", "dark flying", 7,  8,  10,  7,  7,  7), //CR -1
+		new create_character("Murkrow", "dark flying", 12,  13,  7,  9,  9,  9), //CR -1
+		new create_character("Mandibuzz", "dark flying", 9,  11,  15,  10,  10,  10), //CR 0
+		new create_character("Honchkrow", "dark flying", 17,  10,  10,  11,  11,  11), //CR 0
+		new create_character("Yveltal", "dark flying", 18,  14,  15,  16,  16,  16), //CR 1
+		new create_character("Sableye", "dark ghost", 12,  2,  12,  14,  14,  14), //CR 0
+		new create_character("Sneasel", "dark ice", 13,  16,  7,  7,  7,  7), //CR -1
+		new create_character("Weavile", "dark ice", 17,  17,  9,  9,  9,  9), //CR 0
+		new create_character("Inkay", "dark psychic", 7,  6,  7,  5,  5,  5), //CR -2
+		new create_character("Malamar", "dark psychic", 13,  10,  12,  10,  10,  10), //CR 0
+		new create_character("Pawniard", "dark steel", 12,  8,  8,  5,  5,  5), //CR -1
+		new create_character("Bisharp", "dark steel", 17,  10,  11,  9,  9,  9), //CR 0
+		new create_character("Jangmo-o", "dragon", 7,  6,  7,  6,  6,  6), //CR -1
+		new create_character("Bagon", "dragon", 10,  7,  7,  5,  5,  5), //CR -1
+		new create_character("Axew", "dragon", 12,  8,  7,  5,  5,  5), //CR -1
+		new create_character("Dratini", "dragon", 9,  7,  6,  7,  7,  7), //CR -1
+		new create_character("Goomy", "dragon", 7,  5,  5,  9,  9,  9), //CR -1
+		new create_character("Fraxure", "dragon", 16,  9,  9,  6,  6,  6), //CR -1
+		new create_character("Shelgon", "dragon", 13,  7,  11,  7,  7,  7), //CR -1
+		new create_character("Dragonair", "dragon", 12,  10,  9,  10,  10,  10), //CR 0
+		new create_character("Druddigon", "dragon", 17,  6,  11,  10,  10,  10), //CR 0
+		new create_character("Sliggoo", "dragon", 10,  8,  8,  14,  14,  14), //CR 0
+		new create_character("Haxorus", "dragon", 21,  13,  11,  9,  9,  9), //CR 0
+		new create_character("Goodra", "dragon", 14,  11,  11,  18,  18,  18), //CR 1
+		new create_character("Zekrom", "dragon electric", 21,  12,  15,  15,  15,  15), //CR 1
+		new create_character("Hakamo-o", "dragon fighting", 10,  9,  10,  9,  9,  9), //CR -1
+		new create_character("Kommo-o", "dragon fighting", 15,  12,  14,  14,  14,  14), //CR 0
+		new create_character("Reshiram", "dragon fire", 17,  12,  14,  19,  19,  19), //CR 1
+		new create_character("Altaria", "dragon flying", 15,  11,  13,  15,  15,  15), //CR 1
+		new create_character("Dragonite", "dragon flying", 19,  11,  13,  14,  14,  14), //CR 1
+		new create_character("Salamence", "dragon flying", 20,  17,  16,  15,  15,  15), //CR 1
+		new create_character("Rayquaza", "dragon flying", 25,  16,  14,  20,  20,  20), //CR 2
+		new create_character("Gible", "dragon ground", 10,  6,  7,  6,  6,  6), //CR -1
+		new create_character("Gabite", "dragon ground", 12,  11,  9,  7,  7,  7), //CR -1
+		new create_character("Zygarde", "dragon ground", 14,  12,  24,  13,  13,  13), //CR 1
+		new create_character("Garchomp", "dragon ground", 24,  13,  15,  15,  15,  15), //CR 1
+		new create_character("Kyurem", "dragon ice", 17,  13,  15,  19,  19,  19), //CR 1
+		new create_character("Latias", "dragon psychic", 14,  15,  14,  20,  20,  20), //CR 1
+		new create_character("Latios", "dragon psychic", 18,  15,  12,  20,  20,  20), //CR 1
+		new create_character("Pichu", "electric", 5,  8,  2,  5,  5,  5), //CR -2
+		new create_character("Shinx", "electric", 9,  6,  5,  5,  5,  5), //CR -2
+		new create_character("Mareep", "electric", 5,  5,  6,  7,  7,  7), //CR -1
+		new create_character("Tynamo", "electric", 7,  8,  5,  6,  6,  6), //CR -1
+		new create_character("Blitzle", "electric", 8,  10,  5,  5,  5,  5), //CR -1
+		new create_character("Electrike", "electric", 6,  9,  5,  7,  7,  7), //CR -1
+		new create_character("Pikachu", "electric", 7,  12,  5,  7,  7,  7), //CR -1
+		new create_character("Voltorb", "electric", 4,  14,  6,  7,  7,  7), //CR -1
+		new create_character("Luxio", "electric", 12,  8,  7,  7,  7,  7), //CR -1
+		new create_character("Elekid", "electric", 9,  13,  5,  8,  8,  8), //CR -1
+		new create_character("Flaaffy", "electric", 7,  6,  8,  10,  10,  10), //CR -1
+		new create_character("Pachirisu", "electric", 6,  13,  9,  9,  9,  9), //CR -1
+		new create_character("Eelektrik", "electric", 12,  5,  9,  10,  10,  10), //CR -1
+		new create_character("Minun", "electric", 5,  13,  7,  11,  11,  11), //CR -1
+		new create_character("Plusle", "electric", 7,  13,  7,  11,  11,  11), //CR 0
+		new create_character("Zebstrika", "electric", 14,  16,  9,  10,  10,  10), //CR 0
+		new create_character("Electrode", "electric", 7,  21,  9,  11,  11,  11), //CR 0
+		new create_character("Electabuzz", "electric", 11,  15,  8,  12,  12,  12), //CR 0
+		new create_character("Eelektross", "electric", 16,  7,  11,  13,  13,  13), //CR 0
+		new create_character("Luxray", "electric", 17,  10,  11,  12,  12,  12), //CR 0
+		new create_character("Electivire", "electric", 17,  13,  10,  12,  12,  12), //CR 0
+		new create_character("Jolteon", "electric", 9,  18,  8,  14,  14,  14), //CR 0
+		new create_character("Manectric", "electric", 10,  19,  10,  15,  15,  15), //CR 1
+		new create_character("Raikou", "electric", 12,  16,  11,  15,  15,  15), //CR 1
+		new create_character("Xurkitree", "electric", 12,  11,  11,  17,  17,  17), //CR 1
+		new create_character("Ampharos", "electric", 13,  6,  13,  19,  19,  19), //CR 1
+		new create_character("Raichu", "electric electric", 12,  15,  7,  12,  12,  12), //CR 0
+		new create_character("Dedenne", "electric fairy", 8,  14,  8,  10,  10,  10), //CR 0
+		new create_character("Tapu Koko", "electric fairy", 16,  18,  11,  12,  12,  12), //CR 0
+		new create_character("Emolga", "electric flying", 10,  14,  8,  9,  9,  9), //CR -1
+		new create_character("Zapdos", "electric flying", 12,  14,  12,  15,  15,  15), //CR 0
+		new create_character("Thundurus", "electric flying", 15,  14,  10,  16,  16,  16), //CR 1
+		new create_character("Rotom", "electric ghost", 9,  12,  11,  15,  15,  15), //CR 0
+		new create_character("Helioptile", "electric normal", 5,  10,  5,  7,  7,  7), //CR -1
+		new create_character("Heliolisk", "electric normal", 7,  15,  8,  14,  14,  14), //CR 0
+		new create_character("Magnemite", "electric steel", 5,  6,  6,  10,  10,  10), //CR -1
+		new create_character("Togedemaru", "electric steel", 14,  13,  9,  8,  8,  8), //CR 0
+		new create_character("Magneton", "electric steel", 8,  10,  10,  13,  13,  13), //CR 0
+		new create_character("Magnezone", "electric steel", 10,  8,  13,  15,  15,  15), //CR 0
+		new create_character("Cleffa", "fairy", 3,  2,  5,  7,  7,  7), //CR -2
+		new create_character("Togepi", "fairy", 2,  2,  7,  7,  7,  7), //CR -2
+		new create_character("Snubbull", "fairy", 11,  4,  7,  5,  5,  5), //CR -1
+		new create_character("Clefairy", "fairy", 6,  5,  8,  8,  8,  8), //CR -1
+		new create_character("Flabebe", "fairy", 5,  6,  5,  10,  10,  10), //CR -1
+		new create_character("Spritzee", "fairy", 7,  3,  9,  9,  9,  9), //CR -1
+		new create_character("Swirlix", "fairy", 6,  7,  9,  8,  8,  8), //CR -1
+		new create_character("Granbull", "fairy", 17,  6,  11,  8,  8,  8), //CR -1
+		new create_character("Aromatisse", "fairy", 10,  4,  12,  13,  13,  13), //CR 0
+		new create_character("Slurpuff", "fairy", 11,  10,  12,  11,  11,  11), //CR 0
+		new create_character("Clefable", "fairy", 10,  8,  12,  13,  13,  13), //CR 0
+		new create_character("Comfey", "fairy", 7,  14,  10,  13,  13,  13), //CR 0
+		new create_character("Sylveon", "fairy", 9,  8,  11,  17,  17,  17), //CR 0
+		new create_character("Floette", "fairy", 9,  13,  10,  18,  18,  18), //CR 1
+		new create_character("Florges", "fairy", 9,  10,  10,  19,  19,  19), //CR 1
+		new create_character("Xerneas", "fairy", 18,  14,  15,  16,  16,  16), //CR 1
+		new create_character("Togetic", "fairy flying", 5,  5,  10,  13,  13,  13), //CR -1
+		new create_character("Togekiss", "fairy flying", 7,  11,  12,  16,  16,  16), //CR 0
+		new create_character("Makuhita", "fighting", 8,  3,  7,  3,  3,  3), //CR -2
+		new create_character("Tyrogue", "fighting", 5,  5,  5,  5,  5,  5), //CR -2
+		new create_character("Timburr", "fighting", 11,  5,  9,  4,  4,  4), //CR -1
+		new create_character("Riolu", "fighting", 10,  8,  5,  5,  5,  5), //CR -1
+		new create_character("Machop", "fighting", 11,  5,  8,  5,  5,  5), //CR -1
+		new create_character("Mankey", "fighting", 11,  10,  5,  5,  5,  5), //CR -1
+		new create_character("Pancham", "fighting", 11,  6,  9,  6,  6,  6), //CR -1
+		new create_character("Crabrawler", "fighting", 11,  9,  7,  6,  6,  6), //CR -1
+		new create_character("Mienfoo", "fighting", 12,  9,  6,  7,  7,  7), //CR -1
+		new create_character("Gurdurr", "fighting", 15,  5,  12,  6,  6,  6), //CR -1
+		new create_character("Machoke", "fighting", 14,  6,  10,  7,  7,  7), //CR -1
+		new create_character("Throh", "fighting", 14,  6,  14,  8,  8,  8), //CR -1
+		new create_character("Hariyama", "fighting", 17,  7,  14,  7,  7,  7), //CR -1
+		new create_character("Sawk", "fighting", 17,  12,  10,  7,  7,  7), //CR 0
+		new create_character("Passimian", "fighting", 17,  11,  13,  7,  7,  7), //CR 0
+		new create_character("Primeape", "fighting", 15,  13,  8,  9,  9,  9), //CR 0
+		new create_character("Hitmontop", "fighting", 13,  10,  10,  10,  10,  10), //CR 0
+		new create_character("Hitmonchan", "fighting", 15,  10,  9,  10,  10,  10), //CR 0
+		new create_character("Conkeldurr", "fighting", 20,  6,  14,  8,  8,  8), //CR 0
+		new create_character("Hitmonlee", "fighting", 17,  12,  7,  10,  10,  10), //CR 0
+		new create_character("Machamp", "fighting", 18,  7,  12,  10,  10,  10), //CR 0
+		new create_character("Mienshao", "fighting", 17,  15,  8,  11,  11,  11), //CR 0
+		new create_character("Pangoro", "fighting dark", 17,  8,  12,  10,  10,  10), //CR 0
+		new create_character("Hawlucha", "fighting flying", 13,  16,  10,  9,  9,  9), //CR 0
+		new create_character("Crabominable", "fighting ice", 18,  6,  12,  9,  9,  9), //CR 0
+		new create_character("Meditite", "fighting psychic", 5,  8,  6,  6,  6,  6), //CR -1
+		new create_character("Medicham", "fighting psychic", 14,  14,  10,  11,  11,  11), //CR 0
+		new create_character("Lucario", "fighting steel", 20,  16,  11,  15,  15,  15), //CR 1
+		new create_character("Slugma", "fire", 5,  2,  5,  7,  7,  7), //CR -2
+		new create_character("Darumaka", "fire", 12,  7,  8,  4,  4,  4), //CR -1
+		new create_character("Tepig", "fire", 9,  6,  7,  6,  6,  6), //CR -1
+		new create_character("Charmander", "fire", 7,  9,  5,  7,  7,  7), //CR -1
+		new create_character("Cyndaquil", "fire", 7,  9,  5,  7,  7,  7), //CR -1
+		new create_character("Fennekin", "fire", 6,  8,  5,  8,  8,  8), //CR -1
+		new create_character("Chimchar", "fire", 8,  8,  6,  7,  7,  7), //CR -1
+		new create_character("Torchic", "fire", 8,  6,  6,  8,  8,  8), //CR -1
+		new create_character("Pansear", "fire", 7,  9,  7,  7,  7,  7), //CR -1
+		new create_character("Litten", "fire", 9,  10,  6,  7,  7,  7), //CR -1
+		new create_character("Growlithe", "fire", 10,  8,  7,  8,  8,  8), //CR -1
+		new create_character("Magby", "fire", 10,  11,  5,  8,  8,  8), //CR -1
+		new create_character("Charmeleon", "fire", 9,  11,  8,  10,  10,  10), //CR -1
+		new create_character("Quilava", "fire", 9,  11,  8,  10,  10,  10), //CR -1
+		new create_character("Ponyta", "fire", 12,  12,  7,  9,  9,  9), //CR -1
+		new create_character("Braixen", "fire", 8,  10,  8,  11,  11,  11), //CR -1
+		new create_character("Torracat", "fire", 12,  12,  8,  9,  9,  9), //CR -1
+		new create_character("Torkoal", "fire", 12,  2,  15,  11,  11,  11), //CR 0
+		new create_character("Heatmor", "fire", 13,  9,  10,  12,  12,  12), //CR 0
+		new create_character("Simisear", "fire", 14,  14,  9,  11,  11,  11), //CR 0
+		new create_character("Rapidash", "fire", 14,  15,  9,  11,  11,  11), //CR 0
+		new create_character("Magmar", "fire", 13,  13,  8,  13,  13,  13), //CR 0
+		new create_character("Typhlosion", "fire", 12,  14,  11,  13,  13,  13), //CR 0
+		new create_character("Arcanine", "fire", 15,  13,  12,  12,  12,  12), //CR 0
+		new create_character("Flareon", "fire", 18,  9,  8,  14,  14,  14), //CR 0
+		new create_character("Entei", "fire", 16,  14,  14,  11,  11,  11), //CR 0
+		new create_character("Magmortar", "fire", 13,  11,  10,  15,  15,  15), //CR 0
+		new create_character("Incineroar", "fire dark", 16,  8,  13,  12,  12,  12), //CR 0
+		new create_character("Turtonator", "fire dragon", 11,  5,  13,  12,  12,  12), //CR 0
+		new create_character("Pignite", "fire fighting", 13,  7,  10,  8,  8,  8), //CR -1
+		new create_character("Combusken", "fire fighting", 12,  7,  8,  10,  10,  10), //CR -1
+		new create_character("Monferno", "fire fighting", 11,  11,  8,  9,  9,  9), //CR -1
+		new create_character("Emboar", "fire fighting", 17,  9,  12,  11,  11,  11), //CR 0
+		new create_character("Infernape", "fire fighting", 14,  15,  10,  12,  12,  12), //CR 0
+		new create_character("Blaziken", "fire fighting", 22,  14,  11,  15,  15,  15), //CR 1
+		new create_character("Darmanitan", "fire fire", 4,  7,  15,  17,  17,  17), //CR 0
+		new create_character("Fletchinder", "fire flying", 10,  12,  8,  7,  7,  7), //CR -1
+		new create_character("Oricorio", "fire flying", 10,  13,  10,  12,  12,  12), //CR 0
+		new create_character("Talonflame", "fire flying", 11,  18,  10,  10,  10,  10), //CR 0
+		new create_character("Moltres", "fire flying", 14,  12,  12,  15,  15,  15), //CR 0
+		new create_character("Charizard", "fire flying", 14,  14,  11,  19,  19,  19), //CR 1
+		new create_character("Ho-Oh", "fire flying", 18,  12,  14,  18,  18,  18), //CR 1
+		new create_character("Numel", "fire ground", 8,  5,  7,  7,  7,  7), //CR -1
+		new create_character("Camerupt", "fire ground", 17,  2,  12,  17,  17,  17), //CR 0
+		new create_character("Vulpix", "fire ice", 5,  9,  5,  8,  8,  8), //CR -1
+		new create_character("Ninetales", "fire ice", 9,  15,  10,  12,  12,  12), //CR 0
+		new create_character("Litleo", "fire normal", 7,  10,  8,  9,  9,  9), //CR -1
+		new create_character("Pyroar", "fire normal", 9,  15,  11,  12,  12,  12), //CR 0
+		new create_character("Delphox", "fire psychic", 9,  14,  10,  15,  15,  15), //CR 0
+		new create_character("Magcargo", "fire rock", 7,  4,  12,  12,  12,  12), //CR -1
+		new create_character("Heatran", "fire steel", 12,  11,  14,  16,  16,  16), //CR 1
+		new create_character("Volcanion", "fire water", 15,  10,  14,  15,  15,  15), //CR 1
+		new create_character("Tornadus", "flying", 14,  17,  11,  14,  14,  14), //CR 1
+		new create_character("Noibat", "flying dragon", 4,  7,  5,  6,  6,  6), //CR -2
+		new create_character("Noivern", "flying dragon", 10,  17,  11,  12,  12,  12), //CR 0
+		new create_character("Shuppet", "ghost", 10,  6,  5,  6,  6,  6), //CR -1
+		new create_character("Duskull", "ghost", 5,  3,  7,  8,  8,  8), //CR -1
+		new create_character("Yamask", "ghost", 4,  4,  8,  8,  8,  8), //CR -1
+		new create_character("Misdreavus", "ghost", 8,  12,  8,  12,  12,  12), //CR 0
+		new create_character("Dusclops", "ghost", 10,  3,  12,  13,  13,  13), //CR 0
+		new create_character("Cofagrigus", "ghost", 7,  4,  14,  14,  14,  14), //CR 0
+		new create_character("Dusknoir", "ghost", 14,  6,  12,  14,  14,  14), //CR 0
+		new create_character("Mismagius", "ghost", 8,  15,  8,  15,  15,  15), //CR 0
+		new create_character("Banette", "ghost", 23,  10,  9,  12,  12,  12), //CR 0
+		new create_character("Spiritomb", "ghost dark", 13,  5,  11,  14,  14,  14), //CR 0
+		new create_character("Giratina", "ghost dragon", 17,  12,  17,  15,  15,  15), //CR 1
+		new create_character("Mimikyu", "ghost fairy", 12,  13,  9,  11,  11,  11), //CR 0
+		new create_character("Litwick", "ghost fire", 4,  2,  7,  8,  8,  8), //CR -1
+		new create_character("Lampent", "ghost fire", 5,  7,  8,  11,  11,  11), //CR -1
+		new create_character("Chandelure", "ghost fire", 7,  11,  10,  16,  16,  16), //CR 0
+		new create_character("Drifloon", "ghost flying", 7,  10,  8,  7,  7,  7), //CR -1
+		new create_character("Drifblim", "ghost flying", 11,  11,  13,  10,  10,  10), //CR 0
+		new create_character("Phantump", "ghost grass", 10,  5,  6,  7,  7,  7), //CR -1
+		new create_character("Pumpkaboo", "ghost grass", 9,  5,  9,  7,  7,  7), //CR -1
+		new create_character("Gourgeist", "ghost grass", 14,  7,  14,  9,  9,  9), //CR 0
+		new create_character("Trevenant", "ghost grass", 15,  8,  11,  10,  10,  10), //CR 0
+		new create_character("Dhelmise", "ghost grass", 18,  5,  12,  12,  12,  12), //CR 0
+		new create_character("Sandygast", "ghost ground", 7,  2,  9,  8,  8,  8), //CR -1
+		new create_character("Palossand", "ghost ground", 10,  5,  13,  12,  12,  12), //CR 0
+		new create_character("Gastly", "ghost poison", 5,  11,  4,  9,  9,  9), //CR -1
+		new create_character("Haunter", "ghost poison", 7,  13,  6,  12,  12,  12), //CR 0
+		new create_character("Gengar", "ghost poison", 9,  18,  10,  18,  18,  18), //CR 1
+		new create_character("Sunkern", "grass", 4,  4,  4,  4,  4,  4), //CR -2
+		new create_character("Bounsweet", "grass", 4,  4,  5,  4,  4,  4), //CR -2
+		new create_character("Seedot", "grass", 5,  4,  6,  4,  4,  4), //CR -2
+		new create_character("Fomantis", "grass", 7,  5,  5,  6,  6,  6), //CR -2
+		new create_character("Steenee", "grass", 5,  8,  7,  6,  6,  6), //CR -1
+		new create_character("Petilil", "grass", 5,  4,  6,  8,  8,  8), //CR -1
+		new create_character("Shroomish", "grass", 5,  5,  8,  7,  7,  7), //CR -1
+		new create_character("Chespin", "grass", 8,  5,  8,  6,  6,  6), //CR -1
+		new create_character("Cherubi", "grass", 5,  5,  6,  8,  8,  8), //CR -1
+		new create_character("Turtwig", "grass", 9,  4,  8,  7,  7,  7), //CR -1
+		new create_character("Snivy", "grass", 6,  9,  7,  7,  7,  7), //CR -1
+		new create_character("Pansage", "grass", 7,  9,  7,  7,  7,  7), //CR -1
+		new create_character("Chikorita", "grass", 7,  6,  7,  8,  8,  8), //CR -1
+		new create_character("Treecko", "grass", 6,  10,  5,  8,  8,  8), //CR -1
+		new create_character("Cacnea", "grass", 12,  5,  6,  8,  8,  8), //CR -1
+		new create_character("Skiddo", "grass", 9,  7,  8,  8,  8,  8), //CR -1
+		new create_character("Grotle", "grass", 12,  5,  11,  8,  8,  8), //CR -1
+		new create_character("Quilladin", "grass", 11,  8,  11,  8,  8,  8), //CR -1
+		new create_character("Servine", "grass", 8,  11,  9,  9,  9,  9), //CR -1
+		new create_character("Bayleef", "grass", 8,  8,  10,  10,  10,  10), //CR -1
+		new create_character("Tangela", "grass", 7,  8,  12,  10,  10,  10), //CR -1
+		new create_character("Grovyle", "grass", 9,  13,  6,  10,  10,  10), //CR -1
+		new create_character("Sunflora", "grass", 10,  4,  9,  13,  13,  13), //CR 0
+		new create_character("Cherrim", "grass", 8,  12,  10,  11,  11,  11), //CR 0
+		new create_character("Carnivine", "grass", 14,  6,  10,  11,  11,  11), //CR 0
+		new create_character("Leafeon", "grass", 15,  13,  13,  8,  8,  8), //CR 0
+		new create_character("Maractus", "grass", 12,  8,  10,  12,  12,  12), //CR 0
+		new create_character("Lurantis", "grass", 15,  6,  11,  12,  12,  12), //CR 0
+		new create_character("Lilligant", "grass", 8,  12,  10,  13,  13,  13), //CR 0
+		new create_character("Bellossom", "grass", 11,  7,  12,  13,  13,  13), //CR 0
+		new create_character("Tsareena", "grass", 17,  10,  12,  10,  10,  10), //CR 0
+		new create_character("Simisage", "grass", 14,  14,  9,  11,  11,  11), //CR 0
+		new create_character("Tangrowth", "grass", 14,  7,  16,  11,  11,  11), //CR 0
+		new create_character("Gogoat", "grass", 14,  9,  13,  12,  12,  12), //CR 0
+		new create_character("Meganium", "grass", 11,  11,  12,  13,  13,  13), //CR 0
+		new create_character("Serperior", "grass", 10,  16,  12,  12,  12,  12), //CR 0
+		new create_character("Sceptile", "grass", 15,  20,  10,  16,  16,  16), //CR 1
+		new create_character("Nuzleaf", "grass dark", 10,  8,  7,  7,  7,  7), //CR -1
+		new create_character("Shiftry", "grass dark", 14,  11,  10,  10,  10,  10), //CR 0
+		new create_character("Cacturne", "grass dark", 16,  7,  9,  12,  12,  12), //CR 0
+		new create_character("Cottonee", "grass fairy", 3,  9,  7,  6,  6,  6), //CR -1
+		new create_character("Morelull", "grass fairy", 5,  2,  6,  10,  10,  10), //CR -1
+		new create_character("Shiinotic", "grass fairy", 6,  4,  10,  13,  13,  13), //CR -1
+		new create_character("Whimsicott", "grass fairy", 9,  16,  10,  10,  10,  10), //CR 0
+		new create_character("Tapu Bulu", "grass fairy", 18,  10,  13,  12,  12,  12), //CR 0
+		new create_character("Breloom", "grass fighting", 18,  10,  10,  8,  8,  8), //CR 0
+		new create_character("Chesnaught", "grass fighting", 15,  9,  15,  10,  10,  10), //CR 0
+		new create_character("Virizion", "grass fighting", 12,  15,  11,  15,  15,  15), //CR 0
+		new create_character("Hoppip", "grass flying", 5,  7,  5,  6,  6,  6), //CR -2
+		new create_character("Rowlet", "grass flying", 7,  6,  8,  7,  7,  7), //CR -1
+		new create_character("Skiploom", "grass flying", 6,  11,  7,  7,  7,  7), //CR -1
+		new create_character("Dartrix", "grass flying", 10,  7,  10,  10,  10,  10), //CR -1
+		new create_character("Jumpluff", "grass flying", 7,  15,  10,  10,  10,  10), //CR 0
+		new create_character("Tropius", "grass flying", 9,  7,  13,  11,  11,  11), //CR 0
+		new create_character("Decidueye", "grass ghost", 15,  10,  10,  14,  14,  14), //CR 0
+		new create_character("Shaymin", "grass grass", 14,  18,  12,  13,  13,  13), //CR 0
+		new create_character("Torterra", "grass ground", 15,  8,  14,  11,  11,  11), //CR 0
+		new create_character("Snover", "grass ice", 8,  5,  7,  8,  8,  8), //CR -1
+		new create_character("Abomasnow", "grass ice", 18,  4,  13,  16,  16,  16), //CR 0
+		new create_character("Foongus", "grass poison", 7,  2,  8,  7,  7,  7), //CR -1
+		new create_character("Budew", "grass poison", 4,  7,  5,  8,  8,  8), //CR -1
+		new create_character("Bellsprout", "grass poison", 10,  5,  6,  7,  7,  7), //CR -1
+		new create_character("Bulbasaur", "grass poison", 7,  6,  6,  9,  9,  9), //CR -1
+		new create_character("Oddish", "grass poison", 7,  4,  7,  10,  10,  10), //CR -1
+		new create_character("Weepinbell", "grass poison", 12,  7,  8,  9,  9,  9), //CR -1
+		new create_character("Gloom", "grass poison", 9,  5,  9,  11,  11,  11), //CR -1
+		new create_character("Ivysaur", "grass poison", 8,  8,  8,  11,  11,  11), //CR -1
+		new create_character("Roselia", "grass poison", 8,  9,  6,  12,  12,  12), //CR -1
+		new create_character("Amoonguss", "grass poison", 12,  4,  13,  11,  11,  11), //CR 0
+		new create_character("Vileplume", "grass poison", 11,  7,  11,  14,  14,  14), //CR 0
+		new create_character("Victreebel", "grass poison", 15,  10,  10,  12,  12,  12), //CR 0
+		new create_character("Roserade", "grass poison", 10,  12,  8,  16,  16,  16), //CR 0
+		new create_character("Venusaur", "grass poison", 14,  11,  14,  17,  17,  17), //CR 1
+		new create_character("Exeggcute", "grass psychic", 5,  5,  10,  7,  7,  7), //CR -1
+		new create_character("Exeggutor", "grass psychic", 15,  6,  12,  14,  14,  14), //CR 0
+		new create_character("Ferroseed", "grass steel", 7,  1,  9,  7,  7,  7), //CR -1
+		new create_character("Ferrothorn", "grass steel", 13,  2,  14,  12,  12,  12), //CR 0
+		new create_character("Kartana", "grass steel", 25,  15,  13,  6,  6,  6), //CR 0
+		new create_character("Phanpy", "ground", 8,  5,  10,  5,  5,  5), //CR -1
+		new create_character("Trapinch", "ground", 14,  1,  6,  6,  6,  6), //CR -1
+		new create_character("Hippopotas", "ground", 10,  4,  10,  5,  5,  5), //CR -1
+		new create_character("Cubone", "ground", 7,  5,  10,  6,  6,  6), //CR -1
+		new create_character("Drilbur", "ground", 12,  9,  7,  5,  5,  5), //CR -1
+		new create_character("Mudbray", "ground", 14,  6,  10,  7,  7,  7), //CR -1
+		new create_character("Donphan", "ground", 17,  7,  15,  8,  8,  8), //CR 0
+		new create_character("Mudsdale", "ground", 17,  5,  14,  10,  10,  10), //CR 0
+		new create_character("Hippowdon", "ground", 16,  6,  16,  10,  10,  10), //CR 0
+		new create_character("Groudon", "ground", 25,  12,  18,  17,  17,  17), //CR 1
+		new create_character("Sandile", "ground dark", 10,  9,  6,  5,  5,  5), //CR -1
+		new create_character("Krokorok", "ground dark", 11,  10,  7,  6,  6,  6), //CR -1
+		new create_character("Krookodile", "ground dark", 16,  13,  12,  9,  9,  9), //CR 0
+		new create_character("Vibrava", "ground dragon", 10,  10,  7,  7,  7,  7), //CR -1
+		new create_character("Flygon", "ground dragon", 14,  14,  11,  11,  11,  11), //CR 0
+		new create_character("Stunfisk", "ground electric", 9,  4,  13,  12,  12,  12), //CR 0
+		new create_character("Marowak", "ground fire", 11,  6,  12,  9,  9,  9), //CR -1
+		new create_character("Gligar", "ground flying", 10,  12,  12,  7,  7,  7), //CR -1
+		new create_character("Gliscor", "ground flying", 13,  13,  14,  8,  8,  8), //CR 0
+		new create_character("Landorus", "ground flying", 20,  13,  12,  13,  13,  13), //CR 1
+		new create_character("Golett", "ground ghost", 10,  5,  7,  6,  6,  6), //CR -1
+		new create_character("Golurk", "ground ghost", 17,  7,  12,  9,  9,  9), //CR 0
+		new create_character("Diglett", "ground ground", 7,  12,  2,  5,  5,  5), //CR -1
+		new create_character("Dugtrio", "ground ground", 14,  15,  6,  8,  8,  8), //CR -1
+		new create_character("Sandshrew", "ground ice", 10,  5,  10,  3,  3,  3), //CR -2
+		new create_character("Sandslash", "ground ice", 14,  9,  13,  6,  6,  6), //CR -1
+		new create_character("Baltoy", "ground psychic", 5,  7,  6,  7,  7,  7), //CR -1
+		new create_character("Claydol", "ground psychic", 10,  10,  11,  13,  13,  13), //CR 0
+		new create_character("Rhyhorn", "ground rock", 12,  3,  12,  4,  4,  4), //CR -1
+		new create_character("Rhydon", "ground rock", 18,  5,  16,  6,  6,  6), //CR -1
+		new create_character("Rhyperior", "ground rock", 20,  5,  17,  7,  7,  7), //CR 0
+		new create_character("Excadrill", "ground steel", 19,  12,  12,  8,  8,  8), //CR 0
+		new create_character("Bergmite", "ice", 9,  4,  10,  4,  4,  4), //CR -2
+		new create_character("Snorunt", "ice", 7,  7,  7,  7,  7,  7), //CR -1
+		new create_character("Cubchoo", "ice", 10,  5,  6,  7,  7,  7), //CR -1
+		new create_character("Vanillite", "ice", 7,  6,  6,  8,  8,  8), //CR -1
+		new create_character("Avalugg", "ice", 16,  4,  19,  6,  6,  6), //CR -1
+		new create_character("Vanillish", "ice", 9,  8,  8,  11,  11,  11), //CR -1
+		new create_character("Beartic", "ice", 18,  7,  12,  10,  10,  10), //CR 0
+		new create_character("Glaceon", "ice", 8,  9,  12,  16,  16,  16), //CR 0
+		new create_character("Vanilluxe", "ice", 13,  11,  11,  14,  14,  14), //CR 0
+		new create_character("Cryogonal", "ice", 7,  15,  9,  16,  16,  16), //CR 0
+		new create_character("Glalie", "ice", 17,  14,  11,  14,  14,  14), //CR 1
+		new create_character("Regice", "ice", 7,  7,  12,  21,  21,  21), //CR 1
+		new create_character("Delibird", "ice flying", 7,  10,  6,  7,  7,  7), //CR -1
+		new create_character("Articuno", "ice flying", 12,  12,  13,  15,  15,  15), //CR 0
+		new create_character("Froslass", "ice ghost", 11,  15,  10,  10,  10,  10), //CR 0
+		new create_character("Swinub", "ice ground", 7,  7,  6,  4,  4,  4), //CR -2
+		new create_character("Piloswine", "ice ground", 14,  7,  12,  8,  8,  8), //CR -1
+		new create_character("Mamoswine", "ice ground", 18,  11,  13,  9,  9,  9), //CR 0
+		new create_character("Smoochum", "ice psychic", 4,  9,  4,  10,  10,  10), //CR -1
+		new create_character("Jynx", "ice psychic", 7,  13,  7,  15,  15,  15), //CR 0
+		new create_character("Spheal", "ice water", 5,  3,  8,  7,  7,  7), //CR -1
+		new create_character("Sealeo", "ice water", 8,  6,  11,  10,  10,  10), //CR -1
+		new create_character("Walrein", "ice water", 11,  9,  14,  13,  13,  13), //CR 0
+		new create_character("Happiny", "normal", 0,  4,  7,  5,  5,  5), //CR -2
+		new create_character("Sentret", "normal", 6,  2,  4,  5,  5,  5), //CR -2
+		new create_character("Bunnelby", "normal", 5,  8,  5,  4,  4,  4), //CR -2
+		new create_character("Smeargle", "normal", 2,  10,  6,  4,  4,  4), //CR -2
+		new create_character("Zigzagoon", "normal", 4,  8,  5,  5,  5,  5), //CR -2
+		new create_character("Whismur", "normal", 7,  4,  6,  5,  5,  5), //CR -2
+		new create_character("Bidoof", "normal", 6,  4,  7,  5,  5,  5), //CR -2
+		new create_character("Yungoos", "normal", 10,  6,  5,  4,  4,  4), //CR -2
+		new create_character("Patrat", "normal", 7,  6,  6,  5,  5,  5), //CR -2
+		new create_character("Skitty", "normal", 6,  7,  6,  5,  5,  5), //CR -2
+		new create_character("Slakoth", "normal", 8,  4,  8,  5,  5,  5), //CR -2
+		new create_character("Lillipup", "normal", 8,  7,  6,  5,  5,  5), //CR -1
+		new create_character("Ditto", "normal", 6,  6,  6,  6,  6,  6), //CR -1
+		new create_character("Minccino", "normal", 7,  10,  6,  5,  5,  5), //CR -1
+		new create_character("Glameow", "normal", 7,  12,  6,  5,  5,  5), //CR -1
+		new create_character("Eevee", "normal", 7,  7,  7,  7,  7,  7), //CR -1
+		new create_character("Teddiursa", "normal", 11,  5,  7,  7,  7,  7), //CR -1
+		new create_character("Aipom", "normal", 10,  12,  7,  6,  6,  6), //CR -1
+		new create_character("Spinda", "normal", 8,  8,  8,  8,  8,  8), //CR -1
+		new create_character("Munchlax", "normal", 12,  0,  12,  8,  8,  8), //CR -1
+		new create_character("Buneary", "normal", 9,  12,  7,  7,  7,  7), //CR -1
+		new create_character("Loudred", "normal", 10,  6,  9,  8,  8,  8), //CR -1
+		new create_character("Herdier", "normal", 11,  8,  9,  7,  7,  7), //CR -1
+		new create_character("Lickitung", "normal", 7,  4,  11,  9,  9,  9), //CR -1
+		new create_character("Delcatty", "normal", 9,  12,  9,  7,  7,  7), //CR -1
+		new create_character("Furret", "normal", 10,  12,  10,  7,  7,  7), //CR -1
+		new create_character("Linoone", "normal", 10,  14,  9,  7,  7,  7), //CR -1
+		new create_character("Porygon", "normal", 8,  5,  9,  11,  11,  11), //CR -1
+		new create_character("Dunsparce", "normal", 10,  6,  12,  9,  9,  9), //CR -1
+		new create_character("Gumshoos", "normal", 15,  6,  10,  8,  8,  8), //CR -1
+		new create_character("Vigoroth", "normal", 11,  12,  11,  7,  7,  7), //CR -1
+		new create_character("Chansey", "normal", 0,  7,  18,  10,  10,  10), //CR -1
+		new create_character("Watchog", "normal", 12,  11,  9,  9,  9,  9), //CR -1
+		new create_character("Castform", "normal", 10,  10,  10,  10,  10,  10), //CR 0
+		new create_character("Purugly", "normal", 11,  16,  9,  8,  8,  8), //CR 0
+		new create_character("Miltank", "normal", 11,  14,  14,  7,  7,  7), //CR 0
+		new create_character("Zangoose", "normal", 16,  12,  9,  8,  8,  8), //CR 0
+		new create_character("Kecleon", "normal", 12,  5,  9,  12,  12,  12), //CR 0
+		new create_character("Cinccino", "normal", 13,  16,  9,  8,  8,  8), //CR 0
+		new create_character("Tauros", "normal", 14,  15,  12,  7,  7,  7), //CR 0
+		new create_character("Bouffalant", "normal", 15,  7,  13,  9,  9,  9), //CR 0
+		new create_character("Stantler", "normal", 13,  12,  9,  10,  10,  10), //CR 0
+		new create_character("Stoutland", "normal", 15,  11,  12,  9,  9,  9), //CR 0
+		new create_character("Exploud", "normal", 13,  9,  11,  11,  11,  11), //CR 0
+		new create_character("Ursaring", "normal", 18,  7,  11,  10,  10,  10), //CR 0
+		new create_character("Furfrou", "normal", 11,  14,  9,  11,  11,  11), //CR 0
+		new create_character("Ambipom", "normal", 14,  16,  10,  9,  9,  9), //CR 0
+		new create_character("Lickilicky", "normal", 12,  7,  14,  12,  12,  12), //CR 0
+		new create_character("Komala", "normal", 16,  9,  9,  12,  12,  12), //CR 0
+		new create_character("Snorlax", "normal", 15,  4,  16,  12,  12,  12), //CR 0
+		new create_character("Blissey", "normal", 1,  7,  18,  15,  15,  15), //CR 0
+		new create_character("Porygon2", "normal", 11,  8,  12,  14,  14,  14), //CR 0
+		new create_character("Type: Null", "normal", 13,  8,  13,  13,  13,  13), //CR 0
+		new create_character("Audino", "normal", 8,  7,  16,  14,  14,  14), //CR 0
+		new create_character("Silvally", "normal", 13,  13,  13,  13,  13,  13), //CR 0
+		new create_character("Kangaskhan", "normal", 17,  14,  14,  11,  11,  11), //CR 0
+		new create_character("Porygon-Z", "normal", 11,  12,  11,  15,  15,  15), //CR 0
+		new create_character("Lopunny", "normal", 19,  19,  11,  10,  10,  10), //CR 0
+		new create_character("Slaking", "normal", 22,  14,  17,  11,  11,  11), //CR 1
+		new create_character("Regigigas", "normal", 22,  14,  15,  13,  13,  13), //CR 1
+		new create_character("Arceus", "normal", 17,  17,  17,  17,  17,  17), //CR 1
+		new create_character("Rattata", "normal dark", 8,  10,  4,  4,  4,  4), //CR -2
+		new create_character("Meowth", "normal dark", 5,  12,  5,  6,  6,  6), //CR -1
+		new create_character("Raticate", "normal dark", 10,  11,  10,  8,  8,  8), //CR -1
+		new create_character("Persian", "normal dark", 8,  16,  8,  10,  10,  10), //CR 0
+		new create_character("Drampa", "normal dragon", 8,  5,  11,  16,  16,  16), //CR 0
+		new create_character("Azurill", "normal fairy", 2,  2,  6,  4,  4,  4), //CR -2
+		new create_character("Igglybuff", "normal fairy", 4,  2,  7,  4,  4,  4), //CR -2
+		new create_character("Jigglypuff", "normal fairy", 6,  2,  9,  5,  5,  5), //CR -2
+		new create_character("Wigglytuff", "normal fairy", 10,  6,  13,  9,  9,  9), //CR -1
+		new create_character("Stufful", "normal fighting", 10,  7,  8,  6,  6,  6), //CR -1
+		new create_character("Bewear", "normal fighting", 17,  8,  14,  8,  8,  8), //CR 0
+		new create_character("Starly", "normal flying", 7,  8,  5,  4,  4,  4), //CR -2
+		new create_character("Pidove", "normal flying", 7,  6,  7,  4,  4,  4), //CR -2
+		new create_character("Pidgey", "normal flying", 6,  8,  5,  5,  5,  5), //CR -2
+		new create_character("Spearow", "normal flying", 8,  10,  5,  4,  4,  4), //CR -2
+		new create_character("Hoothoot", "normal flying", 4,  7,  6,  6,  6,  6), //CR -2
+		new create_character("Pikipek", "normal flying", 10,  9,  4,  4,  4,  4), //CR -2
+		new create_character("Taillow", "normal flying", 7,  12,  5,  4,  4,  4), //CR -1
+		new create_character("Fletchling", "normal flying", 7,  8,  6,  5,  5,  5), //CR -1
+		new create_character("Doduo", "normal flying", 12,  10,  5,  5,  5,  5), //CR -1
+		new create_character("Swablu", "normal flying", 5,  7,  7,  8,  8,  8), //CR -1
+		new create_character("Staravia", "normal flying", 10,  11,  7,  5,  5,  5), //CR -1
+		new create_character("Rufflet", "normal flying", 11,  8,  8,  6,  6,  6), //CR -1
+		new create_character("Tranquill", "normal flying", 11,  9,  8,  6,  6,  6), //CR -1
+		new create_character("Pidgeotto", "normal flying", 8,  10,  8,  7,  7,  7), //CR -1
+		new create_character("Trumbeak", "normal flying", 12,  10,  7,  6,  6,  6), //CR -1
+		new create_character("Farfetch'd", "normal flying", 12,  8,  7,  8,  8,  8), //CR -1
+		new create_character("Chatot", "normal flying", 9,  13,  8,  9,  9,  9), //CR -1
+		new create_character("Fearow", "normal flying", 12,  14,  9,  8,  8,  8), //CR -1
+		new create_character("Swellow", "normal flying", 12,  17,  8,  8,  8,  8), //CR 0
+		new create_character("Dodrio", "normal flying", 15,  15,  9,  8,  8,  8), //CR 0
+		new create_character("Staraptor", "normal flying", 17,  14,  11,  7,  7,  7), //CR 0
+		new create_character("Unfezant", "normal flying", 16,  13,  11,  8,  8,  8), //CR 0
+		new create_character("Noctowl", "normal flying", 7,  10,  10,  13,  13,  13), //CR 0
+		new create_character("Toucannon", "normal flying", 17,  8,  11,  10,  10,  10), //CR 0
+		new create_character("Braviary", "normal flying", 17,  11,  12,  9,  9,  9), //CR 0
+		new create_character("Pidgeot", "normal flying", 11,  17,  11,  15,  15,  15), //CR 1
+		new create_character("Deerling", "normal grass", 8,  10,  7,  6,  6,  6), //CR -1
+		new create_character("Sawsbuck", "normal grass", 14,  13,  10,  9,  9,  9), //CR 0
+		new create_character("Diggersby", "normal ground", 8,  11,  11,  9,  9,  9), //CR -1
+		new create_character("Girafarig", "normal psychic", 11,  12,  9,  11,  11,  11), //CR 0
+		new create_character("Oranguru", "normal psychic", 8,  8,  12,  14,  14,  14), //CR 0
+		new create_character("Meloetta", "normal psychic", 18,  18,  13,  11,  11,  11), //CR 0
+		new create_character("Bibarel", "normal water", 12,  10,  9,  8,  8,  8), //CR -1
+		new create_character("Nidoranâ™€", "poison", 6,  5,  7,  5,  5,  5), //CR -2
+		new create_character("Nidoranâ™‚", "poison", 8,  7,  6,  5,  5,  5), //CR -1
+		new create_character("Gulpin", "poison", 6,  5,  8,  6,  6,  6), //CR -1
+		new create_character("Ekans", "poison", 8,  7,  5,  6,  6,  6), //CR -1
+		new create_character("Koffing", "poison", 9,  5,  9,  7,  7,  7), //CR -1
+		new create_character("Trubbish", "poison", 7,  9,  8,  7,  7,  7), //CR -1
+		new create_character("Nidorina", "poison", 8,  8,  9,  7,  7,  7), //CR -1
+		new create_character("Nidorino", "poison", 10,  9,  8,  7,  7,  7), //CR -1
+		new create_character("Arbok", "poison", 13,  11,  9,  10,  10,  10), //CR 0
+		new create_character("Swalot", "poison", 10,  7,  13,  11,  11,  11), //CR 0
+		new create_character("Garbodor", "poison", 13,  10,  11,  10,  10,  10), //CR 0
+		new create_character("Seviper", "poison", 14,  9,  9,  11,  11,  11), //CR 0
+		new create_character("Weezing", "poison", 12,  8,  13,  11,  11,  11), //CR 0
+		new create_character("Skorupi", "poison bug", 7,  9,  9,  6,  6,  6), //CR -1
+		new create_character("Stunky", "poison dark", 9,  10,  7,  5,  5,  5), //CR -1
+		new create_character("Skuntank", "poison dark", 13,  12,  12,  9,  9,  9), //CR 0
+		new create_character("Drapion", "poison dark", 12,  13,  12,  9,  9,  9), //CR 0
+		new create_character("Dragalge", "poison dragon", 10,  6,  11,  15,  15,  15), //CR 0
+		new create_character("Croagunk", "poison fighting", 8,  7,  6,  7,  7,  7), //CR -1
+		new create_character("Toxicroak", "poison fighting", 15,  12,  10,  10,  10,  10), //CR 0
+		new create_character("Salandit", "poison fire", 6,  11,  6,  7,  7,  7), //CR -1
+		new create_character("Salazzle", "poison fire", 9,  16,  9,  12,  12,  12), //CR 0
+		new create_character("Zubat", "poison flying", 6,  7,  5,  5,  5,  5), //CR -2
+		new create_character("Golbat", "poison flying", 11,  12,  10,  10,  10,  10), //CR 0
+		new create_character("Crobat", "poison flying", 12,  18,  11,  10,  10,  10), //CR 0
+		new create_character("Nidoqueen", "poison ground", 13,  10,  12,  11,  11,  11), //CR 0
+		new create_character("Nidoking", "poison ground", 14,  12,  11,  11,  11,  11), //CR 0
+		new create_character("Grimer", "poison poison", 11,  3,  9,  6,  6,  6), //CR -1
+		new create_character("Muk", "poison poison", 15,  7,  12,  11,  11,  11), //CR 0
+		new create_character("Mareanie", "poison water", 7,  6,  8,  6,  6,  6), //CR -1
+		new create_character("Skrelp", "poison water", 8,  4,  7,  8,  8,  8), //CR -1
+		new create_character("Toxapex", "poison water", 9,  5,  14,  13,  13,  13), //CR 0
+		new create_character("Cosmog", "psychic", 4,  5,  5,  4,  4,  4), //CR -2
+		new create_character("Wynaut", "psychic", 3,  3,  10,  5,  5,  5), //CR -2
+		new create_character("Munna", "psychic", 3,  3,  8,  8,  8,  8), //CR -1
+		new create_character("Chingling", "psychic", 4,  6,  6,  8,  8,  8), //CR -1
+		new create_character("Gothita", "psychic", 4,  6,  6,  8,  8,  8), //CR -1
+		new create_character("Wobbuffet", "psychic", 4,  4,  17,  6,  6,  6), //CR -1
+		new create_character("Solosis", "psychic", 4,  2,  6,  11,  11,  11), //CR -1
+		new create_character("Drowzee", "psychic", 6,  6,  7,  9,  9,  9), //CR -1
+		new create_character("Unown", "psychic", 10,  6,  6,  8,  8,  8), //CR -1
+		new create_character("Spoink", "psychic", 3,  8,  6,  10,  10,  10), //CR -1
+		new create_character("Espurr", "psychic", 6,  9,  8,  8,  8,  8), //CR -1
+		new create_character("Elgyem", "psychic", 7,  4,  7,  10,  10,  10), //CR -1
+		new create_character("Abra", "psychic", 2,  12,  2,  11,  11,  11), //CR -1
+		new create_character("Cosmoem", "psychic", 4,  5,  12,  11,  11,  11), //CR -1
+		new create_character("Gothorita", "psychic", 6,  7,  9,  11,  11,  11), //CR -1
+		new create_character("Duosion", "psychic", 5,  4,  8,  13,  13,  13), //CR -1
+		new create_character("Meowstic", "psychic", 6,  14,  10,  11,  11,  11), //CR 0
+		new create_character("Kadabra", "psychic", 5,  15,  5,  13,  13,  13), //CR 0
+		new create_character("Chimecho", "psychic", 7,  9,  11,  13,  13,  13), //CR 0
+		new create_character("Musharna", "psychic", 7,  4,  14,  14,  14,  14), //CR 0
+		new create_character("Grumpig", "psychic", 6,  11,  10,  14,  14,  14), //CR 0
+		new create_character("Hypno", "psychic", 10,  9,  11,  13,  13,  13), //CR 0
+		new create_character("Gothitelle", "psychic", 7,  9,  11,  14,  14,  14), //CR 0
+		new create_character("Beheeyem", "psychic", 10,  5,  10,  15,  15,  15), //CR 0
+		new create_character("Reuniclus", "psychic", 9,  4,  13,  15,  15,  15), //CR 0
+		new create_character("Uxie", "psychic", 10,  13,  14,  14,  14,  14), //CR 0
+		new create_character("Espeon", "psychic", 9,  15,  8,  16,  16,  16), //CR 0
+		new create_character("Cresselia", "psychic", 10,  12,  17,  14,  14,  14), //CR 0
+		new create_character("Azelf", "psychic", 17,  16,  10,  13,  13,  13), //CR 0
+		new create_character("Mesprit", "psychic", 15,  11,  13,  15,  15,  15), //CR 1
+		new create_character("Mew", "psychic", 14,  14,  14,  14,  14,  14), //CR 1
+		new create_character("Necrozma", "psychic", 15,  11,  14,  15,  15,  15), //CR 1
+		new create_character("Deoxys", "psychic", 13,  25,  10,  13,  13,  13), //CR 1
+		new create_character("Alakazam", "psychic", 7,  21,  8,  20,  20,  20), //CR 1
+		new create_character("Mewtwo", "psychic", 21,  20,  12,  22,  22,  22), //CR 2
+		new create_character("Ralts", "psychic fairy", 3,  5,  3,  5,  5,  5), //CR -2
+		new create_character("Kirlia", "psychic fairy", 5,  7,  5,  8,  8,  8), //CR -1
+		new create_character("Mime Jr.", "psychic fairy", 3,  8,  4,  11,  11,  11), //CR -1
+		new create_character("Mr. Mime", "psychic fairy", 6,  12,  7,  15,  15,  15), //CR 0
+		new create_character("Tapu Lele", "psychic fairy", 12,  13,  10,  17,  17,  17), //CR 1
+		new create_character("Gardevoir", "psychic fairy", 12,  14,  9,  21,  21,  21), //CR 1
+		new create_character("Gallade", "psychic fighting", 23,  15,  11,  12,  12,  12), //CR 1
+		new create_character("Victini", "psychic fire", 14,  14,  14,  14,  14,  14), //CR 1
+		new create_character("Woobat", "psychic flying", 6,  10,  7,  7,  7,  7), //CR -1
+		new create_character("Natu", "psychic flying", 7,  10,  6,  8,  8,  8), //CR -1
+		new create_character("Swoobat", "psychic flying", 8,  16,  8,  9,  9,  9), //CR -1
+		new create_character("Xatu", "psychic flying", 10,  13,  9,  11,  11,  11), //CR 0
+		new create_character("Sigilyph", "psychic flying", 8,  13,  10,  13,  13,  13), //CR 0
+		new create_character("Lugia", "psychic flying", 12,  15,  16,  17,  17,  17), //CR 1
+		new create_character("Lunala", "psychic ghost", 16,  13,  16,  17,  17,  17), //CR 1
+		new create_character("Hoopa", "psychic ghost", 22,  11,  10,  21,  21,  21), //CR 1
+		new create_character("Celebi", "psychic grass", 14,  14,  14,  14,  14,  14), //CR 1
+		new create_character("Solgaleo", "psychic steel", 19,  13,  17,  14,  14,  14), //CR 1
+		new create_character("Roggenrola", "rock", 10,  2,  10,  3,  3,  3), //CR -2
+		new create_character("Bonsly", "rock", 11,  1,  10,  3,  3,  3), //CR -2
+		new create_character("Rockruff", "rock", 9,  8,  6,  5,  5,  5), //CR -1
+		new create_character("Cranidos", "rock", 17,  8,  7,  4,  4,  4), //CR -1
+		new create_character("Boldore", "rock", 15,  2,  12,  6,  6,  6), //CR -1
+		new create_character("Nosepass", "rock", 6,  4,  11,  9,  9,  9), //CR -1
+		new create_character("Sudowoodo", "rock", 14,  4,  13,  6,  6,  6), //CR -1
+		new create_character("Lycanroc", "rock", 16,  11,  11,  9,  9,  9), //CR 0
+		new create_character("Rampardos", "rock", 23,  8,  11,  8,  8,  8), //CR 0
+		new create_character("Gigalith", "rock", 19,  3,  15,  10,  10,  10), //CR 0
+		new create_character("Regirock", "rock", 14,  7,  20,  10,  10,  10), //CR 0
+		new create_character("Anorith", "rock bug", 13,  10,  6,  6,  6,  6), //CR -1
+		new create_character("Armaldo", "rock bug", 17,  6,  12,  10,  10,  10), //CR 0
+		new create_character("Tyranitar", "rock dark", 23,  10,  17,  15,  15,  15), //CR 1
+		new create_character("Tyrunt", "rock dragon", 12,  6,  9,  6,  6,  6), //CR -1
+		new create_character("Tyrantrum", "rock dragon", 17,  10,  14,  9,  9,  9), //CR 0
+		new create_character("Carbink", "rock fairy", 7,  7,  14,  14,  14,  14), //CR 0
+		new create_character("Diancie", "rock fairy", 22,  15,  11,  19,  19,  19), //CR 1
+		new create_character("Terrakion", "rock fighting", 18,  15,  12,  11,  11,  11), //CR 0
+		new create_character("Archen", "rock flying", 16,  10,  7,  8,  8,  8), //CR -1
+		new create_character("Minior", "rock flying", 14,  17,  8,  11,  11,  11), //CR 0
+		new create_character("Archeops", "rock flying", 20,  15,  10,  12,  12,  12), //CR 0
+		new create_character("Aerodactyl", "rock flying", 19,  21,  11,  11,  11,  11), //CR 1
+		new create_character("Lileep", "rock grass", 5,  3,  10,  10,  10,  10), //CR -1
+		new create_character("Cradily", "rock grass", 11,  6,  13,  13,  13,  13), //CR 0
+		new create_character("Geodude", "rock ground", 11,  2,  10,  4,  4,  4), //CR -2
+		new create_character("Larvitar", "rock ground", 9,  5,  7,  6,  6,  6), //CR -1
+		new create_character("Onix", "rock ground", 6,  10,  13,  5,  5,  5), //CR -1
+		new create_character("Graveler", "rock ground", 13,  5,  12,  6,  6,  6), //CR -1
+		new create_character("Pupitar", "rock ground", 12,  7,  10,  9,  9,  9), //CR -1
+		new create_character("Golem", "rock ground", 17,  6,  15,  8,  8,  8), //CR 0
+		new create_character("Amaura", "rock ice", 8,  6,  9,  9,  9,  9), //CR -1
+		new create_character("Aurorus", "rock ice", 11,  8,  13,  13,  13,  13), //CR 0
+		new create_character("Nihilego", "rock poison", 7,  14,  11,  18,  18,  18), //CR 1
+		new create_character("Solrock", "rock psychic", 13,  10,  12,  8,  8,  8), //CR -1
+		new create_character("Lunatone", "rock psychic", 7,  10,  11,  12,  12,  12), //CR 0
+		new create_character("Shieldon", "rock steel", 6,  4,  10,  9,  9,  9), //CR -1
+		new create_character("Bastiodon", "rock steel", 7,  4,  16,  13,  13,  13), //CR 0
+		new create_character("Probopass", "rock steel", 7,  5,  14,  16,  16,  16), //CR 0
+		new create_character("Binacle", "rock water", 7,  7,  7,  6,  6,  6), //CR -1
+		new create_character("Kabuto", "rock water", 11,  7,  8,  7,  7,  7), //CR -1
+		new create_character("Omanyte", "rock water", 5,  5,  9,  10,  10,  10), //CR -1
+		new create_character("Kabutops", "rock water", 16,  11,  11,  9,  9,  9), //CR 0
+		new create_character("Omastar", "rock water", 8,  7,  13,  13,  13,  13), //CR 0
+		new create_character("Barbaracle", "rock water", 15,  9,  13,  10,  10,  10), //CR 0
+		new create_character("Klink", "steel", 7,  4,  7,  7,  7,  7), //CR -1
+		new create_character("Klang", "steel", 11,  7,  11,  11,  11,  11), //CR 0
+		new create_character("Klinklang", "steel", 14,  12,  12,  11,  11,  11), //CR 0
+		new create_character("Registeel", "steel", 10,  7,  16,  16,  16,  16), //CR 0
+		new create_character("Dialga", "steel dragon", 17,  12,  15,  17,  17,  17), //CR 1
+		new create_character("Klefki", "steel fairy", 11,  10,  10,  11,  11,  11), //CR 0
+		new create_character("Mawile", "steel fairy", 15,  7,  12,  10,  10,  10), //CR 0
+		new create_character("Magearna", "steel fairy", 13,  9,  13,  17,  17,  17), //CR 1
+		new create_character("Cobalion", "steel fighting", 12,  15,  15,  11,  11,  11), //CR 0
+		new create_character("Skarmory", "steel flying", 11,  10,  14,  7,  7,  7), //CR -1
+		new create_character("Celesteela", "steel flying", 14,  8,  14,  14,  14,  14), //CR 0
+		new create_character("Honedge", "steel ghost", 11,  4,  10,  5,  5,  5), //CR -1
+		new create_character("Doublade", "steel ghost", 15,  5,  14,  6,  6,  6), //CR -1
+		new create_character("Aegislash", "steel ghost", 21,  8,  7,  14,  14,  14), //CR 0
+		new create_character("Steelix", "steel ground", 17,  4,  21,  10,  10,  10), //CR 0
+		new create_character("Beldum", "steel psychic", 7,  4,  8,  6,  6,  6), //CR -1
+		new create_character("Bronzor", "steel psychic", 3,  3,  10,  7,  7,  7), //CR -1
+		new create_character("Metang", "steel psychic", 10,  7,  11,  9,  9,  9), //CR -1
+		new create_character("Bronzong", "steel psychic", 12,  4,  13,  13,  13,  13), //CR 0
+		new create_character("Jirachi", "steel psychic", 14,  14,  14,  14,  14,  14), //CR 1
+		new create_character("Metagross", "steel psychic", 20,  15,  16,  15,  15,  15), //CR 1
+		new create_character("Aron", "steel rock", 10,  4,  10,  5,  5,  5), //CR -1
+		new create_character("Lairon", "steel rock", 12,  5,  14,  7,  7,  7), //CR -1
+		new create_character("Aggron", "steel rock", 20,  7,  21,  10,  10,  10), //CR 0
+		new create_character("Magikarp", "water", 1,  11,  5,  2,  2,  2), //CR -2
+		new create_character("Feebas", "water", 2,  11,  2,  4,  4,  4), //CR -2
+		new create_character("Horsea", "water", 5,  8,  7,  6,  6,  6), //CR -1
+		new create_character("Shellder", "water", 9,  5,  9,  5,  5,  5), //CR -1
+		new create_character("Poliwag", "water", 7,  12,  5,  5,  5,  5), //CR -1
+		new create_character("Krabby", "water", 15,  7,  8,  3,  3,  3), //CR -1
+		new create_character("Tympole", "water", 7,  9,  6,  6,  6,  6), //CR -1
+		new create_character("Corphish", "water", 11,  5,  7,  6,  6,  6), //CR -1
+		new create_character("Oshawott", "water", 7,  6,  7,  7,  7,  7), //CR -1
+		new create_character("Totodile", "water", 9,  6,  8,  6,  6,  6), //CR -1
+		new create_character("Shellos", "water", 6,  4,  8,  8,  8,  8), //CR -1
+		new create_character("Mudkip", "water", 10,  5,  7,  7,  7,  7), //CR -1
+		new create_character("Squirtle", "water", 6,  6,  7,  8,  8,  8), //CR -1
+		new create_character("Piplup", "water", 7,  5,  7,  8,  8,  8), //CR -1
+		new create_character("Goldeen", "water", 9,  9,  7,  6,  6,  6), //CR -1
+		new create_character("Popplio", "water", 7,  5,  7,  8,  8,  8), //CR -1
+		new create_character("Remoraid", "water", 9,  9,  5,  7,  7,  7), //CR -1
+		new create_character("Froakie", "water", 8,  10,  5,  7,  7,  7), //CR -1
+		new create_character("Panpour", "water", 7,  9,  7,  7,  7,  7), //CR -1
+		new create_character("Seel", "water", 6,  6,  8,  8,  8,  8), //CR -1
+		new create_character("Finneon", "water", 7,  9,  7,  7,  7,  7), //CR -1
+		new create_character("Psyduck", "water", 7,  7,  7,  8,  8,  8), //CR -1
+		new create_character("Luvdisc", "water", 4,  13,  7,  7,  7,  7), //CR -1
+		new create_character("Buizel", "water", 9,  12,  6,  6,  6,  6), //CR -1
+		new create_character("Clauncher", "water", 7,  6,  8,  8,  8,  8), //CR -1
+		new create_character("Staryu", "water", 6,  12,  6,  8,  8,  8), //CR -1
+		new create_character("Clamperl", "water", 9,  4,  8,  9,  9,  9), //CR -1
+		new create_character("Wailmer", "water", 10,  8,  11,  7,  7,  7), //CR -1
+		new create_character("Poliwhirl", "water", 9,  12,  9,  7,  7,  7), //CR -1
+		new create_character("Croconaw", "water", 11,  8,  10,  8,  8,  8), //CR -1
+		new create_character("Pyukumuku", "water", 8,  0,  13,  11,  11,  11), //CR -1
+		new create_character("Alomomola", "water", 10,  9,  17,  6,  6,  6), //CR -1
+		new create_character("Wartortle", "water", 9,  8,  9,  10,  10,  10), //CR -1
+		new create_character("Frogadier", "water", 9,  13,  7,  9,  9,  9), //CR -1
+		new create_character("Dewott", "water", 10,  8,  9,  10,  10,  10), //CR -1
+		new create_character("Prinplup", "water", 9,  7,  9,  11,  11,  11), //CR -1
+		new create_character("Brionne", "water", 9,  7,  9,  12,  12,  12), //CR 0
+		new create_character("Seadra", "water", 9,  12,  10,  10,  10,  10), //CR 0
+		new create_character("Kingler", "water", 18,  10,  12,  7,  7,  7), //CR 0
+		new create_character("Seaking", "water", 13,  9,  10,  10,  10,  10), //CR 0
+		new create_character("Wailord", "water", 12,  8,  15,  9,  9,  9), //CR 0
+		new create_character("Basculin", "water", 13,  14,  9,  9,  9,  9), //CR 0
+		new create_character("Lumineon", "water", 9,  13,  10,  11,  11,  11), //CR 0
+		new create_character("Phione", "water", 11,  11,  11,  11,  11,  11), //CR 0
+		new create_character("Octillery", "water", 15,  6,  10,  12,  12,  12), //CR 0
+		new create_character("Huntail", "water", 14,  7,  11,  12,  12,  12), //CR 0
+		new create_character("Floatzel", "water", 15,  16,  10,  9,  9,  9), //CR 0
+		new create_character("Gorebyss", "water", 12,  7,  11,  13,  13,  13), //CR 0
+		new create_character("Simipour", "water", 14,  14,  9,  11,  11,  11), //CR 0
+		new create_character("Golduck", "water", 11,  12,  11,  12,  12,  12), //CR 0
+		new create_character("Politoed", "water", 10,  10,  11,  13,  13,  13), //CR 0
+		new create_character("Clawitzer", "water", 10,  8,  11,  14,  14,  14), //CR 0
+		new create_character("Samurott", "water", 14,  10,  12,  12,  12,  12), //CR 0
+		new create_character("Feraligatr", "water", 15,  11,  13,  11,  11,  11), //CR 0
+		new create_character("Vaporeon", "water", 9,  9,  13,  14,  14,  14), //CR 0
+		new create_character("Milotic", "water", 8,  11,  12,  16,  16,  16), //CR 0
+		new create_character("Suicune", "water", 10,  12,  15,  14,  14,  14), //CR 0
+		new create_character("Manaphy", "water", 14,  14,  14,  14,  14,  14), //CR 1
+		new create_character("Blastoise", "water", 14,  11,  14,  17,  17,  17), //CR 1
+		new create_character("Wishiwashi", "water", 20,  4,  12,  19,  19,  19), //CR 1
+		new create_character("Kyogre", "water", 21,  12,  13,  24,  24,  24), //CR 2
+		new create_character("Dewpider", "water bug", 5,  3,  6,  8,  8,  8), //CR -1
+		new create_character("Araquanid", "water bug", 10,  6,  11,  13,  13,  13), //CR 0
+		new create_character("Carvanha", "water dark", 12,  9,  4,  6,  6,  6), //CR -1
+		new create_character("Crawdaunt", "water dark", 17,  7,  10,  10,  10,  10), //CR 0
+		new create_character("Sharpedo", "water dark", 20,  15,  10,  12,  12,  12), //CR 0
+		new create_character("Greninja", "water dark", 20,  18,  9,  16,  16,  16), //CR 1
+		new create_character("Kingdra", "water dragon", 13,  12,  12,  13,  13,  13), //CR 0
+		new create_character("Palkia", "water dragon", 17,  14,  13,  19,  19,  19), //CR 1
+		new create_character("Chinchou", "water electric", 5,  9,  8,  8,  8,  8), //CR -1
+		new create_character("Lanturn", "water electric", 8,  9,  13,  10,  10,  10), //CR 0
+		new create_character("Marill", "water fairy", 2,  5,  8,  5,  5,  5), //CR -2
+		new create_character("Azumarill", "water fairy", 7,  7,  12,  10,  10,  10), //CR -1
+		new create_character("Primarina", "water fairy", 10,  8,  11,  17,  17,  17), //CR 0
+		new create_character("Tapu Fini", "water fairy", 10,  12,  13,  16,  16,  16), //CR 0
+		new create_character("Poliwrath", "water fighting", 13,  10,  13,  11,  11,  11), //CR 0
+		new create_character("Keldeo", "water fighting", 10,  15,  12,  15,  15,  15), //CR 0
+		new create_character("Wingull", "water flying", 4,  12,  5,  6,  6,  6), //CR -1
+		new create_character("Ducklett", "water flying", 6,  7,  8,  6,  6,  6), //CR -1
+		new create_character("Mantyke", "water flying", 2,  7,  6,  12,  12,  12), //CR -1
+		new create_character("Pelipper", "water flying", 7,  9,  11,  11,  11,  11), //CR 0
+		new create_character("Swanna", "water flying", 12,  14,  9,  10,  10,  10), //CR 0
+		new create_character("Mantine", "water flying", 5,  10,  11,  15,  15,  15), //CR 0
+		new create_character("Gyarados", "water flying", 22,  11,  14,  14,  14,  14), //CR 1
+		new create_character("Frillish", "water ghost", 5,  5,  7,  10,  10,  10), //CR -1
+		new create_character("Jellicent", "water ghost", 8,  8,  12,  13,  13,  13), //CR 0
+		new create_character("Lotad", "water grass", 4,  4,  5,  6,  6,  6), //CR -2
+		new create_character("Lombre", "water grass", 7,  7,  7,  9,  9,  9), //CR -1
+		new create_character("Ludicolo", "water grass", 10,  10,  10,  13,  13,  13), //CR 0
+		new create_character("Wooper", "water ground", 6,  2,  7,  3,  3,  3), //CR -2
+		new create_character("Barboach", "water ground", 6,  8,  6,  6,  6,  6), //CR -1
+		new create_character("Palpitoad", "water ground", 9,  9,  9,  8,  8,  8), //CR -1
+		new create_character("Marshtomp", "water ground", 12,  7,  10,  9,  9,  9), //CR -1
+		new create_character("Quagsire", "water ground", 12,  5,  12,  9,  9,  9), //CR -1
+		new create_character("Whiscash", "water ground", 11,  8,  13,  10,  10,  10), //CR 0
+		new create_character("Gastrodon", "water ground", 11,  5,  12,  12,  12,  12), //CR 0
+		new create_character("Seismitoad", "water ground", 13,  10,  12,  11,  11,  11), //CR 0
+		new create_character("Swampert", "water ground", 21,  10,  15,  14,  14,  14), //CR 1
+		new create_character("Dewgong", "water ice", 10,  10,  12,  11,  11,  11), //CR 0
+		new create_character("Cloyster", "water ice", 13,  10,  16,  9,  9,  9), //CR 0
+		new create_character("Lapras", "water ice", 12,  8,  15,  12,  12,  12), //CR 0
+		new create_character("Tentacool", "water poison", 5,  10,  5,  10,  10,  10), //CR -1
+		new create_character("Qwilfish", "water poison", 13,  12,  10,  7,  7,  7), //CR -1
+		new create_character("Tentacruel", "water poison", 10,  14,  10,  14,  14,  14), //CR 0
+		new create_character("Slowpoke", "water psychic", 9,  2,  11,  5,  5,  5), //CR -1
+		new create_character("Bruxish", "water psychic", 15,  13,  9,  10,  10,  10), //CR 0
+		new create_character("Slowking", "water psychic", 10,  4,  12,  15,  15,  15), //CR 0
+		new create_character("Starmie", "water psychic", 10,  16,  10,  13,  13,  13), //CR 0
+		new create_character("Slowbro", "water psychic", 10,  4,  19,  15,  15,  15), //CR 0
+		new create_character("Tirtouga", "water rock", 11,  3,  11,  7,  7,  7), //CR -1
+		new create_character("Corsola", "water rock", 7,  5,  11,  11,  11,  11), //CR -1
+		new create_character("Relicanth", "water rock", 12,  7,  16,  7,  7,  7), //CR -1
+		new create_character("Carracosta", "water rock", 15,  4,  14,  10,  10,  10), //CR 0
+		new create_character("Empoleon", "water steel", 12,  8,  12,  15,  15,  15) //CR 0			
+	];
+	let skylanders = [
 		new create_character("Bash", "Earth", 17, 6, 18, 4, 4, 4), //CR -1
 		new create_character("Voodood", "Magic", 15, 12, 10, 7, 7, 7), //CR -1
 		new create_character("Elite Voodood", "Magic", 15, 12, 10, 7, 7, 7), //CR -1
