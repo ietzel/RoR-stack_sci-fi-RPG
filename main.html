@@ -365,6 +365,75 @@
 		new create_character("Baby Peach", "Mariokart", 16, 49, 49, 1, 1, 1), //CR 2
 		new create_character("Baby Mario", "Mariokart", 1, 49, 81, 1, 1, 1) //CR 3	
 	];
+	let pathfinder = [
+		new create_character("Barizou Demon ", "Demon", 10, 15, 10, 7, 7, 7), //CR -1
+		new create_character("Azizou Demon ", "Demon", 14, 15, 11, 9, 9, 9), //CR 0
+		new create_character("Geruzou Demon ", "Demon", 12, 15, 12, 8, 8, 8), //CR 0
+		new create_character("Lesser Ooze Demon ", "Demon", 16, 10, 16, 10, 10, 10), //CR 0
+		new create_character("Skitterdark Demon ", "Demon", 8, 17, 16, 11, 11, 11), //CR 0
+		new create_character("Alu-Demon ", "Demon", 17, 15, 15, 15, 15, 15), //CR 1
+		new create_character("Balban Demon ", "Demon", 26, 14, 23, 10, 10, 10), //CR 1
+		new create_character("Cambion Demon ", "Demon", 18, 15, 17, 15, 15, 15), //CR 1
+		new create_character("Chaaor Demon ", "Demon", 26, 17, 22, 12, 12, 12), //CR 1
+		new create_character("Demonic Deadfall Scorpion ", "Demon", 31, 15, 22, 13, 13, 13), //CR 1
+		new create_character("Demonic Mist ", "Demon", 10, 21, 18, 13, 13, 13), //CR 1
+		new create_character("Gallu-Demon ", "Demon", 22, 11, 18, 14, 14, 14), //CR 1
+		new create_character("Greater Ooze Demon ", "Demon", 24, 10, 26, 12, 12, 12), //CR 1
+		new create_character("Greruor Demon ", "Demon", 24, 17, 22, 14, 14, 14), //CR 1
+		new create_character("Mehrim Demon ", "Demon", 21, 14, 10, 13, 13, 13), //CR 1
+		new create_character("Mezzalorn Demon ", "Demon", 18, 21, 23, 15, 15, 15), //CR 1
+		new create_character("Nabasu Demonling ", "Demon", 19, 13, 20, 15, 15, 15), //CR 1
+		new create_character("Nerizo Demon ", "Demon", 23, 15, 25, 14, 14, 14), //CR 1
+		new create_character("Shadow Demon ", "Demon", 10, 18, 17, 15, 15, 15), //CR 1
+		new create_character("Shadow Demon ", "Demon", 10, 18, 17, 15, 15, 15), //CR 1
+		new create_character("Stirge Demon ", "Demon", 22, 17, 23, 14, 14, 14), //CR 1
+		new create_character("Aeshma Demon ", "Demon", 23, 18, 27, 16, 16, 16), //CR 2
+		new create_character("Choronzon Demon ", "Demon", 33, 15, 29, 14, 14, 14), //CR 2
+		new create_character("Daraka Demon ", "Demon", 28, 11, 27, 18, 18, 18), //CR 2
+		new create_character("Demonic Knight ", "Demon", 22, 13, 20, 18, 18, 18), //CR 2
+		new create_character("Mallor Demon ", "Demon", 27, 15, 30, 17, 17, 17), //CR 2
+		new create_character("Nabasu Demon ", "Demon", 25, 13, 26, 15, 15, 15), //CR 2
+		new create_character("Nysrock Demon ", "Demon", 24, 14, 26, 17, 17, 17), //CR 2
+		new create_character("Shrroth Demon ", "Demon", 28, 10, 27, 16, 16, 16), //CR 2
+		new create_character("Gharros Demon ", "Demon", 31, 18, 30, 18, 18, 18), //CR 3
+		new create_character("Shax the Demon Lord ", "Demon", 30, 39, 40, 30, 30, 30), //CR 5
+		new create_character("Nupperibo Devil ", "Devil", 10, 10, 10, 8, 8, 8), //CR -1
+		new create_character("Bearded Devil ", "Devil", 19, 15, 19, 9, 9, 9), //CR 0
+		new create_character("Devil Dog ", "Devil", 15, 15, 15, 9, 9, 9), //CR 0
+		new create_character("Devilfish ", "Devil", 17, 17, 16, 7, 7, 7), //CR 0
+		new create_character("Hellstoker Devil ", "Devil", 15, 13, 15, 8, 8, 8), //CR 0
+		new create_character("Kelp Devil ", "Devil", 26, 10, 19, 9, 9, 9), //CR 0
+		new create_character("Lesser Host Devil ", "Devil", 13, 17, 14, 8, 8, 8), //CR 0
+		new create_character("Screaming Devilkin ", "Devil", 10, 17, 10, 9, 9, 9), //CR 0
+		new create_character("Amaimon Devil ", "Devil", 24, 18, 21, 13, 13, 13), //CR 1
+		new create_character("Blood Reaver Devil ", "Devil", 23, 15, 21, 14, 14, 14), //CR 1
+		new create_character("Devilbound Sorcerer ", "Devil", 8, 10, 18, 17, 17, 17), //CR 1
+		new create_character("Greater Host Devil ", "Devil", 18, 19, 16, 11, 11, 11), //CR 1
+		new create_character("Host Devil ", "Devil", 18, 19, 16, 11, 11, 11), //CR 1
+		new create_character("Sandpoint Devil ", "Devil", 22, 17, 19, 13, 13, 13), //CR 1
+		new create_character("Tormentor Devil ", "Devil", 18, 18, 18, 14, 14, 14), //CR 1
+		new create_character("Warmonger Devil ", "Devil", 20, 17, 19, 15, 15, 15), //CR 1
+		new create_character("Barbed Devil ", "Devil", 23, 23, 22, 15, 15, 15), //CR 2
+		new create_character("Bone Devil ", "Devil", 21, 21, 20, 16, 16, 16), //CR 2
+		new create_character("Contract Devil ", "Devil", 17, 25, 20, 23, 23, 23), //CR 2
+		new create_character("Greater Possession Devil ", "Devil", 10, 26, 24, 19, 19, 19), //CR 2
+		new create_character("Drowning Devil ", "Devil", 20, 25, 23, 18, 18, 18), //CR 2
+		new create_character("Erinyes Devil ", "Devil", 20, 23, 21, 17, 17, 17), //CR 2
+		new create_character("Flayer Devil ", "Devil", 29, 15, 29, 14, 14, 14), //CR 2
+		new create_character("Ghaddar Devil ", "Devil", 33, 21, 24, 14, 14, 14), //CR 2
+		new create_character("Heresy Devil ", "Devil", 24, 8, 24, 21, 21, 21), //CR 2
+		new create_character("Lilin Devil ", "Devil", 16, 16, 20, 19, 19, 19), //CR 2
+		new create_character("Mythic Bone Devil ", "Devil", 25, 21, 20, 16, 16, 16), //CR 2
+		new create_character("Belier Devil ", "Devil", 24, 23, 25, 25, 25, 25), //CR 3
+		new create_character("Handmaiden Devil ", "Devil", 24, 25, 25, 21, 21, 21), //CR 3
+		new create_character("Horned Devil ", "Devil", 31, 27, 28, 19, 19, 19), //CR 3
+		new create_character("Ice Devil ", "Devil", 23, 21, 22, 22, 22, 22), //CR 3
+		new create_character("Mythic Ice Devil ", "Devil", 25, 21, 22, 23, 23, 23), //CR 3
+		new create_character("Advodaza Devil ", "Devil", 34, 25, 30, 24, 24, 24), //CR 4
+		new create_character("Apostate Devil ", "Devil", 28, 31, 28, 24, 24, 24), //CR 4
+		new create_character("Immolation Devil ", "Devil", 34, 26, 35, 23, 23, 23), //CR 4
+		new create_character("Nemesis Devil ", "Devil", 34, 25, 30, 24, 24, 24), //CR 4
+	];
 	let pokemon = [
 		new create_character("Caterpie", "bug", 4,  6,  5,  2,  2,  2), //CR -2
 		new create_character("Wurmple", "bug", 6,  2,  5,  3,  3,  3), //CR -2
