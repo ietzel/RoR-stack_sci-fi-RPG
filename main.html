@@ -1639,7 +1639,7 @@
 	let text = "The Journey Begins.\n"
 	let r, s;
 	let hexagons, player_hexagon;
-	let playerX = 0;
+	let playerX = 0, playerY = 0;
 	let noiseScale = 1/16; 
 	let ocean = "#000D4E"; //Deep Sea
 	let ocean2 = "#008dc4"; //Lakes
@@ -1663,11 +1663,11 @@
   		} else if (keyCode === RIGHT_ARROW) {
     			playerX++;
   		} else if (keyCode === UP_ARROW) {
-    			playerX++;
+    			playerY--;
   		} else if (keyCode === DOWN_ARROW) {
-    			playerX--;
+    			playerY++;
   		} else if (keyCode === ENTER) {	
-			text += hexagons[playerX].x + ", " + hexagons[playerX].y + ", " + hexagons[playerX].c;
+			text += stories[playerX];
 			encounter_number = Math.random()*4;
 			if(encounter_number >= 3) {
 				encounter(10);
