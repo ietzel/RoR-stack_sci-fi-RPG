@@ -22,7 +22,7 @@
     </div>
     <div id="feed" align="right">
 	    <label>Events:</label>
-	    <textarea readonly class="scrollabletextbox" name="note">The Journey Begins:</textarea>
+	    <textarea id="textfeed" readonly class="scrollabletextbox" name="note">The Journey Begins:</textarea>
     </div>
     <div id="race" align="center">
 	<label for="races">Choose a race:</label>
@@ -1672,8 +1672,7 @@
 			if(encounter_number >= 3) {
 				encounter(10);
 			}
-			document.getElementById("feed").appendChild("<br>" + "<p>" + text + "</p>");
-			//document.getElementById("feed").innerHTML = text;
+			document.getElementById("textfeed").innerHTML += text;
 		}
   	}
 	    
