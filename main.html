@@ -1859,13 +1859,25 @@
 		}
 
 		encounter(level) {
+			playerIndex = 0;
+			enemyIndex = 0;
+			playerstarts = false;
 			index = Math.floor(npcs.length*Math.random())
 			if(index > npcs.length - 1) {
 				index = npcs.length - 1;
 			}
-			enemy = npcs[index]
+			enemy = npcs[index];
+			if(player.perception > enemy.perception) {
+				playerstarts = true;
+			} 
 			text += "you find " + enemy.name;
 			document.getElementById("feed").innerHTML = text;
+			while(enemy.hp > -1) {
+				if(playerstarts) {
+					playerprompt();
+					
+				}	
+			}
 		}
 	}
     </script>
