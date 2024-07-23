@@ -1861,34 +1861,51 @@
 		    fill(this.c)
 		    hexagon(this.x, this.y, this.r);
 		}
-
-		encounter(level) {
-			playerIndex = 0, enemyIndex = 4;
-			playerstarts = false;
-			index = Math.floor(npcs.length*Math.random());
-			if(index > npcs.length - 1) {
-				index = npcs.length - 1;
-			}
-			enemy = npcs[index];
-			characters[0] = new create_character("Player Character", "n/a", 10, 10, 10, 10, 10, 10);
-			characters[0].race = document.getElementById("race").value;
-			characters[0].class = document.getElementById("class").value;
-			characters[1] = enemy;
-			if(player.perception > enemy.perception) {
-				playerstarts = true;
-			} 
-			text += "you find " + enemy.name;
-			document.getElementById("feed").innerHTML = text;
-			while(enemy.hp > -1) {
-				if(playerstarts) {
-					playerprompt();
-					
-				} else {
-					
-					playerprompt();
-				}	
-			}
+	}
+	encounter(level) {
+		playerIndex = 0, enemyIndex = 4;
+		playerstarts = false;
+		index = Math.floor(npcs.length*Math.random());
+		if(index > npcs.length - 1) {
+			index = npcs.length - 1;
 		}
+		enemy = npcs[index];
+		characters[0] = new create_character("Player Character", "n/a", 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4));
+		characters[0].race = document.getElementById("race").value;
+		characters[0].str += characters[0].race.str;
+		characters[0].dex += characters[0].race.dex;
+		characters[0].con += characters[0].race.con;
+		characters[0].int += characters[0].race.int;
+		characters[0].wis += characters[0].race.wis;
+		characters[0].cha += characters[0].race.cha;
+		characters[0].class = document.getElementById("class").value;
+		characters[1] = enemy;
+		if(player.perception > enemy.perception) {
+			playerstarts = true;
+		} 
+		text += "you find " + enemy.name;
+		document.getElementById("feed").innerHTML = text;
+		while(enemy.hp > -1) {
+			if(playerstarts) {
+				playerprompt();
+				
+			} else {
+				
+				playerprompt();
+			}	
+		}
+	}
+	playerprompt() {
+		if(playerIndex < enemyIndex) {
+			playerIndex += characters[0].speed/5;
+		} else if(playerIndex > enemyIndex) {
+			playerIndex -= characters[0].speed/5;
+		} 
+		if(playerIndex == enemyIndex) {
+			playerIndex--;
+		}
+		playerstat = max(characters[0].str, characters[0].dex, characters[0].int, characters[0].wis, characters[0].cha);
+		characters[0].damage(playerstat, characters[0].int, characters[0].perception, characters[0].intimidation, characters[1], ranged)
 	}
     </script>
   </body>  
