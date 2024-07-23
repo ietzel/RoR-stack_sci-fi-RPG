@@ -134,6 +134,8 @@
 	function create_character(name, category, str, dex, con, int, wis, cha) {
 		this.name = name;	
 		this.category = category;
+		this.race = "n/a";
+		this.class = "n/a";
 		this.hp = con*Math.floor(((str, dex, con, int, wis, cha)-60)/24); 
 		if(this.hp < 1) {
 			this.hp = 1;
@@ -182,7 +184,8 @@
 		    if(getDist(this.x, target.x) <= size*1.5) {
 		      if((accuracystat-crouch_mod+frightened_mod+10) >= (getModOfStat(target.dex)-dexpenalty+t_crouch_mod)) {
 		        if(((accuracystat*2)+frightened_mod) >= getModOfStat(target.con)) {
-		          characters = splice([indexOf(target), 1]);
+		          
+				= splice([indexOf(target), 1]);
 		        }
 		      } else {
 		        if(((accuracystat-cover_mod)+frightened_mod) >= (getModOfStat(target.dex)-dexpenalty+t_crouch_mod)) {
@@ -1643,6 +1646,7 @@
 	let text = "The Journey Begins.\n"
 	let r, s;
 	let hexagons, player_hexagon;
+	let characters = [];
 	let playerX = 0, playerY = 0;
 	let noiseScale = 1/16; 
 	let ocean = "#000D4E"; //Deep Sea
@@ -1666,10 +1670,10 @@
     			playerX--;
   		} else if (keyCode === RIGHT_ARROW) {
     			playerX++;
-  		} else if (keyCode === UP_ARROW) {
+  		/*} else if (keyCode === UP_ARROW) {
     			playerY--;
   		} else if (keyCode === DOWN_ARROW) {
-    			playerY++;
+    			playerY++;*/
   		} else if (keyCode === ENTER) {	
 			text += stories[playerX];
 			encounter_number = Math.random()*4;
@@ -1859,14 +1863,17 @@
 		}
 
 		encounter(level) {
-			playerIndex = 0;
-			enemyIndex = 0;
+			playerIndex = 0, enemyIndex = 4;
 			playerstarts = false;
-			index = Math.floor(npcs.length*Math.random())
+			index = Math.floor(npcs.length*Math.random());
 			if(index > npcs.length - 1) {
 				index = npcs.length - 1;
 			}
 			enemy = npcs[index];
+			characters[0] = new create_character("Player Character", "n/a", 10, 10, 10, 10, 10, 10);
+			characters[0].race = document.getElementById("race").value;
+			characters[0].class = document.getElementById("class").value;
+			characters[1] = enemy;
 			if(player.perception > enemy.perception) {
 				playerstarts = true;
 			} 
@@ -1876,6 +1883,9 @@
 				if(playerstarts) {
 					playerprompt();
 					
+				} else {
+					
+					playerprompt();
 				}	
 			}
 		}
