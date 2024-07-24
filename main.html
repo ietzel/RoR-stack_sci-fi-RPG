@@ -1888,9 +1888,9 @@
 		while(enemy.hp > -1) {
 			if(playerstarts) {
 				playerprompt();
-				
+				enemyprompt();
 			} else {
-				
+				enemyprompt();
 				playerprompt();
 			}	
 		}
@@ -1906,6 +1906,18 @@
 		}
 		playerstat = max(characters[0].str, characters[0].dex, characters[0].int, characters[0].wis, characters[0].cha);
 		characters[0].damage(playerstat, characters[0].int, characters[0].perception, characters[0].intimidation, characters[1], ranged)
+	}
+	enemyprompt() {
+		if(playerIndex < enemyIndex) {
+			enemyIndex -= characters[1].speed/5;
+		} else if(playerIndex > enemyIndex) {
+			enemyIndex += characters[1].speed/5;
+		} 
+		if(playerIndex == enemyIndex) {
+			enemyIndex++;
+		}
+		enemystat = max(characters[1].str, characters[1].dex, characters[1].int, characters[1].wis, characters[1].cha);
+		characters[1].damage(playerstat, characters[1].int, characters[1].perception, characters[1].intimidation, characters[0], ranged)
 	}
     </script>
   </body>  
