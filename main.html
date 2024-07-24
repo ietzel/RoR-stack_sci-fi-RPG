@@ -1885,14 +1885,16 @@
 		} 
 		text += "you find " + enemy.name;
 		document.getElementById("feed").innerHTML = text;
-		while(enemy.hp > -1) {
-			if(playerstarts) {
-				playerprompt();
-				enemyprompt();
-			} else {
-				enemyprompt();
-				playerprompt();
-			}	
+		while(player.hp > -1) {
+			while(enemy.hp > -1) {
+				if(playerstarts) {
+					playerprompt();
+					enemyprompt();
+				} else {
+					enemyprompt();
+					playerprompt();
+				}	
+			}
 		}
 	}
 	playerprompt() {
