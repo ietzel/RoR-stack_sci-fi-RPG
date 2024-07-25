@@ -173,22 +173,25 @@
 		  }
 		  if((this.dex+this.ment+frightened_mod)>=(this.ofns*2)) {
 		    if((this.ment>target.ment) && (this.sped>target.ment)) {
-		      dexpenalty = target.dex;
+		      dexpenalty = getModOfStat(target.dex);
 		    }
 		  } else {
 		    if(this.str+frightened_mod>target.ment) {
-		      dexpenalty = target.dex;
+		      dexpenalty = getModOfStat(target.dex);
 		    }
 		  }
 		  if(!ranged) {
 		    if(getDist(this.x, target.x) <= size*1.5) {
 		      if((accuracystat-crouch_mod+frightened_mod+10) >= (getModOfStat(target.dex)-dexpenalty+t_crouch_mod)) {
+			message = health_statuses[Math.floor(healthstatuses.length*math.random)];
+			document.getElementById("textfeed").innerHTML += target.name + message;
 		        if(((accuracystat*2)+frightened_mod) >= getModOfStat(target.con)) {
-		          
-				= splice([indexOf(target), 1]);
+			  characters = splice([indexOf(target), 1]);
 		        }
 		      } else {
 		        if(((accuracystat-cover_mod)+frightened_mod) >= (getModOfStat(target.dex)-dexpenalty+t_crouch_mod)) {
+			  message = health_statuses[Math.floor(healthstatuses.length*math.random)];
+			  document.getElementById("textfeed").innerHTML += target.name + message;
 		          if((accuracystat+frightened_mod) >= getModOfStat(target.con)) {
 		            characters = splice([indexOf(target), 1]);
 		          }
@@ -197,11 +200,15 @@
 		    }
 		  } else if(getDist(this.x, target.x) <= size*1.5) {
 		    if((accuracystat-crouch_mod+frightened_mod+10) >= (getModOfStat(target.sped)-dexpenalty+(t_crouch_mod*-1))) {
+			message = health_statuses[Math.floor(healthstatuses.length*math.random)];
+			document.getElementById("textfeed").innerHTML += target.name + message;
 		        if(((accuracystat*2)+frightened_mod) >= getModOfStat(target.dfse)) {
 		          characters = splice([indexOf(target), 1]);
 		        }
 		      } else {
 		        if((accuracystat-+frightened_modcover_mod) >= (getModOfStat(target.sped)-dexpenalty+(t_crouch_mod*-1))) {
+			  message = health_statuses[Math.floor(healthstatuses.length*math.random)];
+			  document.getElementById("textfeed").innerHTML += target.name + message;
 		          if((accuracystat+frightened_mod) >= getModOfStat(target.dfse)) {
 		            characters = splice([indexOf(target), 1]);
 		          }
