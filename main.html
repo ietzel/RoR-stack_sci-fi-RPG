@@ -347,14 +347,13 @@
 		new create_check("Society (recall knowledge)", "", "", 3),
 		new create_check("Stealth", "", "", 1),
 		new create_check("Survival (sense direction + subsist)", "", "", 4),
-		new create_check("Thievery (disable device)", "", "", 1)
-	];
-	let BTD = [
+		new create_check("Thievery (disable device)", "", "", 1),
+		let npcs = [
+		//BTD
 		new create_character("MOAB", "Balloons Tower Defense", 0, 0, 0, 0, 0, 0), //CR -3
 		new create_character("BFB", "Balloons Tower Defense", 1, 1, 1, 1, 1, 1), //CR -3
-		new create_character("ZOMG", "Balloons Tower Defense", 11, 11, 11, 11, 11, 11) //CR 0
-	];
-	let mariokart = [
+		new create_character("ZOMG", "Balloons Tower Defense", 11, 11, 11, 11, 11, 11), //CR 0
+		//mariokart
 		new create_character("Bowser Jr.", "Mariokart", 1, 1, 1, 16, 16, 1), //CR -1
 		new create_character("Daisy", "Mariokart", 25, 9, 1, 16, 1, 1), //CR -1
 		new create_character("Funky Kong", "Mariokart", 25, 1, 1, 1, 16, 1), //CR -1
@@ -381,9 +380,8 @@
 		new create_character("Wario", "Mariokart", 1, 1, 16, 49, 16, 1), //CR 1
 		new create_character("Baby Luigi", "Mariokart", 36, 1, 81, 1, 1, 1), //CR 2
 		new create_character("Baby Peach", "Mariokart", 16, 49, 49, 1, 1, 1), //CR 2
-		new create_character("Baby Mario", "Mariokart", 1, 49, 81, 1, 1, 1) //CR 3	
-	];
-	let pathfinder = [
+		new create_character("Baby Mario", "Mariokart", 1, 49, 81, 1, 1, 1), //CR 3	
+		//pathfinder
 		new create_character("Barizou Demon ", "Demon", 10, 15, 10, 7, 7, 7), //CR -1
 		new create_character("Azizou Demon ", "Demon", 14, 15, 11, 9, 9, 9), //CR 0
 		new create_character("Geruzou Demon ", "Demon", 12, 15, 12, 8, 8, 8), //CR 0
@@ -450,9 +448,8 @@
 		new create_character("Advodaza Devil ", "Devil", 34, 25, 30, 24, 24, 24), //CR 4
 		new create_character("Apostate Devil ", "Devil", 28, 31, 28, 24, 24, 24), //CR 4
 		new create_character("Immolation Devil ", "Devil", 34, 26, 35, 23, 23, 23), //CR 4
-		new create_character("Nemesis Devil ", "Devil", 34, 25, 30, 24, 24, 24) //CR 4
-	];
-	let pokemon = [
+		new create_character("Nemesis Devil ", "Devil", 34, 25, 30, 24, 24, 24), //CR 4
+		//pokemon
 		new create_character("Caterpie", "bug", 4,  6,  5,  2,  2,  2), //CR -2
 		new create_character("Wurmple", "bug", 6,  2,  5,  3,  3,  3), //CR -2
 		new create_character("Metapod", "bug", 2,  4,  7,  3,  3,  3), //CR -2
@@ -1253,9 +1250,8 @@
 		new create_character("Corsola", "water rock", 7,  5,  11,  11,  11,  11), //CR -1
 		new create_character("Relicanth", "water rock", 12,  7,  16,  7,  7,  7), //CR -1
 		new create_character("Carracosta", "water rock", 15,  4,  14,  10,  10,  10), //CR 0
-		new create_character("Empoleon", "water steel", 12,  8,  12,  15,  15,  15) //CR 0			
-	];
-	let skylanders = [
+		new create_character("Empoleon", "water steel", 12,  8,  12,  15,  15,  15), //CR 0			
+		//skylanders
 		new create_character("Bash", "Earth", 17, 6, 18, 4, 4, 4), //CR -1
 		new create_character("Voodood", "Magic", 15, 12, 10, 7, 7, 7), //CR -1
 		new create_character("Elite Voodood", "Magic", 15, 12, 10, 7, 7, 7), //CR -1
@@ -1695,18 +1691,18 @@
 		this.perception_penalty = perception_penalty;
 	}
 	weather_events = [ //-perception check penalties
-		-1,//Fog 
-		-1,//Heavy_Downpour 
-		-1,//Cold_Snap 
-		-1,//Windstorm 
-		-2,//Severe_Hailstorm 
-		-2,//Blizzard
-		-3,//Supernatural_Storm 
-		-3,//Flash_Flood
-		-4,//Wildfire 
-		-5,//Subsidence 
-		-6,//Thunderstorm 
-		-8//Tornado
+		-1, //Fog 
+		-1, //Heavy_Downpour 
+		-1, //Cold_Snap 
+		-1, //Windstorm 
+		-2, //Severe_Hailstorm 
+		-2, //Blizzard
+		-3, //Supernatural_Storm 
+		-3, //Flash_Flood
+		-4, //Wildfire 
+		-5, //Subsidence 
+		-6, //Thunderstorm 
+		-8 //Tornado
 	];
 		
 	function random_weather_event() {
@@ -1914,7 +1910,7 @@
 			playerIndex--;
 		}
 		playerstat = max(characters[0].str, characters[0].dex, characters[0].int, characters[0].wis, characters[0].cha);
-		characters[0].damage(playerstat, characters[0].int, characters[0].perception, characters[0].intimidation, characters[1], ranged)
+		characters[0].damage(playerstat, characters[0].int, characters[0].perception, characters[0].intimidation, characters[1], ranged);
 	}
 	enemyprompt() {
 		if(playerIndex < enemyIndex) {
@@ -1926,7 +1922,7 @@
 			enemyIndex++;
 		}
 		enemystat = max(characters[1].str, characters[1].dex, characters[1].int, characters[1].wis, characters[1].cha);
-		characters[1].damage(playerstat, characters[1].int, characters[1].perception, characters[1].intimidation, characters[0], ranged)
+		characters[1].damage(playerstat, characters[1].int, characters[1].perception, characters[1].intimidation, characters[0], ranged);
 	}
     </script>
   </body>  
