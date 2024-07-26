@@ -131,12 +131,24 @@
 	</select>
     </div>
     <script>
+	function roll(n, s) {
+		total = 0;
+		for(int i=0; i<n; i++) {
+			roll = Math.ceil(Math.random()*s);
+			if(roll < 1) {
+				roll = 1;
+			}
+			total += roll;
+		}
+		return total;
+	}
 	function create_character(name, category, str, dex, con, int, wis, cha) {
 		this.name = name;	
 		this.category = category;
 		this.race = "n/a";
 		this.class = "n/a";
-		this.hp = con*Math.floor(((str, dex, con, int, wis, cha)-60)/24); 
+		this.level = Math.floor(((str, dex, con, int, wis, cha)-60)/24);
+		this.hp = this.con*this.level; 
 		if(this.hp < 1) {
 			this.hp = 1;
 		}
@@ -183,16 +195,18 @@
 		  if(!ranged) {
 		    if(getDist(this.x, target.x) <= size*1.5) {
 		      if((accuracystat-crouch_mod+frightened_mod+10) >= (getModOfStat(target.dex)-dexpenalty+t_crouch_mod)) {
-			message = health_statuses[Math.floor(healthstatuses.length*math.random)];
+			target.hp -= roll(Math.floor(this.level/3), 6);
+			message = health_statuses[0][Math.floor(healthstatuses.length*math.random)];
 			document.getElementById("textfeed").innerHTML += target.name + message;
-		        if(((accuracystat*2)+frightened_mod) >= getModOfStat(target.con)) {
+		        if(target.hp < 0) {
 			  characters = splice([indexOf(target), 1]);
 		        }
 		      } else {
 		        if(((accuracystat-cover_mod)+frightened_mod) >= (getModOfStat(target.dex)-dexpenalty+t_crouch_mod)) {
-			  message = health_statuses[Math.floor(healthstatuses.length*math.random)];
+			  target.hp -= roll(Math.floor(this.level/3), 6);
+			  message = health_statuses[0][Math.floor(healthstatuses.length*math.random)];
 			  document.getElementById("textfeed").innerHTML += target.name + message;
-		          if((accuracystat+frightened_mod) >= getModOfStat(target.con)) {
+		          if(target.hp < 0) {
 		            characters = splice([indexOf(target), 1]);
 		          }
 		        }
@@ -200,16 +214,18 @@
 		    }
 		  } else if(getDist(this.x, target.x) <= size*1.5) {
 		    if((accuracystat-crouch_mod+frightened_mod+10) >= (getModOfStat(target.sped)-dexpenalty+(t_crouch_mod*-1))) {
-			message = health_statuses[Math.floor(healthstatuses.length*math.random)];
+			target.hp -= roll(Math.floor(this.level/3), 6);
+			message = health_statuses[0][Math.floor(healthstatuses.length*math.random)];
 			document.getElementById("textfeed").innerHTML += target.name + message;
-		        if(((accuracystat*2)+frightened_mod) >= getModOfStat(target.dfse)) {
+		        if(target.hp < 0) {
 		          characters = splice([indexOf(target), 1]);
 		        }
 		      } else {
 		        if((accuracystat-+frightened_modcover_mod) >= (getModOfStat(target.sped)-dexpenalty+(t_crouch_mod*-1))) {
-			  message = health_statuses[Math.floor(healthstatuses.length*math.random)];
+			  target.hp -= roll(Math.floor(this.level/3), 6);
+			  message = health_statuses[0][Math.floor(healthstatuses.length*math.random)];
 			  document.getElementById("textfeed").innerHTML += target.name + message;
-		          if((accuracystat+frightened_mod) >= getModOfStat(target.dfse)) {
+		          if(target.hp < 0) {
 		            characters = splice([indexOf(target), 1]);
 		          }
 		        }
