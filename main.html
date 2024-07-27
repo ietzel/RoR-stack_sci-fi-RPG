@@ -1930,7 +1930,7 @@
 		if((characters[0].wis + 12) > characters[1].wis) {
 			playerstarts = true;
 		} 
-		text += document.getElementById("nameinput").value + " finds " + enemy.name;
+		text += document.getElementById("nameinput").value + " finds " + characters[1].name;
 		document.getElementById("feed").innerHTML = text;
 		while(player.hp > -1) {
 			while(enemy.hp > -1) {
@@ -1941,6 +1941,9 @@
 					enemyprompt();
 					playerprompt();
 				}	
+				if(enemy.hp < 0) {
+					document.getElementById("feed").innerHTML += characters[1].name + " is defeated.";
+				}
 			}
 		}
 	}
