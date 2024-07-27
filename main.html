@@ -1900,7 +1900,7 @@
 		characters[0].cha += characters[0].race.cha;
 		characters[0].class = document.getElementById("class").value;
 		characters[1] = enemy;
-		if(player.perception > enemy.perception) {
+		if((player.wis + 12) > enemy.wis) {
 			playerstarts = true;
 		} 
 		text += "you find " + enemy.name;
