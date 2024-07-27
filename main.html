@@ -28,6 +28,10 @@
 	    <label>Events:</label>
 	    <textarea id="textfeed" readonly class="scrollabletextbox" name="note">The Journey Begins:</textarea>
     </div>
+    <div id="name" align="center">
+	<p>Choose a name:</p>
+	<input type="text" id="nameinput">
+    </div>
     <div id="race" align="center">
 	<label for="races">Choose a race:</label>
 	<select name="races" id="races">
@@ -1915,7 +1919,7 @@
 			index = npcs.length - 1;
 		}
 		enemy = npcs[index];
-		characters[0] = new create_character("Player Character", "n/a", 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4));
+		characters[0] = new create_character(document.getElementById("nameinput").value, "n/a", 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4));
 		characters[0].race = document.getElementById("race").value;
 		characters[0].str += characters[0].race.str;
 		characters[0].dex += characters[0].race.dex;
@@ -1928,7 +1932,7 @@
 		if((player.wis + 12) > enemy.wis) {
 			playerstarts = true;
 		} 
-		text += "you find " + enemy.name;
+		text += document.getElementById("nameinput").value + " finds " + enemy.name;
 		document.getElementById("feed").innerHTML = text;
 		while(player.hp > -1) {
 			while(enemy.hp > -1) {
