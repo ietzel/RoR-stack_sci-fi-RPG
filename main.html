@@ -1919,12 +1919,12 @@
 		enemy = npcs[index];
 		characters[0] = new create_character(document.getElementById("nameinput").value, "n/a", 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4), 10+(level*4));
 		characters[0].race = document.getElementById("race").value;
-		characters[0].str += characters[0].race.str;
+		/*characters[0].str += characters[0].race.str;
 		characters[0].dex += characters[0].race.dex;
 		characters[0].con += characters[0].race.con;
 		characters[0].int += characters[0].race.int;
 		characters[0].wis += characters[0].race.wis;
-		characters[0].cha += characters[0].race.cha;
+		characters[0].cha += characters[0].race.cha;*/
 		characters[0].class = document.getElementById("class").value;
 		characters[1] = enemy;
 		if((player.wis + 12) > enemy.wis) {
