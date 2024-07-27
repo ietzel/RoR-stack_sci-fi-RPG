@@ -1947,7 +1947,7 @@
 			}
 		}
 	}
-	playerprompt() {
+	function playerprompt() {
 		if(playerIndex < enemyIndex) {
 			playerIndex += characters[0].speed/5;
 		} else if(playerIndex > enemyIndex) {
@@ -1959,7 +1959,7 @@
 		playerstat = max(characters[0].str, characters[0].dex, characters[0].int, characters[0].wis, characters[0].cha);
 		characters[0].damage(playerstat, characters[0].int, characters[0].perception, characters[0].intimidation, characters[1], ranged);
 	}
-	enemyprompt() {
+	function enemyprompt() {
 		if(playerIndex < enemyIndex) {
 			enemyIndex -= characters[1].speed/5;
 		} else if(playerIndex > enemyIndex) {
