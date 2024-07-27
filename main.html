@@ -1725,10 +1725,7 @@
     			playerY++;*/
   		} else if (keyCode === ENTER) {	
 			text += stories[playerX];
-			encounter_number = Math.random()*4;
-			if(encounter_number >= 3) {
-				encounter(10);
-			}
+			encounter(10);
 			document.getElementById("textfeed").innerHTML += text;
 		}
   	}
