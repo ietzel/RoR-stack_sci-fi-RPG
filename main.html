@@ -1927,7 +1927,7 @@
 		characters[0].cha += characters[0].race.cha;*/
 		characters[0].class = document.getElementById("class").value;
 		characters[1] = enemy;
-		if((character[0].wis + 12) > character[1].wis) {
+		if((characters[0].wis + 12) > characters[1].wis) {
 			playerstarts = true;
 		} 
 		text += document.getElementById("nameinput").value + " finds " + enemy.name;
