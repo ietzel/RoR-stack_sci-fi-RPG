@@ -25,8 +25,8 @@
           this.agility = agility;
           this.defense = defense;
           this.mental = mental;
-          this.level = this.calculate_level();
-          this.calculate_level = function() {
+          this.level = calculate_level();
+          function calculate_level() {
             this.level = ((this.name, this.offense, this.agility, this.defense, this.mental)-40)/16
           }
         }
