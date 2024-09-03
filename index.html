@@ -13,11 +13,17 @@
   <body>
       <script>
         var organisms = [[],[], [], [], [],[],[],[],[], []];
-        //organisms[0][0] = new create_organisms("", "", 10, 10, 10, 10);
+        organisms[0][0] = new create_organisms("", 10, 10, 10, 10);
         for(var j = 0; j < 1; j++) {
-            //organisms[1][j] = new create_organisms("", "", 10, 10, 10, 10);  
+            organisms[1][j] = new create_organisms("", 10, 10, 10, 10);  
         }
-        
+        function create_organism(name, offense, agility, defense, mental) {
+          this.name = name;
+          this.offense = offense;
+          this.agility = agility;
+          this.defense = defense;
+          this.mental = mental;
+        }
         function damage(stat, mental, target, ranged) {
             accuracystat = getModOfStat(stat);
             dexpenalty = 0;
@@ -96,7 +102,7 @@
         let x_coor = 0;
         let y_coor = 0;
         let map = null;
-        let noiseScale = 1/150;
+        let noiseScale = 1/128;
         let ocean = "#008dc4";
         let shore = "#00a9cc";
         let sand = "#eecda3";
@@ -106,7 +112,7 @@
         
         
         function setup() {
-          createCanvas(1280, 720);
+          createCanvas(512, 256);
           noStroke();
           background(0);
           noiseDetail(5, 0.5);
