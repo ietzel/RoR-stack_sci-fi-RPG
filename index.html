@@ -86,14 +86,16 @@
             } else if (keyCode === RIGHT_ARROW) {
             	x_coor += 50;
             } else if (keyCode === DOWN_ARROW) {
-            	z_coor -= 50;
+            	y_coor -= 50;
             	characters[0][0].crouching = true;
             } else if (keyCode === UP_ARROW) {
-            	z_coor += 50;
+            	y_coor += 50;
             	characters[0][0].crouching = false;
             }
         }
-        
+
+        let x_coor = 0;
+        let y_coor = 0;
         let map = null;
         let noiseScale = 1/150;
         let ocean = "#008dc4";
