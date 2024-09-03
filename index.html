@@ -25,6 +25,10 @@
           this.agility = agility;
           this.defense = defense;
           this.mental = mental;
+          this.level = this.calculate_level();
+          this.calculate_level = function() {
+            this.level = ((this.name, this.offense, this.agility, this.defense, this.mental)-40)/16
+          }
         }
         function damage(stat, mental, target, ranged) {
             accuracystat = getModOfStat(stat);
