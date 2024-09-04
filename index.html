@@ -34,7 +34,7 @@
             this.mental = mental;
           }
           calculate_level() {
-            this.level = ((this.name, this.offense, this.agility, this.defense, this.mental)-40)/16;
+            this.level = Math.floor(((this.name, this.offense, this.agility, this.defense, this.mental)-40)/16);
           }
         }
         function damage(stat, mental, target, ranged) {
