@@ -19,13 +19,20 @@
         for(var j = 0; j < 1; j++) {
             organisms[1][j] = new create_organism("", 10, 10, 10, 10);  
         }
-        function create_organism(name, offense, agility, defense, mental) {
-          this.name = name;
-          this.offense = offense;
-          this.agility = agility;
-          this.defense = defense;
-          this.mental = mental;
-          this.level = calculate_level();
+        class organism {
+          this.name;
+          this.offense;
+          this.agility;
+          this.defense;
+          this.mental;
+          this.level;
+          constructor(name, offense, agility, defense, mental) {
+            this.name = name;
+            this.offense = offense;
+            this.agility = agility;
+            this.defense = defense;
+            this.mental = mental;
+          }
           calculate_level() {
             this.level = ((this.name, this.offense, this.agility, this.defense, this.mental)-40)/16;
           }
