@@ -13,7 +13,12 @@
   <body>
       <script>
         var organisms = [[]];
-        var industries = ["Agriculture, Forestry, Fishing & Hunting", "Mining", "Utilities", "Construction", "Manufacturing", "Wholesale Trade", "Retail Trade", "Transportation & Warehousing", "Finance & Insurance", "Real Estate & Rental & Leasing", "Professional, Scientific & Technical Services", "Administration, Business Support & Waste Management Services", "Educational Services", "Healthcare & Social Assistance", "Arts, Entertainment & Recreation", "Accommodation & Food Services"];
+        var industries = [
+          ["Agriculture, Forestry, Fishing & Hunting", ["Mining", "Utilities", "Construction"],
+          ["Real Estate & Rental & Leasing", "Accommodation & Food Services", "Wholesale Trade", "Retail Trade"],
+          ["Manufacturing", "Transportation & Warehousing", "Administration, Business Support & Waste Management Services", "Healthcare & Social Assistance"],
+          ["Finance & Insurance", , "Professional, Scientific & Technical Services", "Educational Services", "Arts, Entertainment & Recreation"]        
+        ];
         var BFCs = ["Production", "R & D", "Management", "Purchasing", "Revenue"];
         organisms[0][0] = new organism("", 10, 10, 10, 10);
         for(var j = 0; j < 1; j++) {
