@@ -14,10 +14,10 @@
       <script>
         var organisms = [[]];
         var industries = [
-          ["Agriculture, Forestry, Fishing & Hunting", "Construction", "Mining", "Utilities"],
-          ["Accommodation & Food Services", "Real Estate & Rental & Leasing", "Retail Trade", "Wholesale Trade"],
-          ["Administration, Business Support & Waste Management Services", "Healthcare & Social Assistance", "Manufacturing", "Transportation & Warehousing"],
-          ["Arts, Entertainment & Recreation", "Educational Services", "Finance & Insurance", "Professional, Scientific & Technical Services"]        
+          [new industry("Agriculture, Forestry, Fishing & Hunting", "", ""), new industry("Construction", "", ""), new industry("Mining", "", ""), new industry("Utilities", "", "")],
+          [new industry("Accommodation & Food Services", "", ""), new industry("Real Estate & Rental & Leasing", "", ""), new industry("Retail Trade", "", ""), new industry("Wholesale Trade", "", "")],
+          [new industry("Administration, Business Support & Waste Management Services", "", ""), new industry("Healthcare & Social Assistance", "", ""), new industry("Manufacturing", "", ""), new industry("Transportation & Warehousing", "", "")],
+          [new industry("Arts, Entertainment & Recreation", "", ""), new industry("Educational Services", "", ""), new industry("Finance & Insurance", "", ""), new industry("Professional, Scientific & Technical Services", "", "")]        
         ];
         var BFCs = ["Production", "R & D", "Management", "Purchasing", "Revenue"];
         organisms[0][0] = new organism("", 10, 10, 10, 10);
@@ -35,6 +35,13 @@
           }
           calculate_level() {
             this.level = Math.floor(((this.name, this.offense, this.agility, this.defense, this.mental)-40)/16);
+          }
+        }
+        class industry {
+          constructor(name, qA, qB) {
+            this.name = name;
+            this.qA = qA;
+            this.qB = qB;
           }
         }
         function encounter() {
