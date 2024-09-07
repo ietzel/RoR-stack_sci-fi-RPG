@@ -108,103 +108,48 @@
             }
         }
         
-        function keyPressed() {
-            if (keyCode === LEFT_ARROW) {
-            	x_coor -= 50;
-            } else if (keyCode === RIGHT_ARROW) {
-            	x_coor += 50;
-            } else if (keyCode === DOWN_ARROW) {
-            	y_coor -= 50;
-            	characters[0][0].crouching = true;
-            } else if (keyCode === UP_ARROW) {
-            	y_coor += 50;
-            	characters[0][0].crouching = false;
-            }
-        }
-
-        let x_coor = 0;
-        let y_coor = 0;
-        let map = null;
-        let noiseScale = 1/128;
-        let ocean = "#008dc4";
-        let shore = "#00a9cc";
-        let sand = "#eecda3";
-        let grass = "#7ec850";
-        let stone = "#676767";
-        let snow = "#fffafa";
-        
-        
-        function setup() {
-          createCanvas(512, 256);
-          noStroke();
-          background(0);
-          noiseDetail(5, 0.5);
-          makeMap();
-          drawMap();
-        }
-        
-        
-        function makeMap() {
-          map = [];
-          for(let i = 0; i < width; i++) {
-            map[i] = [];
-            for(let j = 0; j < height; j++) {
-              map[i][j] = pickColor(i, j);
-            }
-          }
-        }
-        
-        function pickColor(i, j) {
-          let h = noise((i)*noiseScale, (j)*noiseScale);
-          let c = "#facade";
-          
-          if(h < 0.2) {
-            c = ocean;
-          } else if(h < 0.3) {
-            if(random() > pow(h-0.2, 2)*100) {
-              c = ocean;
-            } else {
-              c = shore;
-            }
-          } else if(h < 0.4) {
-            if(random() > pow(h-0.3, 2)*100) {
-              c = shore;
-            } else {
-              c = sand;
-            }
-          } else if(h < 0.5) {
-            if(random() > pow(h-0.4, 2)*100) {
-              c = sand;
-            } else {
-              c = grass;
-            }
-          } else if(h < 0.6) {
-            if(random() > pow(h-0.5, 2)*100) {
-              c = grass;
-            } else {
-              c = stone;
-            }
-          } else if (h < 0.7) {
-            if(random() > pow(h-0.6, 2)*100) {
-              c = stone;
-            } else {
-              c = snow;
-            }
-           } else {
-            c = snow;
-          }
-          
-          return color(c);
-        }
-        
-        function drawMap() {
-          for(let i = 0; i < width; i++) {
-             for(let j = 0; j < height; j++) {
-              set(i, j, map[i][j])
-            }
-          }
-          updatePixels();
-        }        
+        quotes = [
+	"You don't even know that you're alive, 81^3#!",
+	"Green number 4, close the door!",
+	"You're not perfect!",
+	"I-I-I-I-I want the knife.",
+	"Sharks and minnows!",
+	"You are not even past the phase yet.",
+	"Put your hand in the gom jabbar.",
+	"We're gonna drive that mother, down into your spine!",
+	"And the nazgul was no more.",
+	"At the end of a road was a white house.",
+	"Who shall you be, the payer, or the payee?",
+	"The game is predator vs prey.",
+	"Where is the scroll?",
+	"Just wait, until I've finished this section!",
+	"Of passion accurst I have drank of a water that quenches all thirst",
+	"Hell is empty and all the devils are here",
+	"Chainsaw sepukku!"
+	"It is a dump company.",
+	"Let's say we strike a deal, not reinvent the wheel!",
+	"We need to save the mentally ill.",
+	"It was bait.",
+	"Spinware is dark pattern.",
+	"You don't have to implement the program. You do have to implement the program.",
+	"Prometheus one.",
+	"Bio-sadist engine.",
+	"Engine of the uncontrolled.",
+	"Floating white gown.",
+	"Depressive marketing campaign.",
+	"Very repetitive excitement.",
+	"Round 2 electric boogaloo",
+	"It's bad for ya.",
+	"Sleep.",
+	"Intelligence is disease.",
+	"It shattered the kid's dreams.",
+	"They just keep driving, driving, driving.",
+	"Make sure it actually meets what they expect.",
+	"Don't be afraid of the dark.",
+	"Undead malware."
+	"Goatskull floating in green mist.",
+	"That was just my crazy ********: don't crap on me."
+]
         
     </script>
   
