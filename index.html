@@ -37,6 +37,9 @@
             this.level = Math.floor(((this.name, this.offense, this.agility, this.defense, this.mental)-40)/16);
           }
         }
+        function encounter() {
+          alert("Encounter");
+        }
         function damage(stat, mental, target, ranged) {
             accuracystat = getModOfStat(stat);
             dexpenalty = 0;
