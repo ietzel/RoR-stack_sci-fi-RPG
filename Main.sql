@@ -1,6 +1,6 @@
 CREATE DATABASE game;
 
-CREATE TABLE Tiles (
+CREATE TABLE Triangles (
   x SMALLINT(2048),
   y SMALLINT(2048),
   type TINYTEXT
@@ -20,10 +20,8 @@ CREATE TABLE Characters (
   crouching BOOLEAN,
   x INT(1000092),
   y INT(1000092),
-  z INT(1000092),
   dX TINYINT(128),
-  dY TINYINT(128),
-  dZ TINYINT(128)
+  dY TINYINT(128)
 );
 
 CREATE TABLE Dialogue {
