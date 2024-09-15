@@ -6,19 +6,15 @@
   </head>
   <body>
       <input type="range" min="1" max="18" value="1" class="slider" id="myRange">
-      <p>Material, First World, Shadow, Earth, Water, Air, Fire, Ethereal, Purgatory, Utopia, Heaven, Nirvana, Elysium, Limbo, Abyss, Abaddon, Hell, Astral</p>
+      <p id="location">Material, First World, Shadow, Earth, Water, Air, Fire, Ethereal, Purgatory, Utopia, Heaven, Nirvana, Elysium, Limbo, Abyss, Abaddon, Hell, Astral</p>
       <style>
-              input[type=range][orient=vertical] {
-	  	-webkit-appearance: slider-vertical;
-	  	width: 16px;
-	  	height: 175px;
-	  	padding: 0 5px;
-	      }
 	      form {
 		      font-size: 5px;
 	      }
       </style>
       <script>
+	var rangeInput = document.getElementById("myRange").value;
+	document.getElementById("rangeInput").value = rangeInput;
 	var planes = ["Material", "First World", "Shadow", "Earth", "Water", "Air", "Fire", "Ethereal", "Purgatory", "Utopia", "Heaven", "Nirvana", "Elysium", "Limbo", "Abyss", "Abaddon", "Hell", "Astral"]; 
 	var organisms = [[]];
 	var industries = [
