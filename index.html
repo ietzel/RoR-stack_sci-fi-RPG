@@ -6,15 +6,15 @@
   </head>
   <body>
       <input type="range" min="0" max="17" value="0" class="slider" id="myRange" onchange="updateSlider(this.value)">
-      <p>Location: </p><p id="location">Material</p><p>Plane</p>
+      <p id="location">Location: Material Plane</p>
       <style>
-	      form {
+	      option {
 		      font-size: 5px;
 	      }
       </style>
       <script>
 	function updateSlider(location) {
-	        document.getElementById("location").value = planes[location];
+	        document.getElementById("location").value = "Location: " + planes[location] + "Plane";
 	}
 	var planes = ["Material", "First World", "Shadow", "Earth", "Water", "Air", "Fire", "Ethereal", "Purgatory", "Utopia", "Heaven", "Nirvana", "Elysium", "Limbo", "Abyss", "Abaddon", "Hell", "Astral"]; 
 	var organisms = [[]];
