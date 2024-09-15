@@ -5,7 +5,8 @@
     <title>Sci-Fi RPG Sim</title>
   </head>
   <body>
-      <input type="range" min="0" max="17" value="0" class="slider" id="myRange">
+      <input type="range" min="0" max="17">
+      <option></option>
       <p id="location">Location: Material Plane</p>
       <style>
 	      select {
@@ -20,6 +21,9 @@
 		document.getElementById("location").value = "Location: " + planes[location] + " Plane";
 		encounter();
 	}
+	document.querySelector('input').addEventListener('input', function () {
+	  document.querySelector('output').innerHTML = "Location: " + planes[document.querySelector('input').value] + " Plane";
+	}, false);
 	var planes = ["Material", "First World", "Shadow", "Earth", "Water", "Air", "Fire", "Ethereal", "Purgatory", "Utopia", "Heaven", "Nirvana", "Elysium", "Limbo", "Abyss", "Abaddon", "Hell", "Astral"]; 
 	var organisms = [
 		new organism("Player", 10, 10, 10, 10),
