@@ -5,7 +5,7 @@
     <title>Sci-Fi RPG Sim</title>
   </head>
   <body>
-      <input type="range" min="1" max="18" value="1" class="slider" id="myRange">
+      <input type="range" min="1" max="18" value="1" class="slider" id="myRange" onchange="updateSlider(this.value)">
       <p id="location">Material, First World, Shadow, Earth, Water, Air, Fire, Ethereal, Purgatory, Utopia, Heaven, Nirvana, Elysium, Limbo, Abyss, Abaddon, Hell, Astral</p>
       <style>
 	      form {
@@ -13,8 +13,10 @@
 	      }
       </style>
       <script>
-	var rangeInput = document.getElementById("myRange").value;
-	document.getElementById("rangeInput").value = rangeInput;
+	function updateSlider(location) {
+	        var sliderDiv = document.getElementById("location");
+	        sliderDiv.innerHTML = location;
+	}
 	var planes = ["Material", "First World", "Shadow", "Earth", "Water", "Air", "Fire", "Ethereal", "Purgatory", "Utopia", "Heaven", "Nirvana", "Elysium", "Limbo", "Abyss", "Abaddon", "Hell", "Astral"]; 
 	var organisms = [[]];
 	var industries = [
