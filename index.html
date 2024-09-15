@@ -17,12 +17,9 @@
 	      }
       </style>
       <script>
-	document.getElementById("myRange").onchange = function() {
-		document.getElementById("location").value = "Location: " + planes[location] + " Plane";
-		encounter();
-	}
 	document.querySelector('input').addEventListener('input', function () {
 	  document.querySelector('output').innerHTML = "Location: " + planes[document.querySelector('input').value] + " Plane";
+	  encounter();
 	}, false);
 	var planes = ["Material", "First World", "Shadow", "Earth", "Water", "Air", "Fire", "Ethereal", "Purgatory", "Utopia", "Heaven", "Nirvana", "Elysium", "Limbo", "Abyss", "Abaddon", "Hell", "Astral"]; 
 	var organisms = [
