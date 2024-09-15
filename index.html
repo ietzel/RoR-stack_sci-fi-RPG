@@ -17,10 +17,6 @@
 	      }
       </style>
       <script>
-	document.querySelector('input').addEventListener('input', function () {
-	  document.querySelector('output').innerHTML = "Location: " + planes[document.querySelector('input').value] + " Plane";
-	  encounter();
-	}, false);
 	var planes = ["Material", "First World", "Shadow", "Earth", "Water", "Air", "Fire", "Ethereal", "Purgatory", "Utopia", "Heaven", "Nirvana", "Elysium", "Limbo", "Abyss", "Abaddon", "Hell", "Astral"]; 
 	var organisms = [
 		new organism("Player", 10, 10, 10, 10),
@@ -179,13 +175,34 @@
     <h1><a href="https://docs.google.com/document/d/1UnQN5FBOXWiEOR3lkoWNMFROX0AjwMuNREEij2Xrdvo/edit">Campaign</a> tips for character creation</h1>
     <form>Skill Check:
 	    <select>
+		    <option>Material<option>
+		    <option>First World<option>
+		    <option>Shadow<option>
+		    <option>Earth<option>
+		    <option>Water<option>
+		    <option>Air<option>
+		    <option>Fire<option>
+		    <option>Ethereal<option>
+		    <option>Purgatory<option>
+		    <option>Utopia<option>
+		    <option>Heaven<option>
+		    <option>Nirvana<option>
+		    <option>Elysium<option>
+		    <option>Limbo<option>
+		    <option>Abyss<option>
+		    <option>Abaddon<option>
+		    <option>Hell<option>
+		    <option>Astral<option>
+		<form>
+	    <select>
+    <!--<form>Skill Check:
+	    <select>
 		    <option>Athletics (climb, force open, grapple, high jump, long jump, reposition, shove, swim, trip; disarm)</option>
-		    <option>Melee Attack</option>
+		    <option>Melee/Ranged/Magic Attack</option>
 		    <option> Acrobatics (balance, tumble through; fly maneuver, squeeze)</option>
 		    <option>Piloting</option>
 		    <option>Stealth (conceal object, hide, sneak)</option>
 		    <option>Thievery (palm object, steal; disable device, pick lock)</option>
-		    <option>Ranged Attack</option>
 		    <option>Arcana (recall knowledge; borrow an arcane spell, decipher writing, identify magic, learn a spell)</option>
 		    <option>Computers</option>
 		    <option>Crafting (recall knowledge, repair; craft, earn income, identify alchemy)</option>
@@ -199,7 +216,7 @@
 		    <option>Religion (recall knowledge; decipher writing, identify magic, learn a spell)</option>
 		    <option>Society (recall knowledge, subsist; create forgery)</option>
 	    </select>
-    </form>
+    </form>-->
     <table>
       <tr>
         <td>Financial Intermediation</td>
