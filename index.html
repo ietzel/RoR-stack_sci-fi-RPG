@@ -18,6 +18,26 @@
       </style>
       <script>
 	var planes = ["Material", "First World", "Shadow", "Earth", "Water", "Air", "Fire", "Ethereal", "Purgatory", "Utopia", "Heaven", "Nirvana", "Elysium", "Limbo", "Abyss", "Abaddon", "Hell", "Astral"]; 
+	var summaries = [
+		"You prepare to take off on your journey. The Inner Sphere remains close, while the Outer Sphere remains at a distance.",
+		"Bound to have wierd things. It is a portal for the Inner Sphere, and esoteric from the Outer Sphere.",
+		"A great castle looms. The most evil of the Inner Sphere, though is not as evil as the Outer Sphere.",
+		"Earth. Inner Sphere, Outer Sphere.",
+		"Water. Inner Sphere, Outer Sphere.",
+		"Air. Inner Sphere, Outer Sphere.",
+		"Fire. Inner Sphere, Outer Sphere.",
+		"Ethereal. Inner Sphere, Outer Sphere.",
+		"Purgatory. Inner Sphere, Outer Sphere.",
+		"Utopia. Inner Sphere, Outer Sphere.",
+		"Heaven. Inner Sphere, Outer Sphere.",
+		"Nirvana. Inner Sphere, Outer Sphere.",
+		"Elysium. Inner Sphere, Outer Sphere.",
+		"Limbo. Inner Sphere, Outer Sphere.",
+		"Abyss. Inner Sphere, Outer Sphere.",
+		"Abbadon. Inner Sphere, Outer Sphere.",
+		"Hell. Inner Sphere, Outer Sphere.",
+		"Astral. Inner Sphere, Outer Sphere.",
+	];
 	var organisms = [
 		new organism("Player", 10, 10, 10, 10),
 		new organism("", , , , ),
@@ -66,7 +86,7 @@
           }
         }
         function encounter() {
-          alert("Encounter");
+          alert("Encounter: ", summaries[document.getElementById("travel").selectedIndex], organisms[document.getElementById("travel").selectedIndex]);
         }
         function damage(stat, mental, target, ranged) {
             accuracystat = getModOfStat(stat);
@@ -173,7 +193,7 @@
 	];      
     </script>
     <h1><a href="https://docs.google.com/document/d/1UnQN5FBOXWiEOR3lkoWNMFROX0AjwMuNREEij2Xrdvo/edit">Campaign</a> tips for character creation</h1>
-    <form>Skill Check:
+    <form id="travel">Travel:
 	    <select>
 		    <option>Material<option>
 		    <option>First World<option>
