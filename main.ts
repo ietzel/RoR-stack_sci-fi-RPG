@@ -1,6 +1,6 @@
 
-var planes = ["Material", "First World", "Shadow", "Earth", "Water", "Air", "Fire", "Ethereal", "Purgatory", "Utopia", "Heaven", "Nirvana", "Elysium", "Limbo", "Abyss", "Abaddon", "Hell", "Astral"]; 
-var summaries = [
+const planes = ["Material", "First World", "Shadow", "Earth", "Water", "Air", "Fire", "Ethereal", "Purgatory", "Utopia", "Heaven", "Nirvana", "Elysium", "Limbo", "Abyss", "Abaddon", "Hell", "Astral"]; 
+const summaries = [
 	"You prepare to take off on your journey. The Inner Sphere remains close, while the Outer Sphere remains at a distance.",
 	"Bound to have wierd things. It is a portal for the Inner Sphere, and esoteric from the Outer Sphere.",
 	"A great castle looms. The most evil of the Inner Sphere, though is not as evil as the Outer Sphere.",
@@ -42,35 +42,30 @@ var organisms = [
 	new organism("Pit Fiend", 37, 30, 35, 27),
 	new organism("Pleroma Aeon", 24, 27, 26, 25),
 ];
-var industries = [
+const industries = [
   [new industry("Financial Intermediation", "", ""), new industry("Mining", "", ""), new industry("Community, Social and Personal Service Activities & Tourism", "", "")] 
   [new industry("Wholesale & Retail Trade", "", ""), new industry("Retail Estate & Renting & Hotels & Restaurants", "", ""), new industry("Business Activities", "", "")]
   [new industry("Telecommunications", "", ""), new industry("Manufacturing", "", ""), new industry("Transport, Post & Storage", "", "")]        
 ];
+
 class organism {
-  constructor(name, offense, agility, defense, mental) {
-    this.name = name;
-    this.offense = offense;
-    this.agility = agility;
-    this.defense = defense;
-    this.mental = mental;
-    calculate_level();
-  }
-  calculate_level() {
-    this.level = Math.floor(((this.name, this.offense, this.agility, this.defense, this.mental)-40)/16);
+    name: string;
+    offense: int;
+    agility: int;
+    defense: int;
+    mental: int;
   }
 }
 class industry {
-  constructor(name, qA, qB) {
-    this.name = name;
-    this.qA = qA;
-    this.qB = qB;
+    name: string;
+    qA: string;
+    qB: string;
   }
 }
 function encounter() {
   alert("Encounter: ", summaries[document.getElementById("travel").selectedIndex], organisms[document.getElementById("travel").selectedIndex]);
 }
-function damage(stat, mental, target, ranged) {
+function damage(stat, mental, target, ranged): void {
     accuracystat = getModOfStat(stat);
     dexpenalty = 0;
     crouch_mod = 0;
@@ -131,7 +126,7 @@ function damage(stat, mental, target, ranged) {
     }
 }
 
-quotes = [
+const quotes = [
 	"You don't even know that you're alive, 81^3#!",
 	"Green number 4, close the door!",
 	"You're not perfect!",
