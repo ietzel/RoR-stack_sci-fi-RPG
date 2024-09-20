@@ -62,7 +62,7 @@ class industry {
     qB: string;
   }
 }
-function encounter() {
+function encounter(): void {
   alert("Encounter: ", summaries[document.getElementById("travel").selectedIndex], organisms[document.getElementById("travel").selectedIndex]);
 }
 function damage(stat, mental, target, ranged): void {
