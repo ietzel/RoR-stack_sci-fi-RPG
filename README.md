@@ -4,4 +4,4 @@ Comments Appreciated!
 
 A combat & exploration experience.
 
-Run on Ubuntu & latest version Apache.
+Run on Ubuntu & latest Apache.
