@@ -1,5 +1,5 @@
 
-const planes = ["Material", "First World", "Shadow", "Earth", "Water", "Air", "Fire", "Ethereal", "Purgatory", "Utopia", "Heaven", "Nirvana", "Elysium", "Limbo", "Abyss", "Abaddon", "Hell", "Astral"]; 
+const planes = ["Material", "First World", "Shadow", "Abyss", "Abaddon", "Hell", "Astral"]; 
 const summaries = [
 	"You prepare to take off on your journey. The Inner Sphere remains close, while the Outer Sphere remains at a distance.",
 	"Bound to have wierd things. It is a portal for the Inner Sphere, and esoteric from the Outer Sphere.",
@@ -38,6 +38,7 @@ class industry {
 }
 function encounter(): void {
   alert("Encounter: ", summaries[document.getElementById("travel").selectedIndex], organisms[document.getElementById("travel").selectedIndex]);
+  damage(organisms[0].offense, organisms[0].mental, organisms[document.getElementById("travel").selectedIndex], false);
 }
 function damage(stat, mental, target, ranged): void {
     accuracystat = getModOfStat(stat);
