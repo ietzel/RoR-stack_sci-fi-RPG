@@ -1,1 +1,0 @@
-puts "Sci-Fi RPG"
