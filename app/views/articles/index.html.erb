@@ -104,16 +104,6 @@
 	}*/    
 	<!--<script>
     <h1><a href="https://docs.google.com/document/d/1UnQN5FBOXWiEOR3lkoWNMFROX0AjwMuNREEij2Xrdvo/edit">Campaign</a> tips for character creation</h1>
-    <form id="travel">Travel:
-	    <select>
-		    <option>Material<option>
-		    <option>First World<option>
-		    <option>Shadow<option>
-		    <option>Abaddon<option>
-		    <option>Hell<option>
-		    <option>Astral<option>
-		<select>
-	<form>    
 	<button onclick="encounter()">Go</button>
     	<form>Skill Check:
 	    <select>
@@ -137,10 +127,18 @@
 		    <option>Society (recall knowledge, subsist; create forgery)</option>
 	    </select>
     </form>-->
-<form action="/somepath" method="post">
-  <input type="text">
-  <input type="submit" value="Submit This Form">
-</form>
+	<form action="/somepath" method="post">
+		<select name = "post[person_id]">
+			<option value = "1">Material<option>
+			<option value = "2">First World<option>
+			<option value = "3">Shadow<option>
+			<option value = "4">Abaddon<option>
+			<option value = "5">Hell<option>
+			<option value = "6">Astral<option>
+		</select>
+	  	<input type="text">
+	  	<input type="submit" value="Submit Destination">
+	</form>
     <table>
       <tr>
 	<td>Manufacturing</td>
