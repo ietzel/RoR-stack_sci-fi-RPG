@@ -5,7 +5,7 @@ Fantasy
 
 Magic
 aspects: source, cost, potency, commonality, accessibility, mastery.
-Paths: Scientific, Artisan, Arcane, Natural, Legendary, Forbidden, Pantheon.
+paths: Scientific, Artisan, Arcane, Natural, Legendary, Forbidden, Pantheon.
 
 One thing to rule them all
 priorities: reputation, attainability, complexity, potency, appearance.
