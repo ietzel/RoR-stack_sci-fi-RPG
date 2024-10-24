@@ -21,8 +21,8 @@ priorities: Beauty, Culture, Amenities, Wisdom, Secrets.
 Sci-Fi
 
 Time to Face the Strange
-Innovation: Medicine, Transportation, Security, Communication.
-Change: Social, Economic, Political, Personal.
+innovation: Medicine, Transportation, Security, Communication.
+change: Social, Economic, Political, Personal.
 
 
 Horror
@@ -34,7 +34,7 @@ definitions: nature, appearance, violence, vulnerabilities.
 X-Punk
 
 Style is Substance
-Subgenre: Cyber, Steam, Diesel, Necro, Apocalyptic, Dungeon.
+subgenre: Cyber, Steam, Diesel, Necro, Apocalyptic, Dungeon.
 
 Making a Megacorp
 basics: goods, services, assets, threats, corruptions.
